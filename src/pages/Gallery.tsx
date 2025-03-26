@@ -21,13 +21,13 @@ const Gallery = () => {
       id: 1,
       title: "Pierniczki z lukrem",
       description: "Tradycyjne pierniczki ozdobione białym lukrem, idealne na świąteczny stół.",
-      imageUrl: "https://images.unsplash.com/photo-1607920592519-ab0664cd8c39?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
     },
     {
       id: 2,
       title: "Kolekcja świąteczna",
       description: "Zestaw pierniczków w kształcie gwiazdek, choinek i bałwanków.",
-      imageUrl: "https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?q=80&w=2014&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
     },
     {
       id: 3,
@@ -45,13 +45,13 @@ const Gallery = () => {
       id: 5,
       title: "Pierniczki świąteczne",
       description: "Klasyczne pierniczki w kształcie reniferów i Mikołajów, idealne na prezent.",
-      imageUrl: "https://images.unsplash.com/photo-1576618148500-a84b370cad53?q=80&w=2075&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
     },
     {
       id: 6,
       title: "Lukrowane ciasteczka",
       description: "Delikatnie przyprawione pierniki z artystycznie wykonanymi wzorami.",
-      imageUrl: "https://images.unsplash.com/photo-1607920592529-3b1e314a27a3?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
     },
     {
       id: 7,
@@ -63,13 +63,13 @@ const Gallery = () => {
       id: 8,
       title: "Świąteczne słodkości",
       description: "Różnorodne kształty i wzory pierników, każdy starannie ręcznie przyozdobiony.",
-      imageUrl: "https://images.unsplash.com/photo-1482854256601-fb51a5d0fded?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
     },
     {
       id: 9,
       title: "Mini pierniczki",
       description: "Małe pierniczki z gwiazdkami i płatkami śniegu, idealne do kawy.",
-      imageUrl: "https://images.unsplash.com/photo-1480953251531-1dd49ad1818f?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
     },
     {
       id: 10,
@@ -81,13 +81,13 @@ const Gallery = () => {
       id: 11,
       title: "Pierniki z polewą",
       description: "Wykwintne pierniki z czekoladową polewą i orzechami, dla koneserów.",
-      imageUrl: "https://images.unsplash.com/photo-1575468131771-cb23a4f6a3da?q=80&w=1974&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
     },
     {
       id: 12,
       title: "Świąteczna kolekcja",
       description: "Pierniki w różnych kształtach z tradycyjnymi świątecznymi motywami.",
-      imageUrl: "https://images.unsplash.com/photo-1639610806629-84192417bcb2?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
     },
   ];
 

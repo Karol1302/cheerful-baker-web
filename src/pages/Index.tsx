@@ -15,14 +15,14 @@ const Index = () => {
       id: 1,
       title: "Świąteczny zestaw pierników",
       description: "Ręcznie robione pierniki świąteczne z naturalnymi przyprawami i własnoręcznie przygotowanymi dekoracjami.",
-      imageUrl: "https://images.unsplash.com/photo-1607920592529-3b1e314a27a3?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
       price: "Od 120 zł",
     },
     {
       id: 2,
       title: "Personalizowane pierniczki",
       description: "Wyjątkowe pierniczki z indywidualnymi napisami i wzorami, idealne na prezent świąteczny.",
-      imageUrl: "https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?q=80&w=2014&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
       price: "Od 85 zł",
     },
     {
@@ -41,7 +41,7 @@ const Index = () => {
         subtitle="Ręcznie wykonane słodkości, które wprowadzą świąteczny klimat do Twojego domu."
         ctaText="Zobacz galerię"
         ctaLink="/gallery"
-        backgroundImage="https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?q=80&w=2070&auto=format&fit=crop"
+        backgroundImage="/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png"
       />
       
       <div id="content">
