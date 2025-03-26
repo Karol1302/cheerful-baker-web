@@ -32,7 +32,7 @@ const Header = () => {
           to="/" 
           className="text-2xl font-bold tracking-tight text-gingerbread hover:opacity-90 transition-opacity"
         >
-          Handcrafted
+          PierniczkiKiM
         </NavLink>
         
         {/* Desktop Menu */}
@@ -45,7 +45,7 @@ const Header = () => {
               }`
             }
           >
-            Home
+            Strona główna
           </NavLink>
           <NavLink 
             to="/gallery" 
@@ -55,7 +55,7 @@ const Header = () => {
               }`
             }
           >
-            Gallery
+            Galeria
           </NavLink>
           <NavLink 
             to="/contact" 
@@ -65,7 +65,7 @@ const Header = () => {
               }`
             }
           >
-            Contact
+            Kontakt
           </NavLink>
         </nav>
 
@@ -93,7 +93,7 @@ const Header = () => {
             }
             onClick={() => setMobileMenuOpen(false)}
           >
-            Home
+            Strona główna
           </NavLink>
           <NavLink 
             to="/gallery" 
@@ -102,7 +102,7 @@ const Header = () => {
             }
             onClick={() => setMobileMenuOpen(false)}
           >
-            Gallery
+            Galeria
           </NavLink>
           <NavLink 
             to="/contact" 
@@ -111,7 +111,7 @@ const Header = () => {
             }
             onClick={() => setMobileMenuOpen(false)}
           >
-            Contact
+            Kontakt
           </NavLink>
         </div>
       </div>

@@ -14,9 +14,9 @@ const Contact = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
+          <h1 className="text-4xl font-bold mb-4">Skontaktuj się</h1>
           <p className="text-muted-foreground text-pretty">
-            Have a question or interested in a custom order? Reach out using the contact information below.
+            Masz pytanie lub interesujesz się indywidualnym zamówieniem? Skontaktuj się, korzystając z poniższych informacji.
           </p>
         </div>
         

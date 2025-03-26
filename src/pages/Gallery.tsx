@@ -1,66 +1,101 @@
 
+import { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import ImageGallery from "@/components/ui/ImageGallery";
+import { 
+  Pagination, 
+  PaginationContent, 
+  PaginationItem, 
+  PaginationLink, 
+  PaginationNext, 
+  PaginationPrevious 
+} from "@/components/ui/pagination";
 
 const Gallery = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
-  const galleryItems = [
+  const allGalleryItems = [
     {
       id: 1,
-      title: "Handcrafted Wooden Bowl",
-      description: "Solid oak bowl with natural grain pattern, hand-turned and finished with food-safe oil.",
-      imageUrl: "https://images.unsplash.com/photo-1635115428736-aee25eb1b087?q=80&w=2070&auto=format&fit=crop",
+      title: "Pierniczki z lukrem",
+      description: "Tradycyjne pierniczki ozdobione białym lukrem, idealne na świąteczny stół.",
+      imageUrl: "https://images.unsplash.com/photo-1607920592519-ab0664cd8c39?q=80&w=2070&auto=format&fit=crop",
     },
     {
       id: 2,
-      title: "Ceramic Vase Collection",
-      description: "Set of three organic-shaped vases in complementary earthy tones.",
-      imageUrl: "https://images.unsplash.com/photo-1604678786654-ce998f21c8a9?q=80&w=2073&auto=format&fit=crop",
+      title: "Kolekcja świąteczna",
+      description: "Zestaw pierniczków w kształcie gwiazdek, choinek i bałwanków.",
+      imageUrl: "https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?q=80&w=2014&auto=format&fit=crop",
     },
     {
       id: 3,
-      title: "Woven Wall Hanging",
-      description: "Natural fiber wall hanging with intricate pattern, perfect for adding texture to your walls.",
-      imageUrl: "https://images.unsplash.com/photo-1617806104780-ff7a4a0b1e4e?q=80&w=1974&auto=format&fit=crop",
+      title: "Pierniki z przyprawami",
+      description: "Puszyste pierniki z cynamonem, goździkami i imbirem, ręcznie zdobione.",
+      imageUrl: "https://images.unsplash.com/photo-1608877904943-f546cee61cb1?q=80&w=1974&auto=format&fit=crop",
     },
     {
       id: 4,
-      title: "Leather Journal",
-      description: "Hand-stitched leather journal with handmade paper pages and brass closure.",
-      imageUrl: "https://images.unsplash.com/photo-1544775677-4614a9ad1324?q=80&w=1936&auto=format&fit=crop",
+      title: "Domek z piernika",
+      description: "Tradycyjny domek z piernika, ozdobiony kolorowym lukrem i posypkami.",
+      imageUrl: "https://images.unsplash.com/photo-1544285231-ae61a4567a75?q=80&w=1960&auto=format&fit=crop",
     },
     {
       id: 5,
-      title: "Wooden Cutting Board",
-      description: "End-grain cutting board made from maple and walnut with juice groove and handle.",
-      imageUrl: "https://images.unsplash.com/photo-1648183163286-32a0c8f62809?q=80&w=2070&auto=format&fit=crop",
+      title: "Pierniczki świąteczne",
+      description: "Klasyczne pierniczki w kształcie reniferów i Mikołajów, idealne na prezent.",
+      imageUrl: "https://images.unsplash.com/photo-1576618148500-a84b370cad53?q=80&w=2075&auto=format&fit=crop",
     },
     {
       id: 6,
-      title: "Macrame Plant Hanger",
-      description: "Intricately knotted plant hanger made from natural cotton rope.",
-      imageUrl: "https://images.unsplash.com/photo-1615529162924-f8605388461d?q=80&w=1974&auto=format&fit=crop",
+      title: "Lukrowane ciasteczka",
+      description: "Delikatnie przyprawione pierniki z artystycznie wykonanymi wzorami.",
+      imageUrl: "https://images.unsplash.com/photo-1607920592529-3b1e314a27a3?q=80&w=2070&auto=format&fit=crop",
     },
     {
       id: 7,
-      title: "Hand-Poured Candles",
-      description: "Soy wax candles in reusable ceramic containers with custom scent blends.",
-      imageUrl: "https://images.unsplash.com/photo-1605651531143-4fdbd71f904d?q=80&w=2012&auto=format&fit=crop",
+      title: "Pierniki na choinkę",
+      description: "Ozdobne pierniczki do zawieszenia na choince, z otworami na wstążkę.",
+      imageUrl: "https://images.unsplash.com/photo-1513267598994-9e3b4052dc0c?q=80&w=2070&auto=format&fit=crop",
     },
     {
       id: 8,
-      title: "Ceramic Dinnerware Set",
-      description: "Complete set of plates, bowls, and cups in speckled clay with minimalist design.",
-      imageUrl: "https://images.unsplash.com/photo-1567300089216-439c77fd8e0d?q=80&w=2070&auto=format&fit=crop",
+      title: "Świąteczne słodkości",
+      description: "Różnorodne kształty i wzory pierników, każdy starannie ręcznie przyozdobiony.",
+      imageUrl: "https://images.unsplash.com/photo-1482854256601-fb51a5d0fded?q=80&w=2070&auto=format&fit=crop",
     },
     {
       id: 9,
-      title: "Carved Wooden Spoons",
-      description: "Set of hand-carved cooking and serving spoons in various hardwoods.",
-      imageUrl: "https://images.unsplash.com/photo-1613645693539-24df70a03e5b?q=80&w=1974&auto=format&fit=crop",
+      title: "Mini pierniczki",
+      description: "Małe pierniczki z gwiazdkami i płatkami śniegu, idealne do kawy.",
+      imageUrl: "https://images.unsplash.com/photo-1480953251531-1dd49ad1818f?q=80&w=2070&auto=format&fit=crop",
+    },
+    {
+      id: 10,
+      title: "Zestaw świąteczny",
+      description: "Komplet pierników w ekologicznym opakowaniu, gotowy do podarowania.",
+      imageUrl: "https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?q=80&w=2070&auto=format&fit=crop",
+    },
+    {
+      id: 11,
+      title: "Pierniki z polewą",
+      description: "Wykwintne pierniki z czekoladową polewą i orzechami, dla koneserów.",
+      imageUrl: "https://images.unsplash.com/photo-1575468131771-cb23a4f6a3da?q=80&w=1974&auto=format&fit=crop",
+    },
+    {
+      id: 12,
+      title: "Świąteczna kolekcja",
+      description: "Pierniki w różnych kształtach z tradycyjnymi świątecznymi motywami.",
+      imageUrl: "https://images.unsplash.com/photo-1639610806629-84192417bcb2?q=80&w=2070&auto=format&fit=crop",
     },
   ];
+
+  // Calculate pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = allGalleryItems.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(allGalleryItems.length / itemsPerPage);
 
   return (
     <div className="pt-28 pb-24 px-6">
@@ -71,13 +106,47 @@ const Gallery = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h1 className="text-4xl font-bold mb-4">Gallery</h1>
+          <h1 className="text-4xl font-bold mb-4">Galeria</h1>
           <p className="text-muted-foreground text-pretty">
-            Browse through my collection of handcrafted items. Click on any image to view it in more detail.
+            Przeglądaj moją kolekcję ręcznie wykonanych pierniczków. Kliknij na dowolne zdjęcie, aby zobaczyć je w powiększeniu.
           </p>
         </div>
         
-        <ImageGallery items={galleryItems} />
+        <ImageGallery items={currentItems} />
+
+        {/* Pagination */}
+        <div className="mt-12">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious 
+                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  className={currentPage === 1 ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
+                  aria-disabled={currentPage === 1}
+                />
+              </PaginationItem>
+              
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <PaginationItem key={index}>
+                  <PaginationLink 
+                    isActive={currentPage === index + 1}
+                    onClick={() => setCurrentPage(index + 1)}
+                  >
+                    {index + 1}
+                  </PaginationLink>
+                </PaginationItem>
+              ))}
+              
+              <PaginationItem>
+                <PaginationNext 
+                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  className={currentPage === totalPages ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
+                  aria-disabled={currentPage === totalPages}
+                />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
       </div>
     </div>
   );
