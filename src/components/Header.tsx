@@ -79,17 +79,19 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Updated with slide-down animation and better styling */}
       <div 
-        className={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-x-0 top-[60px] z-40 bg-black/80 backdrop-blur-sm transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         } md:hidden`}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="flex flex-col items-center py-8 space-y-6">
           <NavLink 
             to="/" 
             className={({ isActive }) => 
-              `text-2xl font-medium ${isActive ? 'text-gingerbread' : 'text-foreground'}`
+              `text-xl font-medium px-6 py-2 rounded-md w-4/5 text-center transition-colors ${
+                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
+              }`
             }
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -98,7 +100,9 @@ const Header = () => {
           <NavLink 
             to="/gallery" 
             className={({ isActive }) => 
-              `text-2xl font-medium ${isActive ? 'text-gingerbread' : 'text-foreground'}`
+              `text-xl font-medium px-6 py-2 rounded-md w-4/5 text-center transition-colors ${
+                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
+              }`
             }
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -107,7 +111,9 @@ const Header = () => {
           <NavLink 
             to="/contact" 
             className={({ isActive }) => 
-              `text-2xl font-medium ${isActive ? 'text-gingerbread' : 'text-foreground'}`
+              `text-xl font-medium px-6 py-2 rounded-md w-4/5 text-center transition-colors ${
+                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
+              }`
             }
             onClick={() => setMobileMenuOpen(false)}
           >

@@ -8,6 +8,12 @@ const Gallery = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
   const categories = getAllGalleryCategories();
 
+  // Function to determine if we should show a collage or a single image
+  const shouldShowCollage = (categoryId: string) => {
+    const category = categories.find(cat => cat.id === categoryId);
+    return category && category.images && category.images.length >= 4;
+  };
+
   return (
     <div className="pt-28 pb-24 px-6">
       <div className="container mx-auto">
@@ -24,16 +30,22 @@ const Gallery = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((category, index) => (
-            <CategoryCard
-              key={category.id}
-              id={category.id}
-              name={category.name}
-              description={category.description}
-              thumbnail={category.thumbnail}
-              index={index}
-            />
-          ))}
+          {categories.map((category, index) => {
+            const hasEnoughImages = category.images && category.images.length >= 4;
+            
+            return (
+              <CategoryCard
+                key={category.id}
+                id={category.id}
+                name={category.name}
+                description={category.description}
+                thumbnail={category.thumbnail}
+                index={index}
+                collageImages={hasEnoughImages ? category.images.slice(0, 4).map(img => img.imageUrl) : []}
+                useCollage={hasEnoughImages}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

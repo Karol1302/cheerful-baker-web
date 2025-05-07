@@ -52,21 +52,12 @@ const ImageGallery = ({ items }: ImageGalleryProps) => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <div className="p-4 bg-white">
-              <h3 className="font-medium text-foreground group-hover:text-gingerbread transition-colors">
-                {item.title}
-              </h3>
-              {item.description && (
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-1">
-                  {item.description}
-                </p>
-              )}
-            </div>
+            {/* Caption removed from grid view as requested */}
           </div>
         ))}
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox - Captions only shown here */}
       {selectedImage && (
         <div 
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in"
