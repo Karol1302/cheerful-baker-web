@@ -1,6 +1,6 @@
 
-import { NavLink } from 'react-router-dom';
-import { Instagram, Facebook, Mail, Phone } from 'lucide-react';
+import { Mail, Instagram, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,41 +16,54 @@ const Footer = () => {
             </p>
           </div>
           
-          <div className="space-y-4">
-            <h3 className="text-md font-semibold text-foreground">Kontakt</h3>
-            <div className="flex space-x-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noreferrer noopener"
-                className="text-muted-foreground hover:text-gingerbread transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noreferrer noopener"
-                className="text-muted-foreground hover:text-gingerbread transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="mailto:info@pierniczkikim.pl" 
-                className="text-muted-foreground hover:text-gingerbread transition-colors"
-                aria-label="Email"
-              >
-                <Mail size={20} />
-              </a>
-              <a 
-                href="tel:+48123456789" 
-                className="text-muted-foreground hover:text-gingerbread transition-colors"
-                aria-label="Phone"
-              >
-                <Phone size={20} />
-              </a>
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-foreground">Kontakt</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              {/* Email Contact Option */}
+              <div className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-10 h-10 bg-cream rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Mail size={20} className="text-gingerbread" />
+                </div>
+                <h4 className="text-sm font-medium mb-1">Email</h4>
+                <a 
+                  href="mailto:kontakt@pierniczkikim.pl" 
+                  className="text-sm text-gingerbread hover:text-gingerbread-dark transition-colors"
+                >
+                  kontakt@pierniczkikim.pl
+                </a>
+              </div>
+              
+              {/* Instagram Contact Option */}
+              <div className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-10 h-10 bg-cream rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Instagram size={20} className="text-gingerbread" />
+                </div>
+                <h4 className="text-sm font-medium mb-1">Instagram</h4>
+                <a 
+                  href="https://instagram.com/pierniczkikim" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm text-gingerbread hover:text-gingerbread-dark transition-colors"
+                >
+                  @pierniczkikim
+                </a>
+              </div>
+              
+              {/* Facebook Contact Option */}
+              <div className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-10 h-10 bg-cream rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Facebook size={20} className="text-gingerbread" />
+                </div>
+                <h4 className="text-sm font-medium mb-1">Facebook</h4>
+                <a 
+                  href="https://facebook.com/pierniczkikim" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm text-gingerbread hover:text-gingerbread-dark transition-colors"
+                >
+                  pierniczkikim
+                </a>
+              </div>
             </div>
           </div>
         </div>

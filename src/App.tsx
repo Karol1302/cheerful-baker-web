@@ -13,9 +13,11 @@ import Gallery from "./pages/Gallery";
 import CategoryGallery from "./pages/CategoryGallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ui/ScrollToTop";
+import CookieSettings from "./components/ui/CookieSettings";
 
 // ScrollToTop component to handle scrolling to top on route changes
-const ScrollToTop = () => {
+const ScrollToTopOnNavigation = () => {
   const { pathname } = useLocation();
   
   useEffect(() => {
@@ -33,7 +35,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <ScrollToTop />
+        <ScrollToTopOnNavigation />
         <Header />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -43,6 +45,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <ScrollToTop />
+        <CookieSettings />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
