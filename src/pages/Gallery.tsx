@@ -41,7 +41,6 @@ const Gallery = () => {
                 description={category.description}
                 thumbnail={category.thumbnail}
                 index={index}
-                collageImages={hasEnoughImages ? category.images.slice(0, 4).map(img => img.imageUrl) : []}
                 useCollage={hasEnoughImages}
               />
             );

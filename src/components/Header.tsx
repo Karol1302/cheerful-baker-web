@@ -79,17 +79,17 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu - Updated with slide-down animation and better styling */}
+      {/* Mobile Menu - Updated to fully fit viewport */}
       <div 
-        className={`fixed inset-x-0 top-[60px] z-40 bg-black/80 backdrop-blur-sm transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-x-0 top-[60px] z-40 bg-black/90 backdrop-blur-sm transform transition-transform duration-300 ease-in-out max-h-[calc(100vh-60px)] overflow-y-auto ${
           mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         } md:hidden`}
       >
-        <div className="flex flex-col items-center py-8 space-y-6">
+        <div className="flex flex-col items-center py-6 space-y-4 w-full max-w-full">
           <NavLink 
             to="/" 
             className={({ isActive }) => 
-              `text-xl font-medium px-6 py-2 rounded-md w-4/5 text-center transition-colors ${
+              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
                 isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
               }`
             }
@@ -100,7 +100,7 @@ const Header = () => {
           <NavLink 
             to="/gallery" 
             className={({ isActive }) => 
-              `text-xl font-medium px-6 py-2 rounded-md w-4/5 text-center transition-colors ${
+              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
                 isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
               }`
             }
@@ -111,7 +111,7 @@ const Header = () => {
           <NavLink 
             to="/contact" 
             className={({ isActive }) => 
-              `text-xl font-medium px-6 py-2 rounded-md w-4/5 text-center transition-colors ${
+              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
                 isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
               }`
             }
