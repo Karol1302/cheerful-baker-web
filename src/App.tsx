@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
+import CategoryGallery from "./pages/CategoryGallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery/:categoryId" element={<CategoryGallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

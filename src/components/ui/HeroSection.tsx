@@ -1,5 +1,7 @@
 
+import { useEffect, useState } from 'react';
 import { ArrowDownCircle } from 'lucide-react';
+import { getHeroSlideshowConfig } from '@/utils/configLoader';
 
 interface HeroSectionProps {
   title: string;
@@ -14,8 +16,24 @@ const HeroSection = ({
   subtitle,
   ctaText,
   ctaLink,
-  backgroundImage = 'https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=2012&auto=format&fit=crop'
 }: HeroSectionProps) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const { images, transitionTime } = getHeroSlideshowConfig();
+  
+  useEffect(() => {
+    if (images.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+        setIsTransitioning(false);
+      }, 500); // 500ms for the fade effect
+    }, transitionTime);
+    
+    return () => clearInterval(interval);
+  }, [images.length, transitionTime]);
   
   const scrollToContent = () => {
     const contentSection = document.getElementById('content');
@@ -27,12 +45,37 @@ const HeroSection = ({
   return (
     <section 
       className="relative h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7)), url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
     >
+      {/* Background Images */}
+      {images.map((img, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-500 ${
+            currentImageIndex === index 
+              ? 'opacity-100'
+              : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7)), url(${img})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: currentImageIndex === index ? 1 : 0
+          }}
+        />
+      ))}
+
+      {/* Fallback background for no JavaScript */}
+      <noscript>
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7)), url(${images[0]})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+      </noscript>
+
       <div className="container mx-auto px-6 z-10">
         <div 
           className="max-w-4xl mx-auto text-center space-y-6 opacity-0 animate-fade-in"
