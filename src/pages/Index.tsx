@@ -3,6 +3,7 @@ import HeroSection from "@/components/ui/HeroSection";
 import InstagramFeed from "@/components/ui/InstagramFeed";
 import ProductCard from "@/components/ui/ProductCard";
 import ServiceCard from "@/components/ui/ServiceCard";
+import GalleryCTA from "@/components/ui/GalleryCTA";
 import { Scissors, Sparkles, Clock, PaintBucket } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
@@ -74,6 +75,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+        
+        {/* Gallery CTA Section */}
+        <GalleryCTA />
         
         {/* Instagram Feed */}
         <InstagramFeed />

@@ -1,6 +1,6 @@
 
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import ContactForm from "@/components/ui/ContactForm";
+import { Mail, Instagram, Facebook } from "lucide-react";
 
 const Contact = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
@@ -20,7 +20,66 @@ const Contact = () => {
           </p>
         </div>
         
-        <ContactForm />
+        <div className="max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Email Contact Option */}
+            <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
+                <Mail size={28} className="text-gingerbread" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Email</h3>
+              <p className="text-muted-foreground mb-4">Napisz do mnie email</p>
+              <a 
+                href="mailto:kontakt@pierniczkikim.pl" 
+                className="text-gingerbread hover:text-gingerbread-dark transition-colors font-medium"
+              >
+                kontakt@pierniczkikim.pl
+              </a>
+            </div>
+            
+            {/* Instagram Contact Option */}
+            <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
+                <Instagram size={28} className="text-gingerbread" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Instagram</h3>
+              <p className="text-muted-foreground mb-4">Obserwuj najnowsze kreacje</p>
+              <a 
+                href="https://instagram.com/pierniczkikim" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gingerbread hover:text-gingerbread-dark transition-colors font-medium"
+              >
+                @pierniczkikim
+              </a>
+            </div>
+            
+            {/* Facebook Contact Option */}
+            <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
+                <Facebook size={28} className="text-gingerbread" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Facebook</h3>
+              <p className="text-muted-foreground mb-4">Dołącz do społeczności</p>
+              <a 
+                href="https://facebook.com/pierniczkikim" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gingerbread hover:text-gingerbread-dark transition-colors font-medium"
+              >
+                pierniczkikim
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-16 rounded-lg overflow-hidden shadow-md">
+            <img 
+              src="/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png" 
+              alt="Pierniczki świąteczne" 
+              className="w-full object-cover h-64 md:h-96"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
