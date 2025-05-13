@@ -1,95 +1,154 @@
-
 {
   "categories": [
     {
-      "id": "serca",
-      "name": "Serca",
-      "description": "Pierniczki w kształcie serc, idealne na walentynki i inne romantyczne okazje",
-      "thumbnail": "/categories/serca/heart-cookies.jpg",
-      "images": [
-        {
-          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
-          "description": "Kolorowe pierniczki w kształcie serc"
-        },
-        {
-          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
-          "description": "Pierniczki serca z białym lukrem"
-        }
-      ]
-    },
-    {
       "id": "boze-narodzenie",
       "name": "Boże Narodzenie",
-      "description": "Świąteczne pierniczki i dekoracje na choinkę",
-      "thumbnail": "/categories/boze-narodzenie/christmas-cookies.jpg",
+      "description": "Świąteczne pierniczki i dekoracje na choinkę.",
+      "thumbnail": "/categories/boze-narodzenie/Screenshot_20250424-115917~2.png",
       "images": [
         {
-          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
-          "description": "Komplet pierników świątecznych w ekologicznym opakowaniu"
+          "url": "/categories/boze-narodzenie/Screenshot_20250424-115917~2.png",
+          "description": "Pierniczki świąteczne - choinki i gwiazdki"
         },
         {
-          "url": "https://images.unsplash.com/photo-1544285231-ae61a4567a75?q=80&w=1960&auto=format&fit=crop",
-          "description": "Tradycyjny domek z piernika, ozdobiony kolorowym lukrem i posypkami"
-        }
-      ]
-    },
-    {
-      "id": "wielkanoc",
-      "name": "Wielkanoc",
-      "description": "Wielkanocne pierniczki z motywami zajączków, pisanek i kurczaczków",
-      "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
-      "images": [
+          "url": "/categories/boze-narodzenie/Screenshot_20250424-115932~2.png",
+          "description": "Zestaw świątecznych pierniczków"
+        },
         {
-          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
-          "description": "Pierniczki w kształcie zajączków z kolorowym lukrem"
-        }
-      ]
-    },
-    {
-      "id": "slub-i-wesele",
-      "name": "Ślub i Wesele",
-      "description": "Eleganckie pierniki jako podziękowania dla gości weselnych",
-      "thumbnail": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
-      "images": [
+          "url": "/categories/boze-narodzenie/Screenshot_20250424-115938~2.png",
+          "description": "Pierniczki z lukrem w świątecznych kolorach"
+        },
         {
-          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
-          "description": "Pierniczki z imionami gości jako winietki na stół weselny"
+          "url": "/categories/boze-narodzenie/Screenshot_20250424-115943~2.png",
+          "description": "Świąteczne pierniczki z dekoracjami"
+        },
+        {
+          "url": "/categories/boze-narodzenie/Screenshot_20250424-120133~2.png",
+          "description": "Pierniczki w kształcie gwiazdek"
+        },
+        {
+          "url": "/categories/boze-narodzenie/Screenshot_20250424-120139~2.png",
+          "description": "Pierniczki z kolorowym lukrem"
+        },
+        {
+          "url": "/categories/boze-narodzenie/Screenshot_20250424-120152~2.png",
+          "description": "Zestaw świątecznych pierniczków"
+        },
+        {
+          "url": "/categories/boze-narodzenie/Screenshot_20250424-120157~2.png",
+          "description": "Pierniczki choinki"
         }
       ]
     },
     {
       "id": "komunia",
       "name": "Komunia",
-      "description": "Pierniczki na Pierwszą Komunię Świętą",
-      "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+      "description": "Pierniczki na Pierwszą Komunię Świętą.",
+      "thumbnail": "/categories/komunia/Screenshot_20250504-155426~3.png",
       "images": [
         {
-          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
-          "description": "Pierniczki z motywami religijnymi na komunię"
+          "url": "/categories/komunia/Screenshot_20250504-155426~3.png",
+          "description": "Pierniczki komunijne z motywami religijnymi"
+        },
+        {
+          "url": "/categories/komunia/Screenshot_20250504-155616~2.png",
+          "description": "Zestaw komunijnych pierniczków"
+        },
+        {
+          "url": "/categories/komunia/Screenshot_20250504-155719~3.png",
+          "description": "Pierniczki na komunię z białym lukrem"
+        },
+        {
+          "url": "/categories/komunia/Screenshot_20250504-155922~3.png",
+          "description": "Komunijne pierniczki z napisem"
+        },
+        {
+          "url": "/categories/komunia/Screenshot_20250504-160146~4.png",
+          "description": "Pierniczki z motywem hostii"
         }
       ]
     },
     {
-      "id": "chrzciny-i-baby-shower",
-      "name": "Chrzciny i Baby Shower",
-      "description": "Słodkie upominki dla gości na chrzciny i baby shower",
-      "thumbnail": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+      "id": "serca",
+      "name": "Serca",
+      "description": "Pierniczki w kształcie serc, idealne na walentynki i inne romantyczne okazje.",
+      "thumbnail": "/categories/serca/Screenshot_20250507-172108~3.png",
       "images": [
         {
-          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
-          "description": "Delikatne pierniczki z motywami dziecięcymi"
+          "url": "/categories/serca/Screenshot_20250507-172108~3.png",
+          "description": "Czerwone pierniczki serca"
+        },
+        {
+          "url": "/categories/serca/Screenshot_20250507-172111~3.png",
+          "description": "Pierniczki serca z białym lukrem"
+        },
+        {
+          "url": "/categories/serca/Screenshot_20250507-172114~3.png",
+          "description": "Serca z różowym lukrem"
+        },
+        {
+          "url": "/categories/serca/Screenshot_20250507-172122~3.png",
+          "description": "Pierniczki serca z napisem"
+        },
+        {
+          "url": "/categories/serca/Screenshot_20250507-172145~3.png",
+          "description": "Dekorowane pierniczki serca"
         }
       ]
     },
     {
-      "id": "roczek",
-      "name": "Roczek",
-      "description": "Kolorowe pierniczki na pierwsze urodziny",
-      "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+      "id": "Wielkanoc",
+      "name": "Wielkanoc",
+      "description": "Wielkanocne pierniczki z motywami zajączków, pisanek i kurczaczków.",
+      "thumbnail": "/categories/Wielkanoc/IMG_20250331_202127891~2.jpg",
       "images": [
         {
-          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
-          "description": "Pierniczki z cyfrą 1 i kolorowymi dekoracjami"
+          "url": "/categories/Wielkanoc/IMG_20250331_202127891~2.jpg",
+          "description": "Pierniczki w kształcie zajączków"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-131629~2.png",
+          "description": "Kolorowe pisanki z lukrem"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-132139~3.png",
+          "description": "Pierniczki wielkanocne"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-132154~3.png",
+          "description": "Pierniczki w kształcie kurczaczków"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-132229~3.png",
+          "description": "Zestaw wielkanocnych pierniczków"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-132626~3.png",
+          "description": "Pierniczki z motywem baranka"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-133536~2.png",
+          "description": "Pierniczki z kolorowymi dekoracjami"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-134030~3.png",
+          "description": "Pisanki z lukrem"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-134059~2.png",
+          "description": "Pierniczki zajączki"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-134150~2.png",
+          "description": "Kurczaczki wielkanocne"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-134201~3.png",
+          "description": "Wielkanocne pierniczki"
+        },
+        {
+          "url": "/categories/Wielkanoc/Screenshot_20250404-150044.png",
+          "description": "Zestaw pierniczków na Wielkanoc"
         }
       ]
     }
