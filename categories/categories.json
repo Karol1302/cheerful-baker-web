@@ -1,0 +1,97 @@
+
+{
+  "categories": [
+    {
+      "id": "serca",
+      "name": "Serca",
+      "description": "Pierniczki w kształcie serc, idealne na walentynki i inne romantyczne okazje",
+      "thumbnail": "/categories/serca/heart-cookies.jpg",
+      "images": [
+        {
+          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+          "description": "Kolorowe pierniczki w kształcie serc"
+        },
+        {
+          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+          "description": "Pierniczki serca z białym lukrem"
+        }
+      ]
+    },
+    {
+      "id": "boze-narodzenie",
+      "name": "Boże Narodzenie",
+      "description": "Świąteczne pierniczki i dekoracje na choinkę",
+      "thumbnail": "/categories/boze-narodzenie/christmas-cookies.jpg",
+      "images": [
+        {
+          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+          "description": "Komplet pierników świątecznych w ekologicznym opakowaniu"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1544285231-ae61a4567a75?q=80&w=1960&auto=format&fit=crop",
+          "description": "Tradycyjny domek z piernika, ozdobiony kolorowym lukrem i posypkami"
+        }
+      ]
+    },
+    {
+      "id": "wielkanoc",
+      "name": "Wielkanoc",
+      "description": "Wielkanocne pierniczki z motywami zajączków, pisanek i kurczaczków",
+      "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+      "images": [
+        {
+          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+          "description": "Pierniczki w kształcie zajączków z kolorowym lukrem"
+        }
+      ]
+    },
+    {
+      "id": "slub-i-wesele",
+      "name": "Ślub i Wesele",
+      "description": "Eleganckie pierniki jako podziękowania dla gości weselnych",
+      "thumbnail": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+      "images": [
+        {
+          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+          "description": "Pierniczki z imionami gości jako winietki na stół weselny"
+        }
+      ]
+    },
+    {
+      "id": "komunia",
+      "name": "Komunia",
+      "description": "Pierniczki na Pierwszą Komunię Świętą",
+      "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+      "images": [
+        {
+          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+          "description": "Pierniczki z motywami religijnymi na komunię"
+        }
+      ]
+    },
+    {
+      "id": "chrzciny-i-baby-shower",
+      "name": "Chrzciny i Baby Shower",
+      "description": "Słodkie upominki dla gości na chrzciny i baby shower",
+      "thumbnail": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+      "images": [
+        {
+          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+          "description": "Delikatne pierniczki z motywami dziecięcymi"
+        }
+      ]
+    },
+    {
+      "id": "roczek",
+      "name": "Roczek",
+      "description": "Kolorowe pierniczki na pierwsze urodziny",
+      "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+      "images": [
+        {
+          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+          "description": "Pierniczki z cyfrą 1 i kolorowymi dekoracjami"
+        }
+      ]
+    }
+  ]
+}
