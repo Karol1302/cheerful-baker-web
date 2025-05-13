@@ -65,7 +65,7 @@ const Index = () => {
         subtitle="Ręcznie wykonane słodkości, które wprowadzą świąteczny klimat do Twojego domu."
         ctaText="Zobacz galerię"
         ctaLink="/gallery"
-        backgroundImage="/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png"
+        backgroundImage="/tlo2.png"
       />
       
       <div id="content">
