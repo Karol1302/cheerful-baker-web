@@ -52,7 +52,7 @@ const InstagramFeed = () => {
             className="inline-flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors"
           >
             <Instagram size={16} className="mr-2" />
-            <span>Obserwuj na Instagramie</span>
+            <span>Obserwuj mnie na Instagramie</span>
           </a>
         </div>
       </div>

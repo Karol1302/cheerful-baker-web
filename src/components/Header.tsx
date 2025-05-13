@@ -84,6 +84,16 @@ const Header = () => {
             Strona główna
           </NavLink>
           <NavLink 
+            to="/sets" 
+            className={({ isActive }) => 
+              `font-medium transition-all hover:text-gingerbread relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gingerbread after:transition-all ${
+                isActive ? 'text-gingerbread after:w-full' : 'text-foreground'
+              }`
+            }
+          >
+            Oferta
+          </NavLink>
+          <NavLink 
             to="/gallery" 
             className={({ isActive }) => 
               `font-medium transition-all hover:text-gingerbread relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gingerbread after:transition-all ${
@@ -92,16 +102,6 @@ const Header = () => {
             }
           >
             Galeria
-          </NavLink>
-          <NavLink 
-            to="/sets" 
-            className={({ isActive }) => 
-              `font-medium transition-all hover:text-gingerbread relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gingerbread after:transition-all ${
-                isActive ? 'text-gingerbread after:w-full' : 'text-foreground'
-              }`
-            }
-          >
-            Zestawy
           </NavLink>
           <NavLink 
             to="/contact" 
@@ -145,6 +145,17 @@ const Header = () => {
               Strona główna
             </NavLink>
             <NavLink 
+              to="/sets" 
+              className={({ isActive }) => 
+                `text-lg font-medium transition-colors ${
+                  isActive ? 'text-gingerbread' : 'text-foreground hover:text-gingerbread'
+                }`
+              }
+              onClick={closeSidebar}
+            >
+              Oferta
+            </NavLink>
+            <NavLink 
               to="/gallery" 
               className={({ isActive }) => 
                 `text-lg font-medium transition-colors ${
@@ -154,17 +165,6 @@ const Header = () => {
               onClick={closeSidebar}
             >
               Galeria
-            </NavLink>
-            <NavLink 
-              to="/sets" 
-              className={({ isActive }) => 
-                `text-lg font-medium transition-colors ${
-                  isActive ? 'text-gingerbread' : 'text-foreground hover:text-gingerbread'
-                }`
-              }
-              onClick={closeSidebar}
-            >
-              Zestawy
             </NavLink>
             <NavLink 
               to="/contact" 

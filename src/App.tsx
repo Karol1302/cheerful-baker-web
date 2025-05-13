@@ -37,21 +37,27 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <ScrollToTopOnNavigation />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/gallery/:categoryId" element={<CategoryGallery />} />
-          <Route path="/sets" element={<Sets />} />
-          <Route path="/sets/:setId" element={<SetDetail />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-        <ScrollToTop />
-        <CookieSettings />
-      </BrowserRouter>
+        {/* 1. Flex‐wrapper */}
+        <div className="min-h-screen flex flex-col">
+          <ScrollToTopOnNavigation />
+          <Header />
+          {/* 2. Główna zawartość rośnie */}
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/gallery/:categoryId" element={<CategoryGallery />} />
+              <Route path="/sets" element={<Sets />} />
+              <Route path="/sets/:setId" element={<SetDetail />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+           <ScrollToTop />
+          <CookieSettings />
+        </div>
+     </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

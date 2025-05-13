@@ -227,7 +227,7 @@ const Index = () => {
         </section>
         
         {/* Instagram Feed */}
-        <section className="py-24 px-6 bg-cream">
+        <section className="py-24 px-6 bg-gradient-to-b from-cream to-white">
           <InstagramFeed />
         </section>
       </div>

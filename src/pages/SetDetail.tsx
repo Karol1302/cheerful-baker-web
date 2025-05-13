@@ -1,7 +1,5 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import ImageGallery from "@/components/ui/ImageGallery";
 import { getSet } from "@/utils/setsLoader";
 import { ChevronLeft } from "lucide-react";
@@ -10,10 +8,16 @@ import { GiftSet } from "@/utils/setsLoader";
 const SetDetail = () => {
   const { setId } = useParams();
   const navigate = useNavigate();
-  const { elementRef, isVisible } = useIntersectionObserver();
   const [set, setSet] = useState<GiftSet | null>(null);
   const [loading, setLoading] = useState(true);
-  
+  const [animateIn, setAnimateIn] = useState(false);
+
+  // Trigger animation on mount
+  useEffect(() => {
+    setAnimateIn(true);
+  }, []);
+
+  // Load set data
   useEffect(() => {
     const loadSet = async () => {
       setLoading(true);
@@ -33,7 +37,6 @@ const SetDetail = () => {
         setLoading(false);
       }
     };
-    
     loadSet();
   }, [setId, navigate]);
 
@@ -49,49 +52,69 @@ const SetDetail = () => {
     return null;
   }
 
-  // Convert set images to gallery items format
+  // Prepare gallery items
   const galleryItems = set.images.map((img, index) => ({
     id: index + 1,
     title: img.description || `Image ${index + 1}`,
     description: img.description || "",
-    imageUrl: img.url
+    imageUrl: img.url,
   }));
+
+  // Single main image (first image)
+  const mainImage = galleryItems[0];
+  // Additional images
+  const extraImages = galleryItems.slice(1);
 
   return (
     <div className="pt-28 pb-24 px-6">
       <div className="container mx-auto">
-        <button 
+        <button
           onClick={() => navigate("/sets")}
           className="flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors mb-6"
         >
           <ChevronLeft size={20} />
           <span>Powrót do zestawów</span>
         </button>
-        
-        <div 
-          ref={elementRef as React.RefObject<HTMLDivElement>}
-          className={`max-w-3xl mx-auto mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+
+        {/* Grid layout: left side text, right side image */}
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-700 ${
+            animateIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-center">{set.name}</h1>
+          {/* Left column: title, price, description */}
+          <div className="space-y-6 text-left">
+            <h1 className="text-3xl md:text-4xl font-bold">
+              {set.name}
+            </h1>
+            <span className="text-2xl font-bold text-gingerbread block">
+              {set.price}
+            </span>
+            <div className="text-muted-foreground text-pretty">
+              {set.description.split("\n").map((paragraph, idx) => (
+                <p key={idx} className="mb-4 last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
-          
-          <div className="flex justify-center mb-6">
-            <span className="text-2xl font-bold text-gingerbread">{set.price}</span>
-          </div>
-          
-          <div className="text-muted-foreground text-pretty text-center mb-12 bg-cream p-6 rounded-lg">
-            {set.description.split('\n').map((paragraph, idx) => (
-              <p key={idx} className="mb-4 last:mb-0">
-                {paragraph}
-              </p>
-            ))}
+
+          {/* Right column: main image */}
+          <div className="flex items-center justify-center">
+            <img
+              src={mainImage.imageUrl}
+              alt={mainImage.title}
+              className="w-full h-auto object-cover rounded-lg shadow-md"
+            />
           </div>
         </div>
-        
-        <ImageGallery items={galleryItems} />
+
+        {/* Additional images below grid */}
+        {extraImages.length > 0 && (
+          <div className="max-w-4xl mx-auto">
+            <ImageGallery items={extraImages} />
+          </div>
+        )}
       </div>
     </div>
   );
