@@ -6,7 +6,6 @@ import ImageGallery from "@/components/ui/ImageGallery";
 import { getSet } from "@/utils/setsLoader";
 import { ChevronLeft } from "lucide-react";
 import { GiftSet } from "@/utils/setsLoader";
-import { Badge } from "@/components/ui/badge";
 
 const SetDetail = () => {
   const { setId } = useParams();
@@ -77,11 +76,6 @@ const SetDetail = () => {
         >
           <div className="flex items-center justify-center gap-2 mb-4">
             <h1 className="text-3xl md:text-4xl font-bold text-center">{set.name}</h1>
-            {set.current && (
-              <Badge variant="outline" className="bg-gingerbread text-white">
-                Aktualna oferta
-              </Badge>
-            )}
           </div>
           
           <div className="flex justify-center mb-6">

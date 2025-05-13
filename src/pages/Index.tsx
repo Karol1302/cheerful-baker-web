@@ -6,7 +6,7 @@ import InstagramFeed from "@/components/ui/InstagramFeed";
 import ServiceCard from "@/components/ui/ServiceCard";
 import { Scissors, Sparkles, Clock, PaintBucket, ArrowRight } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { getCurrentSets } from "@/utils/setsLoader";
+import { loadSets } from "@/utils/setsLoader";
 import { GiftSet } from "@/utils/setsLoader";
 import { getSortedCategories, Category } from "@/utils/categoriesLoader";
 import SetCard from "@/components/ui/SetCard";
@@ -22,21 +22,22 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
   const [categoriesLoading, setCategoriesLoading] = useState(true);
   
-  // Load current sets
+  // Load all sets
   useEffect(() => {
-    const loadSets = async () => {
+    const loadAllSets = async () => {
       setLoading(true);
       try {
-        const sets = await getCurrentSets(6);
-        setCurrentSets(sets);
+        const allSets = await loadSets();
+        // Limit to 6 sets
+        setCurrentSets(allSets.slice(0, 6));
       } catch (error) {
-        console.error("Failed to load current sets:", error);
+        console.error("Failed to load sets:", error);
       } finally {
         setLoading(false);
       }
     };
     
-    loadSets();
+    loadAllSets();
   }, []);
   
   // Load categories for "Poprzednie realizacje"
@@ -89,26 +90,16 @@ const Index = () => {
               </div>
             ) : currentSets.length > 0 ? (
               <>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {currentSets.map((set, index) => (
-                    <div key={set.id} className="flex flex-col h-full">
-                      <Link 
-                        to={`/sets/${set.id}`}
-                        className="group block h-full border border-muted rounded-lg overflow-hidden hover:border-gingerbread transition-colors shadow-sm hover:shadow-md"
-                      >
-                        <div className="aspect-square overflow-hidden relative">
-                          <img 
-                            src={set.thumbnail} 
-                            alt={set.name}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                          />
-                        </div>
-                        <div className="p-3">
-                          <h3 className="text-sm font-medium line-clamp-1 group-hover:text-gingerbread transition-colors">{set.name}</h3>
-                          <p className="text-xs text-gingerbread mt-1">{set.price}</p>
-                        </div>
-                      </Link>
-                    </div>
+                    <SetCard
+                      key={set.id}
+                      id={set.id}
+                      name={set.name}
+                      description={set.shortDescription || set.description}
+                      thumbnail={set.thumbnail}
+                      index={index}
+                    />
                   ))}
                 </div>
                 
@@ -133,7 +124,7 @@ const Index = () => {
         {/* Instagram Feed */}
         <InstagramFeed />
         
-        {/* Poprzednie realizacje - New section */}
+        {/* Poprzednie realizacje - Section */}
         <section className="py-24 px-6 bg-cream/50">
           <div className="container mx-auto">
             <div 
@@ -144,7 +135,7 @@ const Index = () => {
             >
               <h2 className="text-3xl font-bold mb-4">Poprzednie realizacje</h2>
               <p className="text-muted-foreground text-pretty">
-                Zobacz wybrane przykłady moich realizacji z różnych kategori.
+                Zobacz wybrane przykłady moich realizacji z różnych kategorii.
               </p>
             </div>
             

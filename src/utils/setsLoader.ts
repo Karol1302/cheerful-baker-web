@@ -11,7 +11,7 @@ export interface GiftSet {
   shortDescription: string;
   thumbnail: string;
   price: string;
-  current: boolean;
+  current: boolean; // Keeping for backward compatibility with data
   images: SetImage[];
 }
 
@@ -40,21 +40,18 @@ export const getSet = async (setId: string): Promise<GiftSet | undefined> => {
   return sets.find(set => set.id === setId);
 };
 
+// Get sorted sets alphabetically
 export const getSortedSets = async (): Promise<GiftSet[]> => {
   const sets = await loadSets();
-  // Sort: current sets first, then alphabetically
-  return [...sets].sort((a, b) => {
-    if (a.current && !b.current) return -1;
-    if (!a.current && b.current) return 1;
-    return a.name.localeCompare(b.name);
-  });
+  return [...sets].sort((a, b) => a.name.localeCompare(b.name));
 };
 
+// Get limited sets for homepage (for backward compatibility)
 export const getCurrentSets = async (limit?: number): Promise<GiftSet[]> => {
   const sets = await loadSets();
-  const currentSets = sets.filter(set => set.current);
+  const sortedSets = [...sets].sort((a, b) => a.name.localeCompare(b.name));
   if (limit) {
-    return currentSets.slice(0, limit);
+    return sortedSets.slice(0, limit);
   }
-  return currentSets;
+  return sortedSets;
 };

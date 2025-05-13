@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import SetRow from "@/components/ui/SetRow";
-import { getSortedSets } from "@/utils/setsLoader";
+import { loadSets } from "@/utils/setsLoader";
 import type { GiftSet } from "@/utils/setsLoader";
 
 const Sets = () => {
@@ -14,7 +14,11 @@ const Sets = () => {
     const loadData = async () => {
       setLoading(true);
       try {
-        const sortedSets = await getSortedSets();
+        // Sort sets alphabetically by name
+        const loadedSets = await loadSets();
+        const sortedSets = [...loadedSets].sort((a, b) => 
+          a.name.localeCompare(b.name)
+        );
         setSets(sortedSets);
       } catch (error) {
         console.error("Failed to load sets:", error);
@@ -57,7 +61,6 @@ const Sets = () => {
                 price={set.price}
                 thumbnail={set.thumbnail}
                 index={index}
-                current={set.current}
               />
             ))}
           </div>
