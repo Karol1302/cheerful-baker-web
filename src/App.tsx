@@ -36,7 +36,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/cheerful-baker-web">
         {/* 1. Flex‐wrapper */}
         <div className="min-h-screen flex flex-col">
           <ScrollToTopOnNavigation />
