@@ -10,6 +10,7 @@ export interface Category {
   description: string;
   thumbnail: string;
   images: CategoryImage[];
+  current?: boolean; // Add the current property as optional
 }
 
 export const getCategoriesFromJson = async (): Promise<Category[]> => {
