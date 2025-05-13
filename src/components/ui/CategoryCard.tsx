@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { Badge } from './badge';
 
 interface CategoryCardProps {
   id: string;
@@ -8,15 +9,29 @@ interface CategoryCardProps {
   description: string;
   thumbnail: string;
   index: number;
+  useCollage?: boolean;
+  current?: boolean;
+  collageImages?: string[];
 }
 
-const CategoryCard = ({ id, name, description, thumbnail, index }: CategoryCardProps) => {
+const CategoryCard = ({ 
+  id, 
+  name, 
+  description, 
+  thumbnail, 
+  index, 
+  useCollage = false,
+  current = false,
+  collageImages = [] 
+}: CategoryCardProps) => {
   const { elementRef, isVisible } = useIntersectionObserver();
 
   return (
     <div
       ref={elementRef as React.RefObject<HTMLDivElement>}
-      className={`cursor-pointer group overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all duration-300 ${
+      className={`cursor-pointer group overflow-hidden rounded-lg ${
+        current ? 'ring-2 ring-gingerbread shadow-md' : 'shadow-sm hover:shadow-md'
+      } transition-all duration-300 ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-10'
@@ -24,12 +39,33 @@ const CategoryCard = ({ id, name, description, thumbnail, index }: CategoryCardP
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <Link to={`/gallery/${id}`}>
-        <div className="aspect-square overflow-hidden">
-          <img
-            src={thumbnail}
-            alt={name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+        <div className="relative aspect-square overflow-hidden">
+          {useCollage && collageImages && collageImages.length >= 4 ? (
+            <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
+              {collageImages.slice(0, 4).map((imgUrl, i) => (
+                <div key={i} className="overflow-hidden">
+                  <img
+                    src={imgUrl}
+                    alt={`${name} image ${i + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <img
+              src={thumbnail}
+              alt={name}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          )}
+          {current && (
+            <div className="absolute top-2 right-2">
+              <Badge variant="default" className="bg-gingerbread text-white">
+                Aktualna oferta
+              </Badge>
+            </div>
+          )}
         </div>
         <div className="p-4 bg-white">
           <h3 className="font-medium text-foreground group-hover:text-gingerbread transition-colors">

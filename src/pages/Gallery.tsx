@@ -1,18 +1,30 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import CategoryCard from "@/components/ui/CategoryCard";
-import { getAllGalleryCategories } from "@/utils/configLoader";
+import { getSortedCategories } from "@/utils/configLoader";
+import type { Category } from "@/utils/categoriesLoader";
 
 const Gallery = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
-  const categories = getAllGalleryCategories();
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Function to determine if we should show a collage or a single image
-  const shouldShowCollage = (categoryId: string) => {
-    const category = categories.find(cat => cat.id === categoryId);
-    return category && category.images && category.images.length >= 4;
-  };
+  useEffect(() => {
+    const loadData = async () => {
+      setLoading(true);
+      try {
+        const sortedCategories = await getSortedCategories();
+        setCategories(sortedCategories);
+      } catch (error) {
+        console.error("Failed to load categories:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
 
   return (
     <div className="pt-28 pb-24 px-6">
@@ -29,23 +41,34 @@ const Gallery = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((category, index) => {
-            const hasEnoughImages = category.images && category.images.length >= 4;
-            
-            return (
-              <CategoryCard
-                key={category.id}
-                id={category.id}
-                name={category.name}
-                description={category.description}
-                thumbnail={category.thumbnail}
-                index={index}
-                useCollage={hasEnoughImages}
-              />
-            );
-          })}
-        </div>
+        {loading ? (
+          <div className="flex justify-center">
+            <div className="w-8 h-8 border-4 border-gingerbread border-r-transparent rounded-full animate-spin"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categories.map((category, index) => {
+              const hasEnoughImages = category.images && category.images.length >= 4;
+              const imageUrls = hasEnoughImages 
+                ? category.images.slice(0, 4).map(img => img.url) 
+                : [];
+              
+              return (
+                <CategoryCard
+                  key={category.id}
+                  id={category.id}
+                  name={category.name}
+                  description={category.description}
+                  thumbnail={category.thumbnail}
+                  index={index}
+                  useCollage={hasEnoughImages}
+                  current={category.current}
+                  collageImages={imageUrls}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
