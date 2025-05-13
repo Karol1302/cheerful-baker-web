@@ -1,15 +1,39 @@
 
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import HeroSection from "@/components/ui/HeroSection";
 import InstagramFeed from "@/components/ui/InstagramFeed";
 import ProductCard from "@/components/ui/ProductCard";
 import ServiceCard from "@/components/ui/ServiceCard";
 import GalleryCTA from "@/components/ui/GalleryCTA";
-import { Scissors, Sparkles, Clock, PaintBucket } from "lucide-react";
+import { Scissors, Sparkles, Clock, PaintBucket, ArrowRight } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { getCurrentOffers } from "@/utils/configLoader";
+import { isCategory } from "@/utils/configLoader";
+import CategoryCard from "@/components/ui/CategoryCard";
+import SetCard from "@/components/ui/SetCard";
 
 const Index = () => {
   const { elementRef: productsRef, isVisible: productsVisible } = useIntersectionObserver();
   const { elementRef: servicesRef, isVisible: servicesVisible } = useIntersectionObserver();
+  const [currentOffers, setCurrentOffers] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    const loadOffers = async () => {
+      setLoading(true);
+      try {
+        const offers = await getCurrentOffers(6);
+        setCurrentOffers(offers);
+      } catch (error) {
+        console.error("Failed to load current offers:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadOffers();
+  }, []);
   
   const products = [
     {
@@ -46,7 +70,7 @@ const Index = () => {
       />
       
       <div id="content">
-        {/* Products Section */}
+        {/* Current Offers Section (replaces Products Section) */}
         <section className="py-24 px-6">
           <div className="container mx-auto">
             <div 
@@ -55,24 +79,79 @@ const Index = () => {
                 productsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <h2 className="text-3xl font-bold mb-4">Najnowsze kreacje</h2>
+              <h2 className="text-3xl font-bold mb-4">Aktualna oferta</h2>
               <p className="text-muted-foreground text-pretty">
-                Każdy pierniczek jest starannie wykonany ręcznie, co zapewnia wyjątkową jakość, unikalność i dbałość o detale.
+                Wybierz spośród aktualnie dostępnych propozycji lub skontaktuj się ze mną, aby zamówić coś specjalnego.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {products.map((product, index) => (
-                <ProductCard 
-                  key={product.id}
-                  title={product.title}
-                  description={product.description}
-                  imageUrl={product.imageUrl}
-                  price={product.price}
-                  index={index}
-                />
-              ))}
-            </div>
+            {loading ? (
+              <div className="flex justify-center">
+                <div className="w-8 h-8 border-4 border-gingerbread border-r-transparent rounded-full animate-spin"></div>
+              </div>
+            ) : currentOffers.length > 0 ? (
+              <>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {currentOffers.map((item, index) => {
+                    if (isCategory(item)) {
+                      const hasEnoughImages = item.images && item.images.length >= 4;
+                      const imageUrls = hasEnoughImages 
+                        ? item.images.slice(0, 4).map(img => img.url) 
+                        : [];
+                      
+                      return (
+                        <CategoryCard
+                          key={`category-${item.id}`}
+                          id={item.id}
+                          name={item.name}
+                          description={item.description}
+                          thumbnail={item.thumbnail}
+                          index={index}
+                          useCollage={hasEnoughImages}
+                          current={item.current}
+                          collageImages={imageUrls}
+                        />
+                      );
+                    } else {
+                      return (
+                        <SetCard
+                          key={`set-${item.id}`}
+                          id={item.id}
+                          name={item.name}
+                          description={item.shortDescription || item.description}
+                          price={item.price}
+                          thumbnail={item.thumbnail}
+                          index={index}
+                          current={item.current}
+                        />
+                      );
+                    }
+                  })}
+                </div>
+                
+                <div className="mt-12 text-center">
+                  <Link 
+                    to="/gallery" 
+                    className="mr-6 inline-flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors group"
+                  >
+                    <span>Zobacz więcej kategorii</span>
+                    <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
+                  </Link>
+                  
+                  <Link 
+                    to="/sets" 
+                    className="inline-flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors group"
+                  >
+                    <span>Zobacz więcej zestawów</span>
+                    <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
+                  </Link>
+                </div>
+              </>
+            ) : (
+              <div className="text-center text-muted-foreground">
+                <p>Aktualnie brak dostępnych ofert. Sprawdź ponownie wkrótce!</p>
+              </div>
+            )}
           </div>
         </section>
         

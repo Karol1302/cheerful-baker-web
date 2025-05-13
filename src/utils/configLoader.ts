@@ -1,6 +1,7 @@
 
 import siteConfig from '../config/siteConfig.json';
 import { getCategoriesFromJson, Category } from './categoriesLoader';
+import { GiftSet, loadSets } from './setsLoader';
 
 export const getHeroSlideshowConfig = () => {
   return siteConfig.heroSlideshow;
@@ -20,7 +21,7 @@ export const getAllGalleryCategories = () => {
   return siteConfig.gallery.categories;
 };
 
-// New methods using the JSON-based category system
+// Categories methods using the JSON-based category system
 let cachedCategories: Category[] | null = null;
 
 export const loadCategories = async (): Promise<Category[]> => {
@@ -56,4 +57,29 @@ export const getSortedCategories = async (): Promise<Category[]> => {
     if (!a.current && b.current) return 1;
     return a.name.localeCompare(b.name);
   });
+};
+
+export const getCurrentCategories = async (limit?: number): Promise<Category[]> => {
+  const categories = await loadCategories();
+  const currentCategories = categories.filter(category => category.current);
+  if (limit) {
+    return currentCategories.slice(0, limit);
+  }
+  return currentCategories;
+};
+
+// Function to get combined current offers (categories + sets)
+export const getCurrentOffers = async (limit: number = 6): Promise<Array<Category | GiftSet>> => {
+  const currentCategories = await getCurrentCategories();
+  const currentSets = await loadSets().then(sets => sets.filter(set => set.current));
+  
+  const combined = [...currentCategories, ...currentSets];
+  // Sort all items
+  const sorted = combined.sort((a, b) => a.name.localeCompare(b.name));
+  
+  return sorted.slice(0, limit);
+};
+
+export const isCategory = (item: Category | GiftSet): item is Category => {
+  return (item as Category).images && Array.isArray((item as Category).images);
 };

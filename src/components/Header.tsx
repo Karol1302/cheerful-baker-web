@@ -58,6 +58,26 @@ const Header = () => {
             Galeria
           </NavLink>
           <NavLink 
+            to="/sets" 
+            className={({ isActive }) => 
+              `font-medium transition-all hover:text-gingerbread relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gingerbread after:transition-all ${
+                isActive ? 'text-gingerbread after:w-full' : 'text-foreground'
+              }`
+            }
+          >
+            Zestawy
+          </NavLink>
+          <NavLink 
+            to="/pricing" 
+            className={({ isActive }) => 
+              `font-medium transition-all hover:text-gingerbread relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gingerbread after:transition-all ${
+                isActive ? 'text-gingerbread after:w-full' : 'text-foreground'
+              }`
+            }
+          >
+            Cennik
+          </NavLink>
+          <NavLink 
             to="/contact" 
             className={({ isActive }) => 
               `font-medium transition-all hover:text-gingerbread relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gingerbread after:transition-all ${
@@ -107,6 +127,28 @@ const Header = () => {
             onClick={() => setMobileMenuOpen(false)}
           >
             Galeria
+          </NavLink>
+          <NavLink 
+            to="/sets" 
+            className={({ isActive }) => 
+              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
+                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
+              }`
+            }
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Zestawy
+          </NavLink>
+          <NavLink 
+            to="/pricing" 
+            className={({ isActive }) => 
+              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
+                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
+              }`
+            }
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Cennik
           </NavLink>
           <NavLink 
             to="/contact" 

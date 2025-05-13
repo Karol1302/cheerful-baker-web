@@ -17,10 +17,10 @@ const GalleryCTA = () => {
         <div className="max-w-2xl mx-auto">
           <Link 
             to="/gallery" 
-            className="inline-flex items-center justify-center px-6 py-3 bg-gingerbread text-white rounded-full text-lg font-medium shadow-lg hover:bg-gingerbread-dark hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gingerbread text-white rounded-md text-lg font-medium shadow-lg hover:bg-gingerbread-dark hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group"
           >
             <span>chcesz zobaczyć więcej kreacji – przejdź do galerii</span>
-            <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={24} />
+            <ArrowRight className="ml-2 transition-transform group-hover:translate-x-2" size={24} />
           </Link>
         </div>
       </div>

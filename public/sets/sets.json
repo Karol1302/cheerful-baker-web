@@ -1,0 +1,107 @@
+
+{
+  "sets": [
+    {
+      "id": "swiateczny-maly",
+      "name": "Mały zestaw świąteczny",
+      "shortDescription": "Zestaw 10 różnych pierniczków świątecznych w eleganckim pudełku.",
+      "description": "Mały zestaw świąteczny zawiera 10 ręcznie dekorowanych pierniczków o różnych kształtach i wzorach nawiązujących do Bożego Narodzenia.\n\nW skład zestawu wchodzą pierniczki w kształcie: choinki, gwiazdki, dzwoneczka, skarpety, bombki i innych świątecznych motywów. Każdy pierniczek jest starannie dekorowany lukrem królewskim w tradycyjnych świątecznych kolorach.\n\nPierniczki zapakowane są w eleganckie pudełko o wymiarach 20 x 15 x 5 cm, przewiązane wstążką, gotowe do wręczenia jako prezent.",
+      "thumbnail": "/sets/swiateczny-maly/thumbnail.jpg",
+      "price": "85 zł",
+      "current": true,
+      "images": [
+        {
+          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+          "description": "Komplet pierników świątecznych w eleganckim pudełku"
+        },
+        {
+          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+          "description": "Pierniczki z zestawu świątecznego małego"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1544285231-ae61a4567a75?q=80&w=1960&auto=format&fit=crop",
+          "description": "Ozdobne pierniczki świąteczne"
+        }
+      ]
+    },
+    {
+      "id": "swiateczny-duzy",
+      "name": "Duży zestaw świąteczny",
+      "shortDescription": "Zestaw 20 różnych pierniczków świątecznych w ozdobnym pudełku z opcją personalizacji.",
+      "description": "Duży zestaw świąteczny zawiera 20 ręcznie dekorowanych pierniczków w różnych kształtach i wzorach, idealny jako prezent dla bliskich lub współpracowników.\n\nW skład zestawu wchodzą pierniczki w kształcie: choinki, gwiazdki, dzwoneczka, skarpety, bombki, renifera, Mikołaja i innych świątecznych motywów. Każdy pierniczek jest starannie dekorowany lukrem królewskim w tradycyjnych świątecznych kolorach.\n\nPierniczki zapakowane są w ozdobne pudełko o wymiarach 30 x 20 x 5 cm, przewiązane wstążką i ozdobione gałązką świerku. Istnieje możliwość dodania personalizowanej etykiety z życzeniami.",
+      "thumbnail": "/sets/swiateczny-duzy/thumbnail.jpg",
+      "price": "160 zł",
+      "current": true,
+      "images": [
+        {
+          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+          "description": "Duży zestaw świąteczny w ozdobnym pudełku"
+        },
+        {
+          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+          "description": "Wybrane pierniczki z dużego zestawu świątecznego"
+        }
+      ]
+    },
+    {
+      "id": "walentynkowy",
+      "name": "Zestaw walentynkowy",
+      "shortDescription": "Romantyczny zestaw pierniczków w kształcie serc, idealny prezent na walentynki.",
+      "description": "Zestaw walentynkowy zawiera 8 wyjątkowych pierniczków w kształcie serc, o różnych wielkościach i wzorach.\n\nKażdy pierniczek jest dekorowany z miłością i dbałością o detale, przy użyciu lukru królewskiego w odcieniach czerwieni, bieli i różu. Niektóre pierniczki zawierają romantyczne napisy, inne eleganckie wzory.\n\nZestaw zapakowany jest w czerwone pudełko przewiązane wstążką, idealne do wręczenia ukochanej osobie. Istnieje możliwość dodania personalizowanej wiadomości na karteczce.",
+      "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+      "price": "90 zł",
+      "current": true,
+      "images": [
+        {
+          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+          "description": "Zestaw pierniczków walentynkowych w kształcie serc"
+        }
+      ]
+    },
+    {
+      "id": "domek-z-piernika",
+      "name": "Domek z piernika",
+      "shortDescription": "Ręcznie wykonany i ozdobiony domek z piernika, idealny jako świąteczna dekoracja.",
+      "description": "Domek z piernika to wyjątkowa ozdoba świąteczna, w całości wykonana ręcznie i indywidualnie dekorowana.\n\nKażdy domek składa się ze ścian, dachu, okien, drzwi i komina, precyzyjnie złożonych i połączonych lukrem królewskim. Domek jest bogato zdobiony kolorowym lukrem, posypkami i dodatkami w postaci cukierków.\n\nDomek ma wymiary około 20 x 15 x 20 cm i jest umieszczony na sztywnej podstawce, dzięki czemu może stanowić stabilną dekorację świątecznego stołu lub komody. Ze względu na indywidualny charakter każdego domku, wzory i kolory mogą się nieznacznie różnić od przedstawionych na zdjęciach.",
+      "thumbnail": "https://images.unsplash.com/photo-1544285231-ae61a4567a75?q=80&w=1960&auto=format&fit=crop",
+      "price": "180 zł",
+      "current": true,
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1544285231-ae61a4567a75?q=80&w=1960&auto=format&fit=crop",
+          "description": "Tradycyjny domek z piernika, bogato zdobiony"
+        }
+      ]
+    },
+    {
+      "id": "wielkanocny",
+      "name": "Zestaw wielkanocny",
+      "shortDescription": "Kolekcja pierniczków w kształtach wielkanocnych: zajączki, pisanki, kurczaczki.",
+      "description": "Zestaw wielkanocny zawiera 12 kolorowych pierniczków w motywach związanych z Wielkanocą.\n\nW skład zestawu wchodzą pierniczki w kształcie zajączków, pisanek, kurczaczków i baranków. Każdy pierniczek jest starannie dekorowany lukrem królewskim w wiosennych kolorach - żółciach, zieleniach, różach i błękitach.\n\nPierniczki zapakowane są w ozdobny koszyczek lub pudełko z wielkanocnymi akcentami. Zestaw idealny jako prezent lub dekoracja wielkanocnego stołu.",
+      "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+      "price": "110 zł",
+      "current": false,
+      "images": [
+        {
+          "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
+          "description": "Wielkanocny zestaw pierniczków"
+        }
+      ]
+    },
+    {
+      "id": "urodzinowy",
+      "name": "Zestaw urodzinowy",
+      "shortDescription": "Personalizowane pierniczki urodzinowe z możliwością dodania imienia i wieku jubilata.",
+      "description": "Zestaw urodzinowy to kolekcja 10 personalizowanych pierniczków, idealnych na przyjęcie urodzinowe.\n\nZestaw zawiera pierniczki w kształcie cyfr (wiek jubilata), balonów, prezentów i innych motywów urodzinowych. Każdy pierniczek jest indywidualnie dekorowany w wybranych przez klienta kolorach. Istnieje możliwość dodania imienia jubilata na wybranych pierniczkach.\n\nPierniczki zapakowane są w eleganckie pudełko z wstążką w wybranym kolorze. Zestaw może być dostosowany do różnych grup wiekowych - od pierwszych urodzin po dorosłe jubileusze.",
+      "thumbnail": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+      "price": "130 zł",
+      "current": false,
+      "images": [
+        {
+          "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
+          "description": "Zestaw urodzinowy z personalizowanymi pierniczkami"
+        }
+      ]
+    }
+  ]
+}
