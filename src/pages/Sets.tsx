@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import SetCard from "@/components/ui/SetCard";
+import SetRow from "@/components/ui/SetRow";
 import { getSortedSets } from "@/utils/setsLoader";
 import type { GiftSet } from "@/utils/setsLoader";
 
@@ -47,9 +47,9 @@ const Sets = () => {
             <div className="w-8 h-8 border-4 border-gingerbread border-r-transparent rounded-full animate-spin"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-4 max-w-4xl mx-auto">
             {sets.map((set, index) => (
-              <SetCard
+              <SetRow
                 key={set.id}
                 id={set.id}
                 name={set.name}

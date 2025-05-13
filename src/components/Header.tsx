@@ -2,11 +2,14 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { useMedia } from '@/hooks/use-mobile';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const isMobile = useMedia('(max-width: 768px)');
+  
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -20,6 +23,39 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
+  
+  // Close sidebar when resizing to desktop
+  useEffect(() => {
+    if (!isMobile && sidebarOpen) {
+      setSidebarOpen(false);
+    }
+  }, [isMobile, sidebarOpen]);
+  
+  // Close sidebar when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (sidebarOpen) {
+        const target = e.target as HTMLElement;
+        // Close if clicking outside the sidebar and not on the menu button
+        if (!target.closest('.sidebar') && !target.closest('.menu-button')) {
+          setSidebarOpen(false);
+        }
+      }
+    };
+    
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [sidebarOpen]);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
 
   return (
     <header 
@@ -35,7 +71,7 @@ const Header = () => {
           PierniczkiKiM
         </NavLink>
         
-        {/* Desktop Menu */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink 
             to="/" 
@@ -68,16 +104,6 @@ const Header = () => {
             Zestawy
           </NavLink>
           <NavLink 
-            to="/pricing" 
-            className={({ isActive }) => 
-              `font-medium transition-all hover:text-gingerbread relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gingerbread after:transition-all ${
-                isActive ? 'text-gingerbread after:w-full' : 'text-foreground'
-              }`
-            }
-          >
-            Cennik
-          </NavLink>
-          <NavLink 
             to="/contact" 
             className={({ isActive }) => 
               `font-medium transition-all hover:text-gingerbread relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gingerbread after:transition-all ${
@@ -91,78 +117,77 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-gingerbread"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="menu-button md:hidden text-gingerbread p-2 z-50"
+          onClick={toggleSidebar}
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu - Updated to fully fit viewport */}
+      {/* Mobile Sidebar */}
       <div 
-        className={`fixed inset-x-0 top-[60px] z-40 bg-black/90 backdrop-blur-sm transform transition-transform duration-300 ease-in-out max-h-[calc(100vh-60px)] overflow-y-auto ${
-          mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        className={`sidebar fixed inset-y-0 right-0 z-40 w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+          sidebarOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
       >
-        <div className="flex flex-col items-center py-6 space-y-4 w-full max-w-full">
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => 
-              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
-                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
-              }`
-            }
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Strona główna
-          </NavLink>
-          <NavLink 
-            to="/gallery" 
-            className={({ isActive }) => 
-              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
-                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
-              }`
-            }
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Galeria
-          </NavLink>
-          <NavLink 
-            to="/sets" 
-            className={({ isActive }) => 
-              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
-                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
-              }`
-            }
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Zestawy
-          </NavLink>
-          <NavLink 
-            to="/pricing" 
-            className={({ isActive }) => 
-              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
-                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
-              }`
-            }
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Cennik
-          </NavLink>
-          <NavLink 
-            to="/contact" 
-            className={({ isActive }) => 
-              `text-xl font-medium px-6 py-3 rounded-md w-4/5 text-center transition-colors ${
-                isActive ? 'bg-gingerbread text-white' : 'bg-white/10 text-white hover:bg-white/20'
-              }`
-            }
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Kontakt
-          </NavLink>
+        <div className="flex flex-col h-full pt-20 px-6">
+          <nav className="flex flex-col space-y-6">
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => 
+                `text-lg font-medium transition-colors ${
+                  isActive ? 'text-gingerbread' : 'text-foreground hover:text-gingerbread'
+                }`
+              }
+              onClick={closeSidebar}
+            >
+              Strona główna
+            </NavLink>
+            <NavLink 
+              to="/gallery" 
+              className={({ isActive }) => 
+                `text-lg font-medium transition-colors ${
+                  isActive ? 'text-gingerbread' : 'text-foreground hover:text-gingerbread'
+                }`
+              }
+              onClick={closeSidebar}
+            >
+              Galeria
+            </NavLink>
+            <NavLink 
+              to="/sets" 
+              className={({ isActive }) => 
+                `text-lg font-medium transition-colors ${
+                  isActive ? 'text-gingerbread' : 'text-foreground hover:text-gingerbread'
+                }`
+              }
+              onClick={closeSidebar}
+            >
+              Zestawy
+            </NavLink>
+            <NavLink 
+              to="/contact" 
+              className={({ isActive }) => 
+                `text-lg font-medium transition-colors ${
+                  isActive ? 'text-gingerbread' : 'text-foreground hover:text-gingerbread'
+                }`
+              }
+              onClick={closeSidebar}
+            >
+              Kontakt
+            </NavLink>
+          </nav>
         </div>
       </div>
+      
+      {/* Overlay when sidebar is open */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30 md:hidden"
+          onClick={closeSidebar}
+        />
+      )}
     </header>
   );
 };

@@ -6,7 +6,6 @@
       "name": "Serca",
       "description": "Pierniczki w kształcie serc, idealne na walentynki i inne romantyczne okazje",
       "thumbnail": "/categories/serca/heart-cookies.jpg",
-      "current": true,
       "images": [
         {
           "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
@@ -23,7 +22,6 @@
       "name": "Boże Narodzenie",
       "description": "Świąteczne pierniczki i dekoracje na choinkę",
       "thumbnail": "/categories/boze-narodzenie/christmas-cookies.jpg",
-      "current": true,
       "images": [
         {
           "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
@@ -40,7 +38,6 @@
       "name": "Wielkanoc",
       "description": "Wielkanocne pierniczki z motywami zajączków, pisanek i kurczaczków",
       "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
-      "current": false,
       "images": [
         {
           "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
@@ -53,7 +50,6 @@
       "name": "Ślub i Wesele",
       "description": "Eleganckie pierniki jako podziękowania dla gości weselnych",
       "thumbnail": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
-      "current": false,
       "images": [
         {
           "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
@@ -66,7 +62,6 @@
       "name": "Komunia",
       "description": "Pierniczki na Pierwszą Komunię Świętą",
       "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
-      "current": false,
       "images": [
         {
           "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
@@ -79,7 +74,6 @@
       "name": "Chrzciny i Baby Shower",
       "description": "Słodkie upominki dla gości na chrzciny i baby shower",
       "thumbnail": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
-      "current": false,
       "images": [
         {
           "url": "/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png",
@@ -92,7 +86,6 @@
       "name": "Roczek",
       "description": "Kolorowe pierniczki na pierwsze urodziny",
       "thumbnail": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",
-      "current": false,
       "images": [
         {
           "url": "/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png",

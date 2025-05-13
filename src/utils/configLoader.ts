@@ -35,7 +35,6 @@ export const loadCategories = async (): Promise<Category[]> => {
     // Fallback to old method if something goes wrong
     return siteConfig.gallery.categories.map(cat => ({
       ...cat,
-      current: false,
       images: cat.images.map(img => ({
         url: img.imageUrl,
         description: img.description
@@ -51,33 +50,8 @@ export const getCategory = async (categoryId: string): Promise<Category | undefi
 
 export const getSortedCategories = async (): Promise<Category[]> => {
   const categories = await loadCategories();
-  // Sort: current categories first, then alphabetically
-  return [...categories].sort((a, b) => {
-    if (a.current && !b.current) return -1;
-    if (!a.current && b.current) return 1;
-    return a.name.localeCompare(b.name);
-  });
-};
-
-export const getCurrentCategories = async (limit?: number): Promise<Category[]> => {
-  const categories = await loadCategories();
-  const currentCategories = categories.filter(category => category.current);
-  if (limit) {
-    return currentCategories.slice(0, limit);
-  }
-  return currentCategories;
-};
-
-// Function to get combined current offers (categories + sets)
-export const getCurrentOffers = async (limit: number = 6): Promise<Array<Category | GiftSet>> => {
-  const currentCategories = await getCurrentCategories();
-  const currentSets = await loadSets().then(sets => sets.filter(set => set.current));
-  
-  const combined = [...currentCategories, ...currentSets];
-  // Sort all items
-  const sorted = combined.sort((a, b) => a.name.localeCompare(b.name));
-  
-  return sorted.slice(0, limit);
+  // Sort alphabetically by name
+  return [...categories].sort((a, b) => a.name.localeCompare(b.name));
 };
 
 export const isCategory = (item: Category | GiftSet): item is Category => {

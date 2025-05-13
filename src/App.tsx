@@ -13,7 +13,6 @@ import Gallery from "./pages/Gallery";
 import CategoryGallery from "./pages/CategoryGallery";
 import Sets from "./pages/Sets";
 import SetDetail from "./pages/SetDetail";
-import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ui/ScrollToTop";
@@ -46,7 +45,6 @@ const App = () => (
           <Route path="/gallery/:categoryId" element={<CategoryGallery />} />
           <Route path="/sets" element={<Sets />} />
           <Route path="/sets/:setId" element={<SetDetail />} />
-          <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

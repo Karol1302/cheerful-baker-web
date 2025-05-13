@@ -16,46 +16,43 @@ const Footer = () => {
             </p>
           </div>
           
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-foreground">Kontakt</h3>
-            <div className="flex justify-start md:justify-center gap-6">
-              {/* Email Contact Option */}
-              <a 
-                href="mailto:kontakt@pierniczkikim.pl" 
-                className="hover:scale-110 transition-transform"
-                aria-label="Email"
-              >
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all">
-                  <Mail size={24} className="text-gingerbread" />
-                </div>
-              </a>
-              
-              {/* Instagram Contact Option */}
-              <a 
-                href="https://instagram.com/pierniczkikim" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition-transform"
-                aria-label="Instagram"
-              >
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all">
-                  <Instagram size={24} className="text-gingerbread" />
-                </div>
-              </a>
-              
-              {/* Facebook Contact Option */}
-              <a 
-                href="https://facebook.com/pierniczkikim" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition-transform"
-                aria-label="Facebook"
-              >
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all">
-                  <Facebook size={24} className="text-gingerbread" />
-                </div>
-              </a>
-            </div>
+          <div className="flex justify-center md:justify-end items-center gap-6">
+            {/* Email Contact Option */}
+            <a 
+              href="mailto:kontakt@pierniczkikim.pl" 
+              className="hover:scale-110 transition-transform"
+              aria-label="Email"
+            >
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all">
+                <Mail size={24} className="text-gingerbread" />
+              </div>
+            </a>
+            
+            {/* Instagram Contact Option */}
+            <a 
+              href="https://instagram.com/pierniczkikim" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-transform"
+              aria-label="Instagram"
+            >
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all">
+                <Instagram size={24} className="text-gingerbread" />
+              </div>
+            </a>
+            
+            {/* Facebook Contact Option */}
+            <a 
+              href="https://facebook.com/pierniczkikim" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-transform"
+              aria-label="Facebook"
+            >
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all">
+                <Facebook size={24} className="text-gingerbread" />
+              </div>
+            </a>
           </div>
         </div>
         

@@ -1,5 +1,5 @@
 
-interface CategoryImage {
+export interface CategoryImage {
   url: string;
   description: string;
 }
@@ -9,7 +9,6 @@ export interface Category {
   name: string;
   description: string;
   thumbnail: string;
-  current: boolean;
   images: CategoryImage[];
 }
 
@@ -24,13 +23,8 @@ export const getCategoriesFromJson = async (): Promise<Category[]> => {
   }
 };
 
-export const getImageNameFromUrl = (url: string): string => {
-  // Extract the filename from the URL
-  const filename = url.substring(url.lastIndexOf('/') + 1);
-  // Remove the file extension
-  const nameWithoutExtension = filename.substring(0, filename.lastIndexOf('.'));
-  // Replace hyphens with spaces and capitalize words
-  return nameWithoutExtension
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+export const getSortedCategories = async (): Promise<Category[]> => {
+  const categories = await getCategoriesFromJson();
+  // Simply sort alphabetically
+  return [...categories].sort((a, b) => a.name.localeCompare(b.name));
 };
