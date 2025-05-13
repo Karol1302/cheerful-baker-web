@@ -2,12 +2,12 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { useMedia } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const isMobile = useMedia('(max-width: 768px)');
+  const isMobile = useIsMobile();
   
   // Handle scroll effect
   useEffect(() => {
