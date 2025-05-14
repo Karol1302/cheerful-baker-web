@@ -87,7 +87,7 @@ const ContactForm = () => {
 
         <div className="pt-8">
           <img
-            src="/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png"
+            // src="/lovable-uploads/22504f23-1163-40c0-8b39-fec70c5d903b.png"
             alt="Pierniczki świąteczne"
             className="rounded-md shadow-sm"
           />

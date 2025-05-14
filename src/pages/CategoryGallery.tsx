@@ -1,4 +1,3 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import ImageGallery from "@/components/ui/ImageGallery";
@@ -14,7 +13,7 @@ const CategoryGallery = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
   const [category, setCategory] = useState<Category | null>(null);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     const loadCategory = async () => {
       setLoading(true);
@@ -34,9 +33,12 @@ const CategoryGallery = () => {
         setLoading(false);
       }
     };
-    
     loadCategory();
   }, [categoryId, navigate]);
+
+  // Nowy useEffect żeby zobaczyć prawidłowy stan category
+  useEffect(() => {
+  }, [category]);
 
   if (loading) {
     return (
@@ -50,12 +52,11 @@ const CategoryGallery = () => {
     return null;
   }
 
-  // Convert category images to gallery items format
   const galleryItems = category.images.map((img, index) => ({
     id: index + 1,
     title: img.description || `Image ${index + 1}`,
     description: img.description || "",
-    imageUrl: img.url
+    imageUrl: import.meta.env.BASE_URL + img.url
   }));
 
   return (
@@ -68,13 +69,12 @@ const CategoryGallery = () => {
           <ChevronLeft size={20} />
           <span>Powrót do kategorii</span>
         </button>
-        
-        <div 
-          ref={elementRef as React.RefObject<HTMLDivElement>}
-          className={`max-w-2xl mx-auto mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+
+<div 
+  ref={elementRef as React.RefObject<HTMLDivElement>}
+  className="max-w-2xl mx-auto mb-16 opacity-100 translate-y-0 transition-all duration-700"
+>
+
           <div className="flex items-center justify-center gap-2 mb-4">
             <h1 className="text-4xl font-bold text-center">{category.name}</h1>
             {category.current && (
@@ -87,7 +87,7 @@ const CategoryGallery = () => {
             {category.description}
           </p>
         </div>
-        
+
         <ImageGallery items={galleryItems} />
       </div>
     </div>

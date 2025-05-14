@@ -57,7 +57,7 @@ const SetDetail = () => {
     id: index + 1,
     title: img.description || `Image ${index + 1}`,
     description: img.description || "",
-    imageUrl: img.url,
+    imageUrl: process.env.PUBLIC_URL + img.url
   }));
 
   // Single main image (first image)

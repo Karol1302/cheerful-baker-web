@@ -4,11 +4,14 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import SetRow from "@/components/ui/SetRow";
 import { loadSets } from "@/utils/setsLoader";
 import type { GiftSet } from "@/utils/setsLoader";
+import { ChevronLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Sets = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
   const [sets, setSets] = useState<GiftSet[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadData = async () => {
@@ -33,6 +36,13 @@ const Sets = () => {
   return (
     <div className="pt-28 pb-24 px-6">
       <div className="container mx-auto">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors mb-6"
+        >
+          <ChevronLeft size={20} />
+          <span>Powrót na stronę główną</span>
+        </button>
         <div 
           ref={elementRef as React.RefObject<HTMLDivElement>}
           className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${

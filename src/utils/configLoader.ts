@@ -1,29 +1,19 @@
-
 import siteConfig from '../config/siteConfig.json';
 import { getCategoriesFromJson, Category } from './categoriesLoader';
 import { GiftSet, loadSets } from './setsLoader';
 
+// Zwraca konfigurację Hero Slideshow (pozostaje bez zmian)
 export const getHeroSlideshowConfig = () => {
   return siteConfig.heroSlideshow;
 };
 
-export const getGalleryConfig = () => {
-  return siteConfig.gallery;
-};
+// Usuwamy getGalleryConfig, getGalleryCategory, getAllGalleryCategories
+// ponieważ dane galerii są ładowane teraz dynamicznie z JSON-a
 
-// Legacy function for backward compatibility
-export const getGalleryCategory = (categoryId: string) => {
-  return siteConfig.gallery.categories.find(category => category.id === categoryId);
-};
-
-// Legacy function for backward compatibility
-export const getAllGalleryCategories = () => {
-  return siteConfig.gallery.categories;
-};
-
-// Categories methods using the JSON-based category system
+// Kategorie - cache
 let cachedCategories: Category[] | null = null;
 
+// Ładowanie kategorii z JSON
 export const loadCategories = async (): Promise<Category[]> => {
   try {
     if (!cachedCategories) {
@@ -32,28 +22,26 @@ export const loadCategories = async (): Promise<Category[]> => {
     return cachedCategories;
   } catch (error) {
     console.error("Failed to load categories:", error);
-    // Fallback to old method if something goes wrong
-    return siteConfig.gallery.categories.map(cat => ({
-      ...cat,
-      images: cat.images.map(img => ({
-        url: img.imageUrl,
-        description: img.description
-      }))
-    }));
+    // W razie błędu - fallback do pustej tablicy
+    return [];
   }
 };
 
-export const getCategory = async (categoryId: string): Promise<Category | undefined> => {
+// Pobieranie konkretnej kategorii po ID
+export const getCategory = async (id: string) => {
   const categories = await loadCategories();
-  return categories.find(category => category.id === categoryId);
+  return categories.find((c: Category) => c.id.toLowerCase() === id.toLowerCase()) || null;
 };
 
+
+// Pobieranie posortowanej listy kategorii
 export const getSortedCategories = async (): Promise<Category[]> => {
   const categories = await loadCategories();
-  // Sort alphabetically by name
+  // Sortowanie alfabetyczne
   return [...categories].sort((a, b) => a.name.localeCompare(b.name));
 };
 
+// Pomocnicza funkcja rozróżniająca typ Category vs GiftSet
 export const isCategory = (item: Category | GiftSet): item is Category => {
-  return (item as Category).images && Array.isArray((item as Category).images);
+  return (item as Category).images !== undefined && Array.isArray((item as Category).images);
 };

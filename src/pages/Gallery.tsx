@@ -4,11 +4,15 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import CategoryCard from "@/components/ui/CategoryCard";
 import { getSortedCategories } from "@/utils/configLoader";
 import type { Category } from "@/utils/categoriesLoader";
+import { ChevronLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 
 const Gallery = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadData = async () => {
@@ -29,6 +33,13 @@ const Gallery = () => {
   return (
     <div className="pt-28 pb-24 px-6">
       <div className="container mx-auto">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors mb-6"
+        >
+          <ChevronLeft size={20} />
+          <span>Powrót na stronę główną</span>
+        </button>
         <div 
           ref={elementRef as React.RefObject<HTMLDivElement>}
           className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${
@@ -50,7 +61,7 @@ const Gallery = () => {
             {categories.map((category, index) => {
               const hasEnoughImages = category.images && category.images.length >= 4;
               const imageUrls = hasEnoughImages 
-                ? category.images.slice(0, 4).map(img => img.url) 
+                ? category.images.slice(0, 4).map(img => process.env.PUBLIC_URL + img.url)
                 : [];
               
               return (

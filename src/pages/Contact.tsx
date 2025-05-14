@@ -1,13 +1,23 @@
 
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Mail, Instagram, Facebook } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
+  const navigate = useNavigate();
 
   return (
     <div className="pt-28 pb-24 px-6">
       <div className="container mx-auto">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors mb-6"
+        >
+          <ChevronLeft size={20} />
+          <span>Powrót na stronę główną</span>
+        </button>
         <div 
           ref={elementRef as React.RefObject<HTMLDivElement>}
           className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${
@@ -74,7 +84,7 @@ const Contact = () => {
           
           <div className="mt-16 rounded-lg overflow-hidden shadow-md">
             <img 
-              src="/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png" 
+              // src="/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png" 
               alt="Pierniczki świąteczne" 
               className="w-full object-cover h-64 md:h-96"
             />

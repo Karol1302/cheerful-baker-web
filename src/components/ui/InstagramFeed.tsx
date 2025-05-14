@@ -29,7 +29,7 @@ const InstagramFeed = () => {
           </div>
           <div className="aspect-square bg-gray-100 overflow-hidden">
             <img 
-              src="/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png" 
+              // src="/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png" 
               alt="Świąteczne pierniczki" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />

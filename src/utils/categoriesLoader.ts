@@ -15,7 +15,7 @@ export interface Category {
 
 export const getCategoriesFromJson = async (): Promise<Category[]> => {
   try {
-    const response = await fetch('/categories/categories.json');
+    const response = await fetch(`${import.meta.env.BASE_URL}/categories/categories.json`);
     const data = await response.json();
     return data.categories;
   } catch (error) {

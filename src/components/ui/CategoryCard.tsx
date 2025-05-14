@@ -44,11 +44,12 @@ const CategoryCard = ({
             <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
               {collageImages.slice(0, 4).map((imgUrl, i) => (
                 <div key={i} className="overflow-hidden">
-                  <img
-                    src={imgUrl}
-                    alt={`${name} image ${i + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                <img
+                  src={imgUrl}
+                  alt={`${name} image ${i + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
                 </div>
               ))}
             </div>

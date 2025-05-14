@@ -36,7 +36,7 @@ const SetRow = ({
       >
         <div className="w-full sm:w-32 md:w-40 h-40 sm:h-28 md:h-32 flex-shrink-0">
           <img
-            src={thumbnail}
+            src={`${import.meta.env.BASE_URL}${thumbnail}`}
             alt={name}
             className="w-full h-full object-cover"
           />

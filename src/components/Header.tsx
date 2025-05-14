@@ -58,11 +58,13 @@ const Header = () => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'py-2 shadow-md glass' : 'py-6 bg-transparent'
-      }`}
-    >
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 py-2 transition-[background-color,backdrop-filter] duration-400 ${
+          scrolled ? 'bg-white/90 backdrop-blur shadow-md' : 'bg-transparent backdrop-blur-0 shadow-none'
+        }`}
+      >
+
+
       <div className="container mx-auto px-6 flex items-center justify-between">
         <NavLink 
           to="/" 
@@ -118,20 +120,21 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button 
           className="menu-button md:hidden text-gingerbread p-2 z-50"
-          onClick={toggleSidebar}
+          onClick={() => setSidebarOpen(!sidebarOpen)}
           aria-label="Toggle menu"
         >
-          {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
+          {/* {sidebarOpen ? <X size={24} /> : <Menu size={24} />} */}
+          <Menu className="w-6 h-6" />
         </button>
       </div>
 
       {/* Mobile Sidebar */}
-      <div 
-        className={`sidebar fixed inset-y-0 right-0 z-40 w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
-          sidebarOpen ? 'translate-x-0' : 'translate-x-full'
-        } md:hidden`}
-      >
-        <div className="flex flex-col h-full pt-20 px-6">
+        <div 
+          className={`absolute top-full left-0 right-0 z-40 transition-all duration-300 ease-in-out overflow-hidden md:hidden ${
+          sidebarOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        } ${scrolled || sidebarOpen ? 'bg-white/80 backdrop-blur-md' : 'bg-transparent'}`}
+        >
+        <div className="flex flex-col py-4 px-6">
           <nav className="flex flex-col space-y-6">
             <NavLink 
               to="/" 
@@ -184,7 +187,7 @@ const Header = () => {
       {/* Overlay when sidebar is open */}
       {sidebarOpen && (
         <div 
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30 md:hidden"
+          className="fixed left-0 right-0 top-20 bottom-0 bg-white/40 backdrop-blur-md z-30 md:hidden"
           onClick={closeSidebar}
         />
       )}

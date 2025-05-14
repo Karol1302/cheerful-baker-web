@@ -61,12 +61,12 @@ const Index = () => {
   return (
     <div className="pt-0">
       <HeroSection 
-        title="Pierniczki tworzone z miłością i starannością"
-        subtitle="Ręcznie wykonane słodkości, które wprowadzą świąteczny klimat do Twojego domu."
-        ctaText="Zobacz galerię"
-        ctaLink="/gallery"
-        backgroundImage="/tlo2.png"
-      />
+          title="Pierniczki tworzone z miłością i starannością"
+          subtitle="Ręcznie wykonane słodkości, które wprowadzą świąteczny klimat do Twojego domu."
+          ctaText="Zobacz galerię"
+          ctaLink={import.meta.env.BASE_URL + "gallery"}
+        />
+
       
       <div id="content">
         {/* Current Sets Section */}
@@ -188,11 +188,12 @@ const Index = () => {
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {categories.map((category, index) => {
-                    const hasEnoughImages = category.images && category.images.length >= 4;
-                    const imageUrls = hasEnoughImages 
-                      ? category.images.slice(0, 4).map(img => img.url) 
+                    const imageUrls = category.images
+                      ? category.images.slice(0, 4).map(img => `${import.meta.env.BASE_URL}${img.url}`)
                       : [];
-                    
+
+                    const hasEnoughImages = imageUrls.length >= 4 && new Set(imageUrls).size >= 4;
+
                     return (
                       <CategoryCard
                         key={`category-${category.id}`}

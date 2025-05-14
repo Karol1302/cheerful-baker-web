@@ -17,7 +17,7 @@ export interface GiftSet {
 
 export const getSetsFromJson = async (): Promise<GiftSet[]> => {
   try {
-    const response = await fetch('/sets/sets.json');
+    const response = await fetch(`${import.meta.env.BASE_URL}/sets/sets.json`);
     const data = await response.json();
     return data.sets;
   } catch (error) {
