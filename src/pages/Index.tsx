@@ -61,8 +61,8 @@ const Index = () => {
   return (
     <div className="pt-0">
       <HeroSection 
-          title="Pierniczki tworzone z miłością i starannością"
-          subtitle="Ręcznie wykonane słodkości, które wprowadzą świąteczny klimat do Twojego domu."
+          title="Witamy w świecie słodkiego rękodzieła"
+          subtitle="Zajmujemy sie tworzeniem wyjątkowych ręcznie dekorowanych pierniczków."
           ctaText="Zobacz galerię"
           ctaLink={import.meta.env.BASE_URL + "gallery"}
         />

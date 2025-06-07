@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+const logoUrl = `${process.env.PUBLIC_URL}/Logo.png`;
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -65,12 +67,19 @@ const Header = () => {
       >
 
 
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <NavLink 
-          to="/" 
-          className="text-2xl font-bold tracking-tight text-gingerbread hover:opacity-90 transition-opacity"
+     <div className="container mx-auto px-6 flex items-center justify-between">
+        {/* ↓↓↓ ZAMIENIAMY dotychczasowy NavLink z tekstem */}
+        <NavLink
+          to="/"
+          className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
         >
-          PierniczkiKiM
+          <img
+            src={logoUrl}
+            alt="Pierniczki KiM – logo"
+            className="h-12 md:h-14 lg:h-16 w-auto"
+          />
+          {/* Etykieta tylko dla czytników ekranu – wizualnie niewidoczna */}
+          <span className="sr-only">Pierniczki KiM</span>
         </NavLink>
         
         {/* Desktop Navigation */}
