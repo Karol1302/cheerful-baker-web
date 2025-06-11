@@ -1,19 +1,15 @@
 import { useEffect, useState } from 'react';
 import { ArrowDownCircle } from 'lucide-react';
 import { getHeroSlideshowConfig } from '@/utils/configLoader';
-import { Mail, Image } from 'lucide-react';
+import { Gift, Image } from 'lucide-react';
 interface HeroSectionProps {
   title: string;
   subtitle: string;
-  ctaText: string;
-  ctaLink: string;
 }
 
 const HeroSection = ({
   title,
   subtitle,
-  ctaText,
-  ctaLink,
 }: HeroSectionProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { images, transitionTime } = getHeroSlideshowConfig();
@@ -81,23 +77,23 @@ const HeroSection = ({
             {subtitle}
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center sm:justify-center gap-4">
-            {/* Przycisk 1: Zobacz galerię */}
-            <a
-              href={ctaLink}
+          {/* Przycisk 1: Oferta */}
+          <a
+              href={import.meta.env.BASE_URL + "sets"}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md text-white bg-gingerbread hover:bg-gingerbread-dark transition-colors duration-300 text-base font-medium shadow-sm hover:shadow-md w-fit"
-            >
-              <Image className="w-5 h-5" />
-              {ctaText}
-            </a>
+          >
+              <Gift className="w-5 h-5" />
+              Sprawdź ofertę
+          </a>
 
-            {/* Przycisk 2: Skontaktuj się */}
-            <a
-              href={import.meta.env.BASE_URL + "contact"}
+          {/* Przycisk 2: Zobacz galerię */}
+          <a
+              href={import.meta.env.BASE_URL + "gallery"}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md text-white bg-gingerbread hover:bg-gingerbread-dark transition-colors duration-300 text-base font-medium shadow-sm hover:shadow-md w-fit"
-            >
-              <Mail className="w-5 h-5" />
-              Skontaktuj się
-            </a>
+          >
+              <Image className="w-5 h-5" />
+              Zobacz galerię
+          </a>
           </div>
         </div>
       </div>

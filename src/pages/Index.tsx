@@ -4,13 +4,22 @@ import { Link } from "react-router-dom";
 import HeroSection from "@/components/ui/HeroSection";
 import InstagramFeed from "@/components/ui/InstagramFeed";
 import ServiceCard from "@/components/ui/ServiceCard";
-import { Scissors, Sparkles, Clock, PaintBucket, ArrowRight } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { loadSets } from "@/utils/setsLoader";
 import { GiftSet } from "@/utils/setsLoader";
 import { getSortedCategories, Category } from "@/utils/categoriesLoader";
 import SetCard from "@/components/ui/SetCard";
 import CategoryCard from "@/components/ui/CategoryCard";
+import {
+  HandHeart,   // ręczna praca
+  Leaf,        // naturalne składniki
+  Brush,       // lukrowanie
+  Sparkles,    // dekoracje okolicznościowe
+  Gift,        // eleganckie pakowanie
+  Tag,         // bileciki, etykiety
+  Boxes,       // ikona przycisku „Oferta”
+  ArrowRight,
+} from "lucide-react";
 
 const Index = () => {
   const { elementRef: productsRef, isVisible: productsVisible } = useIntersectionObserver();
@@ -63,8 +72,6 @@ const Index = () => {
       <HeroSection 
           title="Witamy w świecie słodkiego rękodzieła"
           subtitle="Zajmujemy sie tworzeniem wyjątkowych ręcznie dekorowanych pierniczków."
-          ctaText="Zobacz galerię"
-          ctaLink={import.meta.env.BASE_URL + "gallery"}
         />
 
       
@@ -124,47 +131,63 @@ const Index = () => {
         {/* Services Section */}
         <section className="py-24 px-6 bg-cream/50">
           <div className="container mx-auto">
-            <div 
+            <div
               ref={servicesRef as React.RefObject<HTMLDivElement>}
               className={`text-center max-w-2xl mx-auto mb-12 transition-all duration-700 ${
-                servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                servicesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <h2 className="text-3xl font-bold mb-4">Oferowane usługi</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Dlaczego warto wybrać nasze pierniczki?
+              </h2>
+
               <p className="text-muted-foreground text-pretty">
-                Od zamówień indywidualnych po personalizowane wzory, oferuję szereg usług, by spełnić Twoją wizję.
+                Każdy pierniczek tworzymy ręcznie, z&nbsp;pasją i&nbsp;najlepszych składników,
+                a&nbsp;na końcu pakujemy go jak mały prezent – gotowy do wręczenia.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <ServiceCard 
-                title="Zamówienia indywidualne"
-                description="Zrealizuję Twoje unikalne pomysły, tworząc pierniczki w pełni dostosowane do Twoich wymagań."
-                icon={<Scissors size={24} />}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ServiceCard
+                title="Ręczne wykonanie"
+                description="Od wyrobienia ciasta po ostatnią kropkę lukru – 100 % handmade."
+                icon={<HandHeart size={24} />}
                 index={0}
               />
-              <ServiceCard 
-                title="Personalizacja"
-                description="Dodaj osobisty akcent z niestandardowymi napisami, monogramami lub specjalnymi dekoracjami."
-                icon={<Sparkles size={24} />}
+              <ServiceCard
+                title="Naturalne składniki"
+                description="Mąka, jajka, masło, miód naturalny, cukier, soda, kakao, przyprawy korzenne – nic sztucznego."
+                icon={<Leaf size={24} />}
                 index={1}
               />
-              <ServiceCard 
-                title="Szybka realizacja"
-                description="Potrzebujesz pierniczków na szybko? Priorytetowa obsługa dostępna dla pilnych zamówień."
-                icon={<Clock size={24} />}
+              <ServiceCard
+                title="Lukier królewski"
+                description="Każdy detal malujemy lukrem; kolory uzyskujemy barwnikami spożywczymi."
+                icon={<Brush size={24} />}
                 index={2}
               />
-              <ServiceCard 
-                title="Różne opcje wykończenia"
-                description="Wybieraj spośród różnych rodzajów lukru, posypek i kolorów, aby dopasować pierniczki do wystroju."
-                icon={<PaintBucket size={24} />}
+              <ServiceCard
+                title="Dekoracja na każdą okazję"
+                description="Święta, chrzest, urodziny, jubileusz – wzory dopasowujemy do wydarzenia."
+                icon={<Sparkles size={24} />}
                 index={3}
+              />
+              <ServiceCard
+                title="Eleganckie pakowanie"
+                description="Celofan lub pudełko prezentowe – zawsze przewiązane wstążką."
+                icon={<Gift size={24} />}
+                index={4}
+              />
+              <ServiceCard
+                title="Bileciki i etykiety"
+                description="Możemy dodać naklejkę, bilecik lub etykietę z Twoim tekstem."
+                icon={<Tag size={24} />}
+                index={5}
               />
             </div>
           </div>
         </section>
-        
+
         {/* Poprzednie realizacje - Section */}
         <section className="py-24 px-6">
           <div className="container mx-auto">
