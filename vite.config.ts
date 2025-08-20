@@ -10,7 +10,10 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    base: '/cheerful-baker-web/',
+    // Deploying under a custom domain requires assets to be served from the root
+    // rather than a repository subdirectory. Setting base to "/" ensures the
+    // build outputs correct absolute URLs for scripts and assets.
+    base: '/',
     server: {
       host: "localhost",
       port: 8080,
@@ -25,10 +28,11 @@ export default defineConfig(({ mode }) => {
       },
     },
     define: {
-      // Dodajemy globalną zmienną PUBLIC_URL dostępną w całej aplikacji
-      'process.env.PUBLIC_URL': JSON.stringify('/cheerful-baker-web/'),
+      // Globalne wskazanie ścieżki bazowej używanej przez komponenty
+      // podczas budowania na GitHub Pages z własną domeną
+      'process.env.PUBLIC_URL': JSON.stringify('/'),
       // Dla kompatybilności z Vite możemy też dodać:
-      'import.meta.env.PUBLIC_URL': JSON.stringify('/cheerful-baker-web/')
+      'import.meta.env.PUBLIC_URL': JSON.stringify('/')
     }
   }
 });
