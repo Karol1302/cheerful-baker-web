@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { getAssetUrl } from '@/utils/url';
 
-const logoUrl = `${process.env.PUBLIC_URL}/Logo.png`;
+const logoUrl = getAssetUrl('Logo.png');
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);

@@ -20,6 +20,7 @@ import {
   Boxes,       // ikona przycisku „Oferta”
   ArrowRight,
 } from "lucide-react";
+import { getAssetUrl } from "@/utils/url";
 
 const Index = () => {
   const { elementRef: productsRef, isVisible: productsVisible } = useIntersectionObserver();
@@ -212,7 +213,7 @@ const Index = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {categories.map((category, index) => {
                     const imageUrls = category.images
-                      ? category.images.slice(0, 4).map(img => `${import.meta.env.BASE_URL}${img.url}`)
+                      ? category.images.slice(0, 4).map(img => getAssetUrl(img.url))
                       : [];
 
                     const hasEnoughImages = imageUrls.length >= 4 && new Set(imageUrls).size >= 4;
@@ -223,7 +224,7 @@ const Index = () => {
                         id={category.id}
                         name={category.name}
                         description={category.description}
-                        thumbnail={category.thumbnail}
+                        thumbnail={getAssetUrl(category.thumbnail)}
                         index={index}
                         useCollage={hasEnoughImages}
                         collageImages={imageUrls}

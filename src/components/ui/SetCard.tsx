@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { getAssetUrl } from '@/utils/url';
 
 interface SetCardProps {
   id: string;
@@ -33,7 +34,7 @@ const SetCard = ({
         <div className="group overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-full">
           <div className="relative aspect-square overflow-hidden">
             <img
-              src={`${import.meta.env.BASE_URL}${thumbnail}`}
+              src={getAssetUrl(thumbnail)}
               alt={name}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />

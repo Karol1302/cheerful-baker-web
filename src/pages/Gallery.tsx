@@ -6,6 +6,7 @@ import { getSortedCategories } from "@/utils/configLoader";
 import type { Category } from "@/utils/categoriesLoader";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { getAssetUrl } from "@/utils/url";
 
 
 const Gallery = () => {
@@ -60,8 +61,8 @@ const Gallery = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((category, index) => {
               const hasEnoughImages = category.images && category.images.length >= 4;
-              const imageUrls = hasEnoughImages 
-                ? category.images.slice(0, 4).map(img => process.env.PUBLIC_URL + img.url)
+              const imageUrls = hasEnoughImages
+                ? category.images.slice(0, 4).map(img => getAssetUrl(img.url))
                 : [];
               
               return (
@@ -70,7 +71,7 @@ const Gallery = () => {
                   id={category.id}
                   name={category.name}
                   description={category.description}
-                  thumbnail={category.thumbnail}
+                  thumbnail={getAssetUrl(category.thumbnail)}
                   index={index}
                   useCollage={hasEnoughImages}
                   current={category.current}

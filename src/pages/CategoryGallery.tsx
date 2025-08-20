@@ -6,6 +6,7 @@ import { ChevronLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Category } from "@/utils/categoriesLoader";
 import { Badge } from "@/components/ui/badge";
+import { getAssetUrl } from "@/utils/url";
 
 const CategoryGallery = () => {
   const { categoryId } = useParams();
@@ -56,7 +57,7 @@ const CategoryGallery = () => {
     id: index + 1,
     title: img.description || `Image ${index + 1}`,
     description: img.description || "",
-    imageUrl: import.meta.env.BASE_URL + img.url
+    imageUrl: getAssetUrl(img.url)
   }));
 
   return (

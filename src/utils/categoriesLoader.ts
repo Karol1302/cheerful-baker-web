@@ -1,3 +1,4 @@
+import { getAssetUrl } from './url';
 
 export interface CategoryImage {
   url: string;
@@ -15,7 +16,7 @@ export interface Category {
 
 export const getCategoriesFromJson = async (): Promise<Category[]> => {
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}/categories/categories.json`);
+    const response = await fetch(getAssetUrl('categories/categories.json'));
     const data = await response.json();
     return data.categories;
   } catch (error) {

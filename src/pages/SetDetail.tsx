@@ -4,6 +4,7 @@ import ImageGallery from "@/components/ui/ImageGallery";
 import { getSet } from "@/utils/setsLoader";
 import { ChevronLeft } from "lucide-react";
 import { GiftSet } from "@/utils/setsLoader";
+import { getAssetUrl } from "@/utils/url";
 
 const SetDetail = () => {
   const { setId } = useParams();
@@ -57,7 +58,7 @@ const SetDetail = () => {
     id: index + 1,
     title: img.description || `Image ${index + 1}`,
     description: img.description || "",
-    imageUrl: process.env.PUBLIC_URL + img.url
+    imageUrl: getAssetUrl(img.url)
   }));
 
   // Single main image (first image)
