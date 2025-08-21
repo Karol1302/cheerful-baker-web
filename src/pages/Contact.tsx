@@ -30,8 +30,8 @@ const Contact = () => {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
             {/* Email Contact Option */}
             <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">

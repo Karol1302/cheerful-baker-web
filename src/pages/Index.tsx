@@ -97,35 +97,33 @@ const Index = () => {
                 <div className="w-8 h-8 border-4 border-gingerbread border-r-transparent rounded-full animate-spin"></div>
               </div>
             ) : currentSets.length > 0 ? (
-              <>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                  {currentSets.map((set, index) => (
-                    <SetCard
-                      key={set.id}
-                      id={set.id}
-                      name={set.name}
-                      description={set.shortDescription || set.description}
-                      thumbnail={set.thumbnail}
-                      index={index}
-                    />
-                  ))}
-                </div>
-                
-                <div className="mt-12 text-center">
-                  <Link 
-                    to="/sets" 
-                    className="inline-flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors group"
-                  >
-                    <span>Zobacz wszystkie zestawy</span>
-                    <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
-                  </Link>
-                </div>
-              </>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {currentSets.map((set, index) => (
+                  <SetCard
+                    key={set.id}
+                    id={set.id}
+                    name={set.name}
+                    description={set.shortDescription || set.description}
+                    thumbnail={set.thumbnail}
+                    index={index}
+                  />
+                ))}
+              </div>
             ) : (
               <div className="text-center text-muted-foreground">
                 <p>Aktualnie brak dostępnych zestawów. Sprawdź ponownie wkrótce!</p>
               </div>
             )}
+            
+            <div className="mt-12 text-center">
+              <Link 
+                to="/sets" 
+                className="inline-flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors group"
+              >
+                <span>Zobacz więcej</span>
+                <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
+              </Link>
+            </div>
           </div>
         </section>
         
