@@ -3,10 +3,16 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Mail, Instagram, Facebook, Phone } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Contact = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Kontakt – Pierniczki KiM";
+  }, []);
+
 
   return (
     <div className="pt-28 pb-24 px-6">

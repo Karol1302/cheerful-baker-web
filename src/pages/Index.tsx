@@ -31,6 +31,11 @@ const Index = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [categoriesLoading, setCategoriesLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = "Pierniczki KiM – Ręcznie dekorowane pierniczki";
+  }, []);
+
   
   // Load all sets
   useEffect(() => {

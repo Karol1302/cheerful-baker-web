@@ -14,6 +14,11 @@ const Sets = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Oferta – Pierniczki KiM";
+  }, []);
+
+
+  useEffect(() => {
     const loadData = async () => {
       setLoading(true);
       try {

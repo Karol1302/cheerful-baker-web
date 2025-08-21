@@ -16,6 +16,11 @@ const Gallery = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Galeria – Pierniczki KiM";
+  }, []);
+
+
+  useEffect(() => {
     const loadData = async () => {
       setLoading(true);
       try {
