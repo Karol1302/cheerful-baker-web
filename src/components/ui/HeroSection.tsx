@@ -36,8 +36,7 @@ const HeroSection = ({
       {/* Background Images */}
       {images.map((img, index) => (
         <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${
+          className={`absolute inset-0 transition-opacity [transition-duration:2000ms] ease-in-out ${
             currentImageIndex === index ? 'opacity-100' : 'opacity-0'
           }`}
           style={{ zIndex: currentImageIndex === index ? 1 : 0 }}
