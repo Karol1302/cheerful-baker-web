@@ -1,6 +1,6 @@
 
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { Mail, Instagram, Facebook } from "lucide-react";
+import { Mail, Instagram, Facebook, Phone } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -30,8 +30,8 @@ const Contact = () => {
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8">
             {/* Email Contact Option */}
             <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
@@ -64,6 +64,21 @@ const Contact = () => {
               </a>
             </div>
             
+            {/* Phone Contact Option */}
+            <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
+                <Phone size={28} className="text-gingerbread" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Telefon</h3>
+              <p className="text-muted-foreground mb-4">Zadzwoń bezpośrednio</p>
+              <a 
+                href="tel:+48123456789" 
+                className="text-gingerbread hover:text-gingerbread-dark transition-colors font-medium"
+              >
+                +48 123 456 789
+              </a>
+            </div>
+
             {/* Facebook Contact Option */}
             <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
@@ -80,14 +95,6 @@ const Contact = () => {
                 pierniczkikim
               </a>
             </div>
-          </div>
-          
-          <div className="mt-16 rounded-lg overflow-hidden shadow-md">
-            <img 
-              // src="/lovable-uploads/e0d8e338-2e85-404e-bdfe-3243338b4c91.png" 
-              alt="Pierniczki świąteczne" 
-              className="w-full object-cover h-64 md:h-96"
-            />
           </div>
         </div>
       </div>

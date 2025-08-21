@@ -49,16 +49,24 @@ const Sets = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h1 className="text-4xl font-bold mb-4">Zestawy</h1>
+          <h1 className="text-4xl font-bold mb-4">Oferta</h1>
           <p className="text-muted-foreground text-pretty">
-            Odkryj piękne zestawy pierniczków przygotowane na różne okazje. Wybierz jeden z gotowych 
-            zestawów lub skontaktuj się ze mną, aby stworzyć coś specjalnie dla Ciebie.
+            <span className="text-lg font-semibold">Pierniczki Kim</span>{" "}
+            to pracownia rękodzieła artystycznego, tworząca ręcznie od podstaw dekoracyjne pierniczki zdobione lukrem królewskim.
+            Nasze ciasteczka powstają z aromatycznych przypraw korzennych i naturalnych składników takich jak mąka, masło, cukier, jajka, soda, kakao oraz naturalny miód.
+            Składnikami lukru królewskiego są: białko w proszku (albumina), cukier puder oraz barwniki spożywcze. Pierniczki nasze sprzedawane są jako artykuł dekoracyjny. Świetnie nadają się na prezent z różnych okazji lub jako dekoracje na Boże Narodzenie lub Wielkanoc.
           </p>
         </div>
         
         {loading ? (
           <div className="flex justify-center">
             <div className="w-8 h-8 border-4 border-gingerbread border-r-transparent rounded-full animate-spin"></div>
+          </div>
+        ) : sets.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-lg">
+              Aktualnie brak dostępnych zestawów. Sprawdź ponownie wkrótce!
+            </p>
           </div>
         ) : (
           <div className="space-y-4 max-w-4xl mx-auto">
