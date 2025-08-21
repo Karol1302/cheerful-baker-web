@@ -1,5 +1,5 @@
 
-import { Mail, Instagram, Facebook } from 'lucide-react';
+import { Mail, Instagram, Facebook, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-3">
             <h3 className="text-xl font-semibold text-gingerbread">PierniczkiKiM</h3>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Tworzę wyjątkowe, ręcznie zdobione pierniczki, które idealnie pasują do Twojej wizji i wprowadzają ciepło do Twojego domu.
+              Tworzymy wyjątkowe pierniczki, ręcznie zdobione lukrem królewskim.
             </p>
           </div>
           
@@ -38,6 +38,17 @@ const Footer = () => {
             >
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all">
                 <Instagram size={24} className="text-gingerbread" />
+              </div>
+            </a>
+            
+            {/* Phone Contact Option */}
+            <a 
+              href="tel:+48123456789" 
+              className="hover:scale-110 transition-transform"
+              aria-label="Telefon"
+            >
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md transition-all">
+                <Phone size={24} className="text-gingerbread" />
               </div>
             </a>
             

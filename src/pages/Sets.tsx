@@ -45,7 +45,7 @@ const Sets = () => {
         </button>
         <div 
           ref={elementRef as React.RefObject<HTMLDivElement>}
-          className={`text-center px-4 sm:px-8 lg:max-w-4xl lg:mx-auto mb-16 transition-all duration-700 ${
+          className={`text-center px-2 sm:px-4 lg:px-8 max-w-full lg:max-w-4xl lg:mx-auto mb-16 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >

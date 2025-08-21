@@ -34,7 +34,7 @@ const InstagramFeed = () => {
         
         <div className="text-center mt-8">
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/pierniczkikim" 
             target="_blank" 
             rel="noreferrer noopener"
             className="inline-flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors"
