@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Cookie } from "lucide-react";
 import {
   Dialog,
@@ -16,18 +15,34 @@ import { toast } from "sonner";
 interface CookiePreferences {
   necessary: boolean;
   functional: boolean;
-  analytics: boolean;
-  marketing: boolean;
 }
+
+const SIDEBAR_COOKIE_NAME = "sidebar:state";
 
 const CookieSettings = () => {
   const [open, setOpen] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true,
-    functional: true,
-    analytics: false,
-    marketing: false,
+    functional: false
   });
+
+  useEffect(() => {
+  const stored = localStorage.getItem("cookiePreferences");
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored) as CookiePreferences;
+      setPreferences(parsed);
+      if (!parsed.functional) {
+        document.cookie = `${SIDEBAR_COOKIE_NAME}=; path=/; max-age=0`;
+      }
+    } catch {
+      /* ignore */
+    }
+  } else {
+    setOpen(true);
+  }
+}, []);
+
 
   const handleToggle = (type: keyof CookiePreferences) => {
     if (type === "necessary") return; // Necessary cookies can't be disabled
@@ -39,8 +54,10 @@ const CookieSettings = () => {
   };
 
   const savePreferences = () => {
-    // In a real app, this would save to localStorage or cookies
     localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
+    if (!preferences.functional) {
+      document.cookie = `${SIDEBAR_COOKIE_NAME}=; path=/; max-age=0`;
+    }
     toast.success("Ustawienia plików cookie zostały zapisane");
     setOpen(false);
   };
@@ -49,11 +66,10 @@ const CookieSettings = () => {
     const allAccepted = {
       necessary: true,
       functional: true,
-      analytics: true,
-      marketing: true,
     };
     setPreferences(allAccepted);
     localStorage.setItem("cookiePreferences", JSON.stringify(allAccepted));
+
     toast.success("Wszystkie pliki cookie zostały zaakceptowane");
     setOpen(false);
   };
@@ -94,38 +110,12 @@ const CookieSettings = () => {
               <div>
                 <h4 className="font-medium">Funkcjonalne</h4>
                 <p className="text-sm text-muted-foreground">
-                  Pliki cookie poprawiające funkcjonalność strony.
+                  Pliki cookie poprawiające funkcjonalność strony
                 </p>
               </div>
-              <Switch 
-                checked={preferences.functional} 
-                onCheckedChange={() => handleToggle("functional")} 
-              />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="font-medium">Analityczne</h4>
-                <p className="text-sm text-muted-foreground">
-                  Pliki cookie używane do analizy ruchu na stronie.
-                </p>
-              </div>
-              <Switch 
-                checked={preferences.analytics} 
-                onCheckedChange={() => handleToggle("analytics")} 
-              />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="font-medium">Marketingowe</h4>
-                <p className="text-sm text-muted-foreground">
-                  Pliki cookie używane do celów marketingowych.
-                </p>
-              </div>
-              <Switch 
-                checked={preferences.marketing} 
-                onCheckedChange={() => handleToggle("marketing")} 
+              <Switch
+                checked={preferences.functional}
+                onCheckedChange={() => handleToggle("functional")}
               />
             </div>
           </div>
