@@ -22,7 +22,7 @@ const InstagramFeed = () => {
         <div className="max-w-md mx-auto">
           <iframe
             src="https://www.instagram.com/reel/DMvf3DtM95V/embed"
-            width="400"
+            width="300"
             height="600"
             frameBorder="0"
             scrolling="no"

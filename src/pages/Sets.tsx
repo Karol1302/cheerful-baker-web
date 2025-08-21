@@ -51,11 +51,7 @@ const Sets = () => {
         >
           <h1 className="text-4xl font-bold mb-4">Oferta</h1>
           <p className="text-muted-foreground text-pretty">
-            <span className="text-lg font-semibold">Pierniczki Kim</span>{" "}
-            to pracownia rękodzieła artystycznego, tworząca ręcznie od podstaw dekoracyjne pierniczki zdobione lukrem królewskim.
-            Nasze ciasteczka powstają z aromatycznych przypraw korzennych i naturalnych składników takich jak mąka, masło, cukier, jajka, soda, kakao oraz naturalny miód.
-            Składnikami lukru królewskiego są: białko w proszku (albumina), cukier puder oraz barwniki spożywcze. Pierniczki nasze sprzedawane są jako artykuł dekoracyjny. Świetnie nadają się na prezent z różnych okazji lub jako dekoracje na Boże Narodzenie lub Wielkanoc.
-          </p>
+            Tutaj znajdziesz nasze aktualne zestawy pierniczków dekoracyjnych, dostępne do zamówienia</p>
         </div>
         
         {loading ? (

@@ -141,8 +141,7 @@ const Index = () => {
               </h2>
 
               <p className="text-muted-foreground text-pretty">
-                Każdy pierniczek tworzymy ręcznie, z&nbsp;pasją i&nbsp;najlepszych składników,
-                a&nbsp;na końcu pakujemy go jak mały prezent – gotowy do wręczenia.
+                Pierniczki KiM to pracownia rękodzieła artystycznego,&nbsp;tworząca od podstaw dekoracyjne pierniczki&nbsp;zdobione lukrem królewskim.
               </p>
             </div>
 
@@ -161,19 +160,19 @@ const Index = () => {
               />
               <ServiceCard
                 title="Lukier królewski"
-                description="Każdy detal malujemy lukrem; kolory uzyskujemy barwnikami spożywczymi."
+                description="Każdy detal tworzymy lukrem z białka w proszku (albumina), cukru pudru i barwników spożywczych."
                 icon={<Brush size={24} />}
                 index={2}
               />
               <ServiceCard
                 title="Dekoracja na każdą okazję"
-                description="Święta, chrzest, urodziny, jubileusz – wzory dopasowujemy do wydarzenia."
+                description="Pierniczki oferujemy jako artykuł dekoracyjny – idealne na święta, urodziny, jubileusze i inne wyjątkowe chwile."
                 icon={<Sparkles size={24} />}
                 index={3}
               />
               <ServiceCard
                 title="Eleganckie pakowanie"
-                description="Celofan lub pudełko prezentowe – zawsze przewiązane wstążką."
+                description="Celofan lub pudełko prezentowe – zawsze przewiązane wstążką, gotowe do wręczenia jako prezent."
                 icon={<Gift size={24} />}
                 index={4}
               />
