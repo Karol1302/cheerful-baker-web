@@ -76,7 +76,7 @@ const CookieSettings = () => {
 
   return (
     <>
-      <div className="fixed bottom-6 left-6 z-50">
+      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 md:left-6 md:transform-none z-50">
         <button
           onClick={() => setOpen(true)}
           className="bg-gingerbread text-white p-3 rounded-full shadow-lg hover:bg-gingerbread-dark transition-colors"

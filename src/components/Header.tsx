@@ -63,7 +63,7 @@ const Header = () => {
   return (
       <header
         className={`fixed top-0 left-0 right-0 z-50 py-2 transition-[background-color,backdrop-filter] duration-400 ${
-          scrolled ? 'bg-white/90 backdrop-blur shadow-md' : 'bg-transparent backdrop-blur-0 shadow-none'
+          scrolled || (sidebarOpen && isMobile) ? 'bg-white/90 backdrop-blur shadow-md' : 'bg-transparent backdrop-blur-0 shadow-none'
         }`}
       >
 
