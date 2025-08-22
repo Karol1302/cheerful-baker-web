@@ -76,7 +76,7 @@ const CookieSettings = () => {
 
   return (
     <>
-      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 md:left-6 md:transform-none z-50">
+      <div className="fixed bottom-6 left-6 z-50">
         <button
           onClick={() => setOpen(true)}
           className="bg-gingerbread text-white p-3 rounded-full shadow-lg hover:bg-gingerbread-dark transition-colors"
@@ -87,7 +87,7 @@ const CookieSettings = () => {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-md md:fixed md:bottom-6 md:left-6 md:top-auto md:left-6 md:translate-x-0 md:translate-y-0">
           <DialogHeader>
             <DialogTitle>Ustawienia plików cookie</DialogTitle>
             <DialogDescription>
