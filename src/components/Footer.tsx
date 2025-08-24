@@ -43,7 +43,7 @@ const Footer = () => {
             
             {/* Phone Contact Option */}
             <a 
-              href="tel:+48123456789" 
+              href="tel:+48608814596" 
               className="hover:scale-110 transition-transform"
               aria-label="Telefon"
             >
