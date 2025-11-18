@@ -102,7 +102,7 @@ const Index = () => {
                 <div className="w-8 h-8 border-4 border-gingerbread border-r-transparent rounded-full animate-spin"></div>
               </div>
             ) : currentSets.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 min-[340px]:grid-cols-2 min-[600px]:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {currentSets.map((set, index) => (
                   <SetCard
                     key={set.id}
@@ -212,7 +212,7 @@ const Index = () => {
               </div>
             ) : categories.length > 0 ? (
               <>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 min-[350px]:grid-cols-2 min-[400px]:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {categories.map((category, index) => {
                     const imageUrls = category.images
                       ? category.images.slice(0, 4).map(img => getAssetUrl(img.url))

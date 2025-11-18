@@ -39,12 +39,12 @@ const SetCard = ({
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          <div className="p-4 bg-white">
+          <div className="p-2 md:p-4 bg-white">
             <h3 className="font-medium text-foreground group-hover:text-gingerbread transition-colors">
               {name}
             </h3>
             {description && (
-              <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+              <p className="hidden md:block text-sm text-muted-foreground mt-1 line-clamp-2">
                 {description}
               </p>
             )}

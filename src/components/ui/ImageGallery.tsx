@@ -12,11 +12,29 @@ interface GalleryItem {
 
 interface ImageGalleryProps {
   items: GalleryItem[];
+  // Props for external control/lightbox mode
+  isLightbox?: boolean;
+  startIndex?: number;
+  onClose?: () => void;
+  onImageClick?: (index: number) => void;
 }
 
-const ImageGallery = ({ items }: ImageGalleryProps) => {
-  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+const ImageGallery = ({ 
+  items, 
+  isLightbox = false, // Domyślnie tryb siatki
+  startIndex = 0,     // Domyślnie start z indeksu 0
+  onClose,            // Funkcja zamykająca Lightboxa z zewnątrz (używana w SetDetail)
+  onImageClick        // Handler kliknięcia (używany w SetDetail)
+}: ImageGalleryProps) => {
+  
+  // W trybie Lightboxa używamy stanu do śledzenia aktualnie wybranego zdjęcia, 
+  // inicjujemy go na podstawie startIndex.
+  const [internalSelectedIndex, setInternalSelectedIndex] = useState(isLightbox ? startIndex : 0);
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(isLightbox ? items[startIndex] : null);
+  
+  // W trybie Lightboxa to ten prop mówi nam, że jest otwarty. W trybie siatki - selectedImage.
+  const isLightboxOpen = isLightbox || selectedImage !== null;
+
   const { elementRef, isVisible } = useIntersectionObserver();
 
   // Track touch for swipe detection
@@ -26,43 +44,59 @@ const ImageGallery = ({ items }: ImageGalleryProps) => {
   // Required minimum distance in px to be considered a swipe
   const minSwipeDistance = 50;
 
+  // Efekt do obsługi początkowego stanu Lightboxa w trybie zewnętrznym
+  useEffect(() => {
+    if (isLightbox && items.length > 0) {
+      document.body.style.overflow = 'hidden';
+      // Synchronizacja stanów na podstawie propsów zewnętrznych
+      setSelectedImage(items[startIndex]);
+      setInternalSelectedIndex(startIndex);
+    }
+  }, [isLightbox, items, startIndex]);
+
+
   const openLightbox = (item: GalleryItem) => {
     setSelectedImage(item);
     const index = items.findIndex(i => i.id === item.id);
-    setCurrentIndex(index);
+    setInternalSelectedIndex(index);
     document.body.style.overflow = 'hidden';
   };
 
-  const closeLightbox = () => {
-    setSelectedImage(null);
+  // Ujednolicona funkcja zamykania
+  const handleClose = () => {
+    if (isLightbox && onClose) {
+        onClose(); // Użyj zewnętrznej funkcji onClose w trybie Lightboxa (dla SetDetail)
+    } else {
+        setSelectedImage(null); // Użyj wewnętrznej w trybie siatki (gdy jest używana jako samodzielna galeria)
+    }
     document.body.style.overflow = 'auto';
   };
 
   const navigateToImage = useCallback((direction: 'next' | 'prev') => {
-    if (!selectedImage) return;
+    if (!isLightboxOpen) return;
     
     let newIndex;
     if (direction === 'next') {
-      newIndex = (currentIndex + 1) % items.length;
+      newIndex = (internalSelectedIndex + 1) % items.length;
     } else {
-      newIndex = (currentIndex - 1 + items.length) % items.length;
+      newIndex = (internalSelectedIndex - 1 + items.length) % items.length;
     }
     
-    setCurrentIndex(newIndex);
+    setInternalSelectedIndex(newIndex);
     setSelectedImage(items[newIndex]);
-  }, [selectedImage, currentIndex, items]);
+  }, [isLightboxOpen, internalSelectedIndex, items]);
 
   // Handle keyboard navigation
-  useEffect(() => {
+useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (!selectedImage) return;
+      if (!isLightboxOpen) return;
       
       if (event.key === 'ArrowRight') {
         navigateToImage('next');
       } else if (event.key === 'ArrowLeft') {
         navigateToImage('prev');
       } else if (event.key === 'Escape') {
-        closeLightbox();
+        handleClose();
       }
     };
 
@@ -95,48 +129,89 @@ const ImageGallery = ({ items }: ImageGalleryProps) => {
       navigateToImage('prev');
     }
   };
+    // Ograniczenie liczby miniaturek w trybie siatki (obok głównego zdjęcia)
+  const maxVisibleThumbnails = 6;
+  const isGridMode = !isLightbox;
 
-  return (
-    <>
-      <div 
-        ref={elementRef as React.RefObject<HTMLDivElement>}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
-        {items.map((item, index) => (
-          <div
-            key={item.id}
-            className={`cursor-pointer group overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all duration-300 ${
-              isVisible 
-                ? 'opacity-100 scale-100' 
-                : 'opacity-0 scale-95'
+  const visibleItems = isGridMode
+    ? items.slice(0, maxVisibleThumbnails)
+    : items;
+
+  const extraCount = isGridMode
+    ? Math.max(0, items.length - maxVisibleThumbnails)
+    : 0;
+
+return (
+  <>
+      {!isLightbox && ( 
+        <div 
+          className="flex justify-end w-full"
+        >
+          <div 
+            ref={elementRef as React.RefObject<HTMLDivElement>}
+            // klucz: odwracamy kierunek układu grida (zaczynamy od prawej)
+            style={{ direction: 'rtl' }}
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full transition-opacity duration-500 ${
+              isVisible ? 'opacity-100' : 'opacity-0'
             }`}
-            style={{ transitionDelay: `${index * 100}ms` }}
-            onClick={() => openLightbox(item)}
           >
-            <div className="aspect-square overflow-hidden">
-              <img
-                src={item.imageUrl}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            {/* Caption removed from grid view as requested */}
-          </div>
-        ))}
-      </div>
+            {visibleItems.map((item, index) => {
+              const isLastVisible = index === visibleItems.length - 1;
+              const showOverlayCount = extraCount > 0 && isLastVisible && isGridMode;
 
-      {/* Lightbox - Captions only shown here */}
-      {selectedImage && (
+              return (
+                <div
+                  key={item.id}
+                  // a tu przywracamy normalny kierunek dla zawartości
+                  dir="ltr"
+                  className={`cursor-pointer group overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all duration-300 ${
+                    isVisible 
+                      ? 'opacity-100 scale-100' 
+                      : 'opacity-0 scale-95'
+                  }`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                  onClick={() => {
+                    if (onImageClick) {
+                      onImageClick(index);
+                    } else {
+                      openLightbox(item);
+                    }
+                  }}
+                >
+                  <div className="aspect-square overflow-hidden relative">
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {showOverlayCount && (
+                      <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                        <span className="text-white text-lg font-semibold">
+                          +{extraCount}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Lightbox - reszta bez zmian */}
+
+      {isLightboxOpen && selectedImage && (
         <div 
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in"
-          onClick={closeLightbox}
+          onClick={handleClose}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
           <button 
             className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
-            onClick={closeLightbox}
+            onClick={handleClose}
             aria-label="Close lightbox"
           >
             <X size={32} />
@@ -177,9 +252,9 @@ const ImageGallery = ({ items }: ImageGalleryProps) => {
             />
             <div className="mt-4 text-white">
               <h3 className="text-xl font-semibold">{selectedImage.title}</h3>
-              {selectedImage.description && (
+              {/* {selectedImage.description && (
                 <p className="text-gray-300 mt-2">{selectedImage.description}</p>
-              )}
+              )} */}
             </div>
           </div>
         </div>

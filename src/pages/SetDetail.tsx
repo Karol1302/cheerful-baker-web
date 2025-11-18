@@ -12,6 +12,17 @@ const SetDetail = () => {
   const [set, setSet] = useState<GiftSet | null>(null);
   const [loading, setLoading] = useState(true);
   const [animateIn, setAnimateIn] = useState(false);
+  // Stan do zarządzania otwartą galerią (lightboxem)
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState<number | null>(null);
+
+  // Funkcje do kontroli lightboxa
+  const openGallery = (index: number) => {
+    setCurrentGalleryIndex(index);
+  };
+
+  const closeGallery = () => {
+    setCurrentGalleryIndex(null);
+  };
 
   // Trigger animation on mount
   useEffect(() => {
@@ -77,45 +88,75 @@ const SetDetail = () => {
           <span>Powrót do zestawów</span>
         </button>
 
-        {/* Grid layout: left side text, right side image */}
+                {/* Grid layout: left side text + thumbnails, right side image */}
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-700 ${
             animateIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Left column: title, price, description */}
-          <div className="space-y-6 text-left">
+          {/* Left column: title, price, description + thumbnails */}
+          <div className="flex flex-col gap-6 text-left">
             <h1 className="text-3xl md:text-4xl font-bold">
               {set.name}
             </h1>
             <span className="text-2xl font-bold text-gingerbread block">
               {set.price}
             </span>
-            <div className="text-muted-foreground text-pretty">
+
+            {/* Opis – lekko ograniczamy wysokość, żeby zrobić miejsce na miniatury */}
+            <div className="text-muted-foreground text-pretty md:max-h-64 md:overflow-auto">
               {set.description.split("\n").map((paragraph, idx) => (
                 <p key={idx} className="mb-4 last:mb-0">
                   {paragraph}
                 </p>
               ))}
             </div>
+
+            {/* Miniatury obok głównego zdjęcia – pod opisem, wyrównane do prawej */}
+            {extraImages.length > 0 && (
+              <div className="mt-4 flex justify-end">
+                <ImageGallery 
+                  items={extraImages} 
+                  onImageClick={(index) => openGallery(index + 1)}
+                />
+              </div>
+            )}
           </div>
 
           {/* Right column: main image */}
           <div className="flex items-center justify-center">
-            <img
-              src={mainImage.imageUrl}
-              alt={mainImage.title}
-              className="w-full h-auto object-cover rounded-lg shadow-md"
-            />
+            <button
+              onClick={() => openGallery(0)} // Otwórz pełną galerię zaczynając od pierwszego zdjęcia (index 0)
+              className="w-full h-auto p-0 border-none bg-transparent cursor-pointer"
+            >
+              <img
+                src={mainImage.imageUrl}
+                alt={mainImage.title}
+                className="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-90 transition-opacity"
+              />
+            </button>
           </div>
         </div>
 
-        {/* Additional images below grid */}
-        {extraImages.length > 0 && (
-          <div className="max-w-4xl mx-auto">
-            <ImageGallery items={extraImages} />
-          </div>
+        {/* UWAGA: USUWAMY stary blok z extraImages pod gridem */}
+        {currentGalleryIndex !== null && (
+          <ImageGallery 
+            items={galleryItems} // Używamy pełnej listy zdjęć
+            startIndex={currentGalleryIndex}
+            onClose={closeGallery}
+            isLightbox={true}
+          />
         )}
+
+
+        {currentGalleryIndex !== null && (
+          <ImageGallery 
+            items={galleryItems} // Używamy pełnej listy zdjęć
+            startIndex={currentGalleryIndex}
+            onClose={closeGallery}
+            isLightbox={true} // Dodaj ten prop, jeśli ImageGallery ma tryb lightboxa
+          />
+          )}
       </div>
     </div>
   );

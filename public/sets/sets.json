@@ -1,3 +1,107 @@
 {
-  "sets": []
+  "sets": [
+    {
+      "id": "balwanek-duzy",
+      "name": "Bałwanek duży",
+      "description": "Bałwanek duży 9,5cm",
+      "thumbnail": "/sets/balwanek_duzy.png",
+      "price": "19 zł",
+      "images":[
+        {
+          "url": "/sets/balwanek_duzy.png",
+          "description": "Bałwanek duży 9,5cm"
+        },
+        {
+          "url": "/sets/balwanki.png",
+          "description": "Bałwanki duży (po lewej) i mały (po prawej)"
+        }
+      ]
+    },
+        {
+      "id": "domek_bialy",
+      "name": "Domek biały",
+      "description": "Domek biały 9cm",
+      "thumbnail": "/sets/domek_bialy.png",
+      "price": "17 zł",
+      "images":[
+        {
+          "url": "/sets/domek_bialy.png",
+          "description": "Domek biały 9cm"
+        }
+      ]
+    },
+    {
+      "id": "balwanek_maly",
+      "name": "Bałwanek mały",
+      "description": "Bałwanek duży 8,5cm",
+      "thumbnail": "/sets/balwanek_maly.png",
+      "price": "16 zł",
+      "images":[
+        {
+          "url": "/sets/balwanek_maly.png",
+          "description": "Bałwanek mały 8,5cm"
+        },
+        {
+          "url": "/sets/balwanki.png",
+          "description": "Bałwanki duży (po lewej) i mały (po prawej)"
+        }
+      ]
+    },
+        {
+      "id": "choinka",
+      "name": "Choinka z czerwonymi owocami",
+      "description": "Choinka z czerwonymi owocami 9,5cm",
+      "thumbnail": "/sets/choinka.png",
+      "price": "17 zł",
+      "images":[
+        {
+          "url": "/sets/choinka.png",
+          "description": "Choinka z czerwonymi owocami 9,5cm"
+        }
+      ]
+    },
+    {
+      "id": "skarpeta",
+      "name": "Skarpeta z prezentami",
+      "description": "Skarpeta z prezentami 10cm",
+      "thumbnail": "/sets/skarpeta.png",
+      "price": "17 zł",
+      "images":[
+        {
+          "url": "/sets/skarpeta.png",
+          "description": "Skarpeta z prezentami 10cm"
+        },
+        {
+          "url": "/sets/skarpeta_2.png",
+          "description": "Skarpeta z prezentami 10cm"
+        }
+      ]
+    },
+    {
+      "id": "gwiazdka",
+      "name": "Gwiazdka z czerwonymi owocami",
+      "description": "Gwiazdka z czerwonymi owocami 9,5cm",
+      "thumbnail": "/sets/gwiazdka.png",
+      "price": "17 zł",
+      "images":[
+        {
+          "url": "/sets/gwiazdka.png",
+          "description": "Gwiazdka z czerwonymi owocami 9,5cm"
+        }
+      ]
+    },
+    {
+      "id": "rekawica",
+      "name": "Zielona rękawica",
+      "description": "Zielona rękawica 8cm",
+      "thumbnail": "/sets/rekawica.png",
+      "price": "17 zł",
+      "images":[
+        {
+          "url": "/sets/rekawica.png",
+          "description": "Zielona rękawica 8cm"
+        }
+      ]
+    }
+  ]
 }

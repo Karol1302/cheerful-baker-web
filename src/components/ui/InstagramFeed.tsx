@@ -26,7 +26,6 @@ const InstagramFeed = () => {
             height="600"
             frameBorder="0"
             scrolling="no"
-            allowTransparency={true}
             className="mx-auto rounded-lg shadow-md"
             title="Instagram Reel"
           ></iframe>

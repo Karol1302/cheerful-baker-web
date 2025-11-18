@@ -36,6 +36,7 @@ const HeroSection = ({
       {/* Background Images */}
       {images.map((img, index) => (
         <div
+          key={img + index}
           className={`absolute inset-0 transition-opacity [transition-duration:2000ms] ease-in-out ${
             currentImageIndex === index ? 'opacity-100' : 'opacity-0'
           }`}
@@ -50,6 +51,7 @@ const HeroSection = ({
           <div className="absolute inset-0 bg-white opacity-75"></div>
         </div>
       ))}
+
 
       {/* Fallback dla no-JS */}
       <noscript>
