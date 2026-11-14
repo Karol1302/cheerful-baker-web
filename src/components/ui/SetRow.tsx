@@ -10,7 +10,6 @@ interface SetRowProps {
   description: string;
   price: string;
   thumbnail: string;
-  index: number;
 }
 
 const SetRow = ({
@@ -18,18 +17,16 @@ const SetRow = ({
   name,
   description,
   price,
-  thumbnail,
-  index
+  thumbnail
 }: SetRowProps) => {
-  const { elementRef, isVisible } = useIntersectionObserver();
+  const { elementRef, isVisible } = useIntersectionObserver({ rootMargin: '200px 0px' });
 
   return (
     <div
       ref={elementRef as React.RefObject<HTMLDivElement>}
-      className={`transition-all duration-500 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      className={`transition-all duration-200 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
       }`}
-      style={{ transitionDelay: `${index * 100}ms` }}
     >
       <Link
         to={`/sets/${id}`}

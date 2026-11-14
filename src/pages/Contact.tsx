@@ -39,68 +39,44 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
             {/* Email Contact Option */}
-            <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <a href="mailto:kimdekoracje@wp.pl" className="group block bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gingerbread transition-all duration-300 transform hover:-translate-y-1">
               <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mail size={28} className="text-gingerbread" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Email</h3>
               <p className="text-muted-foreground mb-4">Napisz do mnie email</p>
-              <a 
-                href="mailto:kontakt@pierniczkikim.pl" 
-                className="text-gingerbread hover:text-gingerbread-dark transition-colors font-medium"
-              >
-                kontakt@pierniczkikim.pl
-              </a>
-            </div>
+              <span className="text-gingerbread group-hover:text-gingerbread-dark transition-colors font-medium">kimdekoracje@wp.pl</span>
+            </a>
             
             {/* Instagram Contact Option */}
-            <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <a href="https://instagram.com/pierniczkikim" target="_blank" rel="noopener noreferrer" className="group block bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gingerbread transition-all duration-300 transform hover:-translate-y-1">
               <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
                 <Instagram size={28} className="text-gingerbread" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Instagram</h3>
               <p className="text-muted-foreground mb-4">Obserwuj najnowsze kreacje</p>
-              <a 
-                href="https://instagram.com/pierniczkikim" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gingerbread hover:text-gingerbread-dark transition-colors font-medium"
-              >
-                @pierniczkikim
-              </a>
-            </div>
+              <span className="text-gingerbread group-hover:text-gingerbread-dark transition-colors font-medium">@pierniczkikim</span>
+            </a>
             
             {/* Phone Contact Option */}
-            <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <a href="tel:+48608814596" className="group block bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gingerbread transition-all duration-300 transform hover:-translate-y-1">
               <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
                 <Phone size={28} className="text-gingerbread" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Telefon</h3>
               <p className="text-muted-foreground mb-4">Zadzwoń bezpośrednio</p>
-              <a 
-                href="tel:+48608814596" 
-                className="text-gingerbread hover:text-gingerbread-dark transition-colors font-medium"
-              >
-                +48 608 814 596
-              </a>
-            </div>
+              <span className="text-gingerbread group-hover:text-gingerbread-dark transition-colors font-medium">+48 608 814 596</span>
+            </a>
 
             {/* Facebook Contact Option */}
-            <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <a href="https://facebook.com/pierniczkikim" target="_blank" rel="noopener noreferrer" className="group block bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gingerbread transition-all duration-300 transform hover:-translate-y-1">
               <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-6">
                 <Facebook size={28} className="text-gingerbread" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Facebook</h3>
               <p className="text-muted-foreground mb-4">Dołącz do społeczności</p>
-              <a 
-                href="https://facebook.com/pierniczkikim" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gingerbread hover:text-gingerbread-dark transition-colors font-medium"
-              >
-                pierniczkikim
-              </a>
-            </div>
+              <span className="text-gingerbread group-hover:text-gingerbread-dark transition-colors font-medium">pierniczkikim</span>
+            </a>
           </div>
         </div>
       </div>

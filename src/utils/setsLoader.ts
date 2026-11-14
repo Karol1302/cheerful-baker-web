@@ -5,14 +5,17 @@ interface SetImage {
   description: string;
 }
 
+export type OfferTag = 'zestaw' | 'pojedynczy';
+
 export interface GiftSet {
   id: string;
   name: string;
   description: string;
-  shortDescription: string;
+  shortDescription?: string;
   thumbnail: string;
   price: string;
-  current: boolean; // Keeping for backward compatibility with data
+  tag: OfferTag;
+  current?: boolean; // Keeping for backward compatibility with data
   images: SetImage[];
 }
 
@@ -20,7 +23,8 @@ export const getSetsFromJson = async (): Promise<GiftSet[]> => {
   try {
     const response = await fetch(getAssetUrl('sets/sets.json'));
     const data = await response.json();
-    return data.sets;
+    // Nowe wpisy dopisujemy na końcu pliku, a na stronie pokazujemy je od najnowszego.
+    return [...data.sets].reverse();
   } catch (error) {
     console.error("Failed to load sets:", error);
     return [];
@@ -50,9 +54,8 @@ export const getSortedSets = async (): Promise<GiftSet[]> => {
 // Get limited sets for homepage (for backward compatibility)
 export const getCurrentSets = async (limit?: number): Promise<GiftSet[]> => {
   const sets = await loadSets();
-  const sortedSets = [...sets].sort((a, b) => a.name.localeCompare(b.name));
   if (limit) {
-    return sortedSets.slice(0, limit);
+    return sets.slice(0, limit);
   }
-  return sortedSets;
+  return sets;
 };

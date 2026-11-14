@@ -9,6 +9,8 @@ interface SetCardProps {
   description: string;
   thumbnail: string;
   index: number;
+  price?: string;
+  showDescriptionOnMobile?: boolean;
 }
 
 const SetCard = ({ 
@@ -16,9 +18,11 @@ const SetCard = ({
   name, 
   description, 
   thumbnail, 
-  index
+  index,
+  price,
+  showDescriptionOnMobile = false,
 }: SetCardProps) => {
-  const { elementRef, isVisible } = useIntersectionObserver();
+  const { elementRef, isVisible } = useIntersectionObserver({ rootMargin: '200px 0px' });
 
   return (
     <div
@@ -26,9 +30,9 @@ const SetCard = ({
       className={`transition-all duration-300 w-full ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-10'
+          : 'opacity-0 translate-y-2'
       }`}
-      style={{ transitionDelay: `${index * 100}ms` }}
+      style={{ transitionDelay: `${Math.min(index * 30, 90)}ms` }}
     >
       <Link to={`/sets/${id}`} className="block h-full">
         <div className="group overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-full">
@@ -44,10 +48,11 @@ const SetCard = ({
               {name}
             </h3>
             {description && (
-              <p className="hidden md:block text-sm text-muted-foreground mt-1 line-clamp-2">
+              <p className={`${showDescriptionOnMobile ? '' : 'hidden md:block'} text-sm text-muted-foreground mt-1 line-clamp-2`}>
                 {description}
               </p>
             )}
+            {price && <p className="mt-2 font-medium text-gingerbread-dark">{price}</p>}
           </div>
         </div>
       </Link>

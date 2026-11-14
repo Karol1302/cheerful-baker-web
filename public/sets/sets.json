@@ -6,7 +6,8 @@
       "description": "Bałwanek duży 9,5cm",
       "thumbnail": "/sets/balwanek_duzy.png",
       "price": "19 zł",
-      "images":[
+      "tag": "pojedynczy",
+      "images": [
         {
           "url": "/sets/balwanek_duzy.png",
           "description": "Bałwanek duży 9,5cm"
@@ -17,13 +18,14 @@
         }
       ]
     },
-        {
+    {
       "id": "domek_bialy",
       "name": "Domek biały",
       "description": "Domek biały 9cm",
       "thumbnail": "/sets/domek_bialy.png",
       "price": "17 zł",
-      "images":[
+      "tag": "pojedynczy",
+      "images": [
         {
           "url": "/sets/domek_bialy.png",
           "description": "Domek biały 9cm"
@@ -33,10 +35,11 @@
     {
       "id": "balwanek_maly",
       "name": "Bałwanek mały",
-      "description": "Bałwanek duży 8,5cm",
+      "description": "Bałwanek mały 8,5cm",
       "thumbnail": "/sets/balwanek_maly.png",
       "price": "16 zł",
-      "images":[
+      "tag": "pojedynczy",
+      "images": [
         {
           "url": "/sets/balwanek_maly.png",
           "description": "Bałwanek mały 8,5cm"
@@ -47,13 +50,14 @@
         }
       ]
     },
-        {
+    {
       "id": "choinka",
       "name": "Choinka z czerwonymi owocami",
       "description": "Choinka z czerwonymi owocami 9,5cm",
       "thumbnail": "/sets/choinka.png",
       "price": "17 zł",
-      "images":[
+      "tag": "pojedynczy",
+      "images": [
         {
           "url": "/sets/choinka.png",
           "description": "Choinka z czerwonymi owocami 9,5cm"
@@ -66,7 +70,8 @@
       "description": "Skarpeta z prezentami 10cm",
       "thumbnail": "/sets/skarpeta.png",
       "price": "17 zł",
-      "images":[
+      "tag": "pojedynczy",
+      "images": [
         {
           "url": "/sets/skarpeta.png",
           "description": "Skarpeta z prezentami 10cm"
@@ -83,7 +88,8 @@
       "description": "Gwiazdka z czerwonymi owocami 9,5cm",
       "thumbnail": "/sets/gwiazdka.png",
       "price": "17 zł",
-      "images":[
+      "tag": "pojedynczy",
+      "images": [
         {
           "url": "/sets/gwiazdka.png",
           "description": "Gwiazdka z czerwonymi owocami 9,5cm"
@@ -96,10 +102,623 @@
       "description": "Zielona rękawica 8cm",
       "thumbnail": "/sets/rekawica.png",
       "price": "17 zł",
-      "images":[
+      "tag": "pojedynczy",
+      "images": [
         {
           "url": "/sets/rekawica.png",
           "description": "Zielona rękawica 8cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-01-bialy-mis",
+      "name": "Biały Miś",
+      "description": "Biały miś, 9 cm",
+      "shortDescription": "Biały miś, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/01-bialy-mis/01.jpg",
+      "price": "20 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/01-bialy-mis/01.jpg",
+          "description": "Biały miś, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-02-glowa-mikolaja",
+      "name": "Głowa Mikołaja",
+      "description": "Głowa Mikołaja, 9 cm",
+      "shortDescription": "Głowa Mikołaja, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/02-glowa-mikolaja/02.jpg",
+      "price": "19 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/02-glowa-mikolaja/02.jpg",
+          "description": "Głowa Mikołaja, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-mikolaj",
+      "name": "Mikołaj",
+      "description": "Mikołaj postać, 9 cm",
+      "shortDescription": "Mikołaj postać, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/03-mikolaj/03.jpg",
+      "price": "19 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/03-mikolaj/03.jpg",
+          "description": "Mikołaj postać, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-glowa-mikolaja",
+      "name": "Głowa Mikołaja",
+      "description": "Głowa Mikołaja z ostrokrzewem, 9 cm",
+      "shortDescription": "Głowa Mikołaja z ostrokrzewem, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/04-glowa-mikolaja/04.jpg",
+      "price": "20 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/04-glowa-mikolaja/04.jpg",
+          "description": "Głowa Mikołaja z ostrokrzewem, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-05-biala-sniezynka",
+      "name": "Biała śnieżynka",
+      "description": "Biała śnieżynka, 9 cm",
+      "shortDescription": "Biała śnieżynka, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/05-biala-sniezynka/05.jpg",
+      "price": "12 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/05-biala-sniezynka/05.jpg",
+          "description": "Biała śnieżynka, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-osniezona-choinka",
+      "name": "Ośnieżona choinka",
+      "description": "Ośnieżona choinka zielona, 11 cm",
+      "shortDescription": "Ośnieżona choinka zielona, 11 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/06-osniezona-choinka/06.jpg",
+      "price": "16 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/06-osniezona-choinka/06.jpg",
+          "description": "Ośnieżona choinka zielona, 11 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-domek-zielony",
+      "name": "Domek zielony",
+      "description": "Domek zielony, 10,5 cm",
+      "shortDescription": "Domek zielony, 10,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/07-domek-zielony/07.jpg",
+      "price": "22 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/07-domek-zielony/07.jpg",
+          "description": "Domek zielony, 10,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-kamieniczka",
+      "name": "Kamieniczka",
+      "description": "Kamieniczka, 13,5 cm",
+      "shortDescription": "Kamieniczka, 13,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/08-kamieniczka/08.jpg",
+      "price": "12 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/08-kamieniczka/08.jpg",
+          "description": "Kamieniczka, 13,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-domek",
+      "name": "Domek",
+      "description": "Chatka z piernika, 9,5 cm",
+      "shortDescription": "Chatka z piernika, 9,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/09-domek/09.jpg",
+      "price": "17 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/09-domek/09.jpg",
+          "description": "Chatka z piernika, 9,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-skarpeta-z-prezentami",
+      "name": "Skarpeta z prezentami",
+      "description": "Skarpeta z prezentami, 9 cm",
+      "shortDescription": "Skarpeta z prezentami, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/10-skarpeta-z-prezentami/10.jpg",
+      "price": "17 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/10-skarpeta-z-prezentami/10.jpg",
+          "description": "Skarpeta z prezentami, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-czapka",
+      "name": "Czapka",
+      "description": "Czapka Mikołaja, 8x8 cm",
+      "shortDescription": "Czapka Mikołaja, 8x8 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/11-czapka/11.jpg",
+      "price": "16 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/11-czapka/11.jpg",
+          "description": "Czapka Mikołaja, 8x8 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-12-bucik",
+      "name": "Bucik",
+      "description": "Bucik Mikołaja, 8cm",
+      "shortDescription": "Bucik Mikołaja, 8cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/12-bucik/12.jpg",
+      "price": "14 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/12-bucik/12.jpg",
+          "description": "Bucik Mikołaja, 8cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-13-kokardka",
+      "name": "Kokardka",
+      "description": "Kokardka, 8,5 cm",
+      "shortDescription": "Kokardka, 8,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/13-kokardka/13.jpg",
+      "price": "17 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/13-kokardka/13.jpg",
+          "description": "Kokardka, 8,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-14-choinka",
+      "name": "Choinka",
+      "description": "Choinka z białym łańcuchem, 9,5 cm",
+      "shortDescription": "Choinka z białym łańcuchem, 9,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/14-choinka/14.jpg",
+      "price": "10 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/14-choinka/14.jpg",
+          "description": "Choinka z białym łańcuchem, 9,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-15-konik-szwedzki",
+      "name": "Konik szwedzki",
+      "description": "Konik szewdzki, 7,5cm. Biały, czerwony lub miętowy",
+      "shortDescription": "Konik szewdzki, 7,5cm. Biały, czerwony lub miętowy",
+      "thumbnail": "/sets/boze-narodzenie-2026/15-konik-szwedzki/15.jpg",
+      "price": "14 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/15-konik-szwedzki/15.jpg",
+          "description": "Konik szewdzki, 7,5cm. Biały, czerwony lub miętowy"
+        }
+      ]
+    },
+    {
+      "id": "2026-16-sweterek-czerwony",
+      "name": "Sweterek czerwony",
+      "description": "Sweterek czerwony, 9x7 cm",
+      "shortDescription": "Sweterek czerwony, 9x7 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/16-sweterek-czerwony/16.jpg",
+      "price": "20 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/16-sweterek-czerwony/16.jpg",
+          "description": "Sweterek czerwony, 9x7 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-17-wieniec-z-kokardka",
+      "name": "Wieniec z kokardką",
+      "description": "Wieniec z kokardką 7 cm",
+      "shortDescription": "Wieniec z kokardką 7 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/17-wieniec-z-kokardka/17.jpg",
+      "price": "17 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/17-wieniec-z-kokardka/17.jpg",
+          "description": "Wieniec z kokardką 7 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-18-jemiola",
+      "name": "Jemioła",
+      "description": "Jemioła z kokardką, 10 cm",
+      "shortDescription": "Jemioła z kokardką, 10 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/18-jemiola/18.jpg",
+      "price": "18 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/18-jemiola/18.jpg",
+          "description": "Jemioła z kokardką, 10 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-19-laska-swiateczna",
+      "name": "Laska świąteczna",
+      "description": "Laska świąteczna duża, 9,5 cm",
+      "shortDescription": "Laska świąteczna duża, 9,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/19-laska-swiateczna/19.jpg",
+      "price": "14 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/19-laska-swiateczna/19.jpg",
+          "description": "Laska świąteczna duża, 9,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-20-samochod-z-choinka",
+      "name": "Samochód z choinką",
+      "description": "Samochód z choinką, 13cm",
+      "shortDescription": "Samochód z choinką, 13cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/20-samochod-z-choinka/20.jpg",
+      "price": "25 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/20-samochod-z-choinka/20.jpg",
+          "description": "Samochód z choinką, 13cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-21-ciastek-w-czapce",
+      "name": "Ciastek w czapce",
+      "description": "Ciastek w czapce, 9 cm",
+      "shortDescription": "Ciastek w czapce, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/21-ciastek-w-czapce/21.jpg",
+      "price": "18 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/21-ciastek-w-czapce/21.jpg",
+          "description": "Ciastek w czapce, 9 cm"
+        },
+        {
+          "url": "/sets/boze-narodzenie-2026/21-ciastek-w-czapce/22.jpg",
+          "description": "Ciastek w czapce, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-23-kubek-czerwony",
+      "name": "Kubek czerwony",
+      "description": "Kubek czerwony \"Merry Christmas\", 8 cm",
+      "shortDescription": "Kubek czerwony \"Merry Christmas\", 8 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/23-kubek-czerwony/23.jpg",
+      "price": "20 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/23-kubek-czerwony/23.jpg",
+          "description": "Kubek czerwony \"Merry Christmas\", 8 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-24-kubek-mietowy",
+      "name": "Kubek miętowy",
+      "description": "Kubek miętowy snieżynka, 8 cm",
+      "shortDescription": "Kubek miętowy snieżynka, 8 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/24-kubek-mietowy/24.jpg",
+      "price": "18 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/24-kubek-mietowy/24.jpg",
+          "description": "Kubek miętowy snieżynka, 8 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-25-cukierek",
+      "name": "Cukierek",
+      "description": "Cukierek z posypką kryształki, 8 cm",
+      "shortDescription": "Cukierek z posypką kryształki, 8 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/25-cukierek/25.jpg",
+      "price": "14 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/25-cukierek/25.jpg",
+          "description": "Cukierek z posypką kryształki, 8 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-26-muchomorek",
+      "name": "Muchomorek",
+      "description": "Muchomor z blaszkami, grzybek nr 1, 7,5 cm",
+      "shortDescription": "Muchomor z blaszkami, grzybek nr 1, 7,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/26-muchomorek/26.jpg",
+      "price": "16 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/26-muchomorek/26.jpg",
+          "description": "Muchomor z blaszkami, grzybek nr 1, 7,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-27-sweterek-zielony",
+      "name": "Sweterek zielony",
+      "description": "Sweterek zielony, 9x7 cm",
+      "shortDescription": "Sweterek zielony, 9x7 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/27-sweterek-zielony/27.jpg",
+      "price": "20 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/27-sweterek-zielony/27.jpg",
+          "description": "Sweterek zielony, 9x7 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-28-muchomorek",
+      "name": "Muchomorek",
+      "description": "Muchomor bez blaszek, grzybek nr 2, 7,5 cm",
+      "shortDescription": "Muchomor bez blaszek, grzybek nr 2, 7,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/28-muchomorek/28.jpg",
+      "price": "14 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/28-muchomorek/28.jpg",
+          "description": "Muchomor bez blaszek, grzybek nr 2, 7,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-29-choinka",
+      "name": "Choinka",
+      "description": "Choinka biała zielony łańcuch, 9 cm",
+      "shortDescription": "Choinka biała zielony łańcuch, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/29-choinka/29.jpg",
+      "price": "16 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/29-choinka/29.jpg",
+          "description": "Choinka biała zielony łańcuch, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-30-domek",
+      "name": "Domek",
+      "description": "Domek miętowy mały, 9 cm",
+      "shortDescription": "Domek miętowy mały, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/30-domek/30.jpg",
+      "price": "18 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/30-domek/30.jpg",
+          "description": "Domek miętowy mały, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-31-choinka-z-lampkami",
+      "name": "Choinka z lampkami",
+      "description": "Choinka z lampkami, 9,5 cm",
+      "shortDescription": "Choinka z lampkami, 9,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/31-choinka-z-lampkami/31.jpg",
+      "price": "16 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/31-choinka-z-lampkami/31.jpg",
+          "description": "Choinka z lampkami, 9,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-32-choinka-3d",
+      "name": "Choinka 3D",
+      "description": "Choinka 3D, 9 cm",
+      "shortDescription": "Choinka 3D, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/32-choinka-3d/32.jpg",
+      "price": "16 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/32-choinka-3d/32.jpg",
+          "description": "Choinka 3D, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-33-choinka",
+      "name": "Choinka",
+      "description": "Choinka biała ze złotą falbanką, 8,5 cm",
+      "shortDescription": "Choinka biała ze złotą falbanką, 8,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/33-choinka/33.jpg",
+      "price": "12 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/33-choinka/33.jpg",
+          "description": "Choinka biała ze złotą falbanką, 8,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-34-ostrokrzew",
+      "name": "Ostrokrzew",
+      "description": "Ostrokrzew, 7,5 cm",
+      "shortDescription": "Ostrokrzew, 7,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/34-ostrokrzew/34.jpg",
+      "price": "14 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/34-ostrokrzew/34.jpg",
+          "description": "Ostrokrzew, 7,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-35-choinka",
+      "name": "Choinka",
+      "description": "Choinka biała z gwiazdką w miętowej doniczce, 11,5 cm",
+      "shortDescription": "Choinka biała z gwiazdką w miętowej doniczce, 11,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/35-choinka/35.jpg",
+      "price": "17 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/35-choinka/35.jpg",
+          "description": "Choinka biała z gwiazdką w miętowej doniczce, 11,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-36-choinka",
+      "name": "Choinka",
+      "description": "Choinka miętowa ze śnieżynkami, 9,5 cm",
+      "shortDescription": "Choinka miętowa ze śnieżynkami, 9,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/36-choinka/36.jpg",
+      "price": "17 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/36-choinka/36.jpg",
+          "description": "Choinka miętowa ze śnieżynkami, 9,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-37-gwiazdka-zielona",
+      "name": "Gwiazdka zielona",
+      "description": "Gwiazdka zielona, 8,5 cm",
+      "shortDescription": "Gwiazdka zielona, 8,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/37-gwiazdka-zielona/37.jpg",
+      "price": "11 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/37-gwiazdka-zielona/37.jpg",
+          "description": "Gwiazdka zielona, 8,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-38-serce",
+      "name": "Serce",
+      "description": "Serce piernik ze śnieżynką, 9,5 cm",
+      "shortDescription": "Serce piernik ze śnieżynką, 9,5 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/38-serce/38.jpg",
+      "price": "10 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/38-serce/38.jpg",
+          "description": "Serce piernik ze śnieżynką, 9,5 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-39-bombka",
+      "name": "Bombka",
+      "description": "Bombka miętowa ze śnieżynką, 9 cm",
+      "shortDescription": "Bombka miętowa ze śnieżynką, 9 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/39-bombka/39.jpg",
+      "price": "17 zł",
+      "tag": "pojedynczy",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/39-bombka/39.jpg",
+          "description": "Bombka miętowa ze śnieżynką, 9 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-40-zestaw-prezentowy-1",
+      "name": "Zestaw prezentowy 1",
+      "description": "Zestaw z czerwonym sweterkiem i misiem. Pudełko 25x25 cm",
+      "shortDescription": "Zestaw z czerwonym sweterkiem i misiem. Pudełko 25x25 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/40-zestaw-prezentowy-1/40.jpg",
+      "price": "125 zł",
+      "tag": "zestaw",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/40-zestaw-prezentowy-1/40.jpg",
+          "description": "Zestaw z czerwonym sweterkiem i misiem. Pudełko 25x25 cm"
+        },
+        {
+          "url": "/sets/boze-narodzenie-2026/40-zestaw-prezentowy-1/41.jpg",
+          "description": "Zestaw z czerwonym sweterkiem i misiem. Pudełko 25x25 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-42-zestaw-prezentowy-2",
+      "name": "Zestaw prezentowy 2",
+      "description": "Zestaw białe i naturalne pierniczki. Pudełko 25x25 cm",
+      "shortDescription": "Zestaw białe i naturalne pierniczki. Pudełko 25x25 cm",
+      "thumbnail": "/sets/boze-narodzenie-2026/42-zestaw-prezentowy-2/42.png",
+      "price": "88 zł",
+      "tag": "zestaw",
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/42-zestaw-prezentowy-2/42.png",
+          "description": "Zestaw białe i naturalne pierniczki. Pudełko 25x25 cm"
+        },
+        {
+          "url": "/sets/boze-narodzenie-2026/42-zestaw-prezentowy-2/43.png",
+          "description": "Zestaw białe i naturalne pierniczki. Pudełko 25x25 cm"
         }
       ]
     }

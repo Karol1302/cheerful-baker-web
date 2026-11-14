@@ -1,15 +1,15 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ImageGallery from "@/components/ui/ImageGallery";
-import { getSet } from "@/utils/setsLoader";
-import { ChevronLeft } from "lucide-react";
-import { GiftSet } from "@/utils/setsLoader";
+import { loadSets } from "@/utils/setsLoader";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import type { GiftSet } from "@/utils/setsLoader";
 import { getAssetUrl } from "@/utils/url";
 
 const SetDetail = () => {
   const { setId } = useParams();
   const navigate = useNavigate();
-  const [set, setSet] = useState<GiftSet | null>(null);
+  const [sets, setSets] = useState<GiftSet[]>([]);
   const [loading, setLoading] = useState(true);
   const [animateIn, setAnimateIn] = useState(false);
   // Stan do zarządzania otwartą galerią (lightboxem)
@@ -29,28 +29,36 @@ const SetDetail = () => {
     setAnimateIn(true);
   }, []);
 
-  // Load set data
+  // Load the offer in the same order used on the offer page.
   useEffect(() => {
-    const loadSet = async () => {
-      setLoading(true);
+    let active = true;
+    const loadOffer = async () => {
       try {
-        if (setId) {
-          const setData = await getSet(setId);
-          if (setData) {
-            setSet(setData);
-          } else {
-            navigate("/sets", { replace: true });
-          }
-        }
+        const products = await loadSets();
+        if (active) setSets(products);
       } catch (error) {
         console.error("Failed to load set:", error);
-        navigate("/sets", { replace: true });
       } finally {
-        setLoading(false);
+        if (active) setLoading(false);
       }
     };
-    loadSet();
-  }, [setId, navigate]);
+    loadOffer();
+    return () => { active = false; };
+  }, []);
+
+  const currentIndex = sets.findIndex((product) => product.id === setId);
+  const set = sets[currentIndex];
+  const previousSet = sets[currentIndex - 1];
+  const nextSet = sets[currentIndex + 1];
+
+  useEffect(() => {
+    if (!loading && currentIndex === -1) navigate("/sets", { replace: true });
+  }, [loading, currentIndex, navigate]);
+
+  useEffect(() => {
+    setCurrentGalleryIndex(null);
+    return () => { document.body.style.overflow = ''; };
+  }, [setId]);
 
   if (loading) {
     return (
@@ -77,6 +85,20 @@ const SetDetail = () => {
   // Additional images
   const extraImages = galleryItems.slice(1);
 
+  const productLink = (product: GiftSet | undefined, direction: "previous" | "next") => {
+    const previous = direction === "previous";
+    const label = previous ? "Poprzedni produkt" : "Następny produkt";
+    const className = `inline-flex w-full items-center justify-center gap-1 rounded-lg border px-3 py-3 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gingerbread ${
+      product ? "border-gingerbread/30 bg-white text-gingerbread hover:bg-cream" : "border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed"
+    }`;
+    const content = <>{previous && <ChevronLeft size={18} aria-hidden="true" />}<span>{label}</span>{!previous && <ChevronRight size={18} aria-hidden="true" />}</>;
+    return product ? (
+      <Link to={`/sets/${product.id}`} className={className} aria-label={`${label}: ${product.name}`}>{content}</Link>
+    ) : (
+      <button type="button" disabled className={className}>{content}</button>
+    );
+  };
+
   return (
     <div className="pt-28 pb-24 px-6">
       <div className="container mx-auto">
@@ -85,10 +107,9 @@ const SetDetail = () => {
           className="flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors mb-6"
         >
           <ChevronLeft size={20} />
-          <span>Powrót do zestawów</span>
+          <span>Powrót do oferty</span>
         </button>
 
-                {/* Grid layout: left side text + thumbnails, right side image */}
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-700 ${
             animateIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -137,8 +158,11 @@ const SetDetail = () => {
             </button>
           </div>
         </div>
+        <nav className="grid grid-cols-2 gap-3 max-w-4xl mx-auto" aria-label="Nawigacja między produktami">
+          {productLink(previousSet, "previous")}
+          {productLink(nextSet, "next")}
+        </nav>
 
-        {/* UWAGA: USUWAMY stary blok z extraImages pod gridem */}
         {currentGalleryIndex !== null && (
           <ImageGallery 
             items={galleryItems} // Używamy pełnej listy zdjęć
@@ -147,16 +171,6 @@ const SetDetail = () => {
             isLightbox={true}
           />
         )}
-
-
-        {currentGalleryIndex !== null && (
-          <ImageGallery 
-            items={galleryItems} // Używamy pełnej listy zdjęć
-            startIndex={currentGalleryIndex}
-            onClose={closeGallery}
-            isLightbox={true} // Dodaj ten prop, jeśli ImageGallery ma tryb lightboxa
-          />
-          )}
       </div>
     </div>
   );

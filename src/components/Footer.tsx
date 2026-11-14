@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="flex justify-center md:justify-end items-center gap-6">
             {/* Email Contact Option */}
             <a 
-              href="mailto:kontakt@pierniczkikim.pl" 
+              href="mailto:kimdekoracje@wp.pl"
               className="hover:scale-110 transition-transform"
               aria-label="Email"
             >

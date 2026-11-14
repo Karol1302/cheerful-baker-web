@@ -16,7 +16,6 @@ import SetDetail from "./pages/SetDetail";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ui/ScrollToTop";
-import CookieSettings from "./components/ui/CookieSettings";
 
 // ScrollToTop component to handle scrolling to top on route changes
 const ScrollToTopOnNavigation = () => {
@@ -54,7 +53,6 @@ const App = () => (
         </main>
         <Footer />
         <ScrollToTop />
-        <CookieSettings />
       </div>
     </TooltipProvider>
   </QueryClientProvider>

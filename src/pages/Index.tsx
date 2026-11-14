@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import HeroSection from "@/components/ui/HeroSection";
-import InstagramFeed from "@/components/ui/InstagramFeed";
+import SocialMediaBanner from "@/components/ui/SocialMediaBanner";
 import ServiceCard from "@/components/ui/ServiceCard";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { loadSets } from "@/utils/setsLoader";
@@ -21,6 +21,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { getAssetUrl } from "@/utils/url";
+import siteConfig from "@/config/siteConfig.json";
 
 const Index = () => {
   const { elementRef: productsRef, isVisible: productsVisible } = useIntersectionObserver();
@@ -91,9 +92,9 @@ const Index = () => {
                 productsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <h2 className="text-3xl font-bold mb-4">Aktualna oferta</h2>
+              <h2 className="text-3xl font-bold mb-4">{siteConfig.offerTitle}</h2>
               <p className="text-muted-foreground text-pretty">
-                Wybierz spośród aktualnie dostępnych zestawów lub skontaktuj się ze mną, aby zamówić coś specjalnego.
+                Wybierz spośród aktualnie dostępnych pierniczków lub skontaktuj się ze mną, aby zamówić coś specjalnego.
               </p>
             </div>
             
@@ -253,9 +254,9 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Instagram Feed */}
+        {/* Social media */}
         <section className="py-24 px-6 bg-gradient-to-b from-cream to-white">
-          <InstagramFeed />
+          <SocialMediaBanner />
         </section>
       </div>
     </div>

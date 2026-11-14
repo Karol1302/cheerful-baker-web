@@ -1,7 +1,8 @@
 {
+  "offerTitle": "Aktualna oferta na Boże Narodzenie 2026",
   "heroSlideshow": {
     "images": [
-      "/tlo3.jpg"
+      "/hero/hero1.jpg"
     ],
     "transitionTime": 10000
   }
