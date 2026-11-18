@@ -44,8 +44,9 @@ const Index = () => {
       setLoading(true);
       try {
         const allSets = await loadSets();
-        // Limit to 6 sets
-        setCurrentSets(allSets.slice(0, 6));
+        const giftSets = allSets.filter((product) => product.tag === "zestaw").slice(0, 3);
+        const singleCookies = allSets.filter((product) => product.tag === "pojedynczy").slice(0, 3);
+        setCurrentSets([...giftSets, ...singleCookies]);
       } catch (error) {
         console.error("Failed to load sets:", error);
       } finally {
@@ -92,7 +93,14 @@ const Index = () => {
                 productsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <h2 className="text-3xl font-bold mb-4">{siteConfig.offerTitle}</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                <Link
+                  to="/sets"
+                  className="underline-offset-4 transition-colors hover:text-gingerbread-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gingerbread"
+                >
+                  {siteConfig.offerTitle}
+                </Link>
+              </h2>
               <p className="text-muted-foreground text-pretty">
                 Wybierz spośród aktualnie dostępnych pierniczków lub skontaktuj się ze mną, aby zamówić coś specjalnego.
               </p>

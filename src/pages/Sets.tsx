@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import SetRow from "@/components/ui/SetRow";
 import SetCard from "@/components/ui/SetCard";
@@ -14,7 +15,8 @@ const Sets = () => {
   const [sets, setSets] = useState<GiftSet[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTag, setActiveTag] = useState<OfferTag | null>(null);
-  const [view, setView] = useState<"list" | "gallery">("list");
+  const [selectedView, setSelectedView] = useState<"list" | "gallery">("list");
+  const view = useIsMobile() ? "list" : selectedView;
   const navigate = useNavigate();
   const visibleSets = activeTag ? sets.filter((set) => set.tag === activeTag) : sets;
 
@@ -76,7 +78,7 @@ const Sets = () => {
             </p>
           </div>
         ) : (
-          <div className="max-w-4xl mx-auto">
+          <div className={`mx-auto max-w-4xl ${view === "gallery" ? "lg:max-w-6xl" : ""}`}>
             <div className="flex flex-col items-stretch sm:flex-row sm:items-center sm:justify-center gap-3 mb-8" role="group" aria-label="Filtruj ofertę">
               {filters.map(({ tag, label }) => {
                 const active = activeTag === tag;
@@ -101,7 +103,7 @@ const Sets = () => {
             <div aria-live="polite" aria-atomic="true" className="text-center text-sm text-muted-foreground mb-6">
               {activeTag ? `Wyświetlane produkty: ${visibleSets.length}` : "Wyświetlane są wszystkie produkty"}
             </div>
-            <div className="flex justify-center sm:justify-end mb-6" role="group" aria-label="Widok oferty">
+            <div className="mb-6 hidden justify-end md:flex" role="group" aria-label="Widok oferty">
               <div className="inline-flex rounded-lg border border-gingerbread/30 bg-white p-1">
                 {([
                   { value: "list" as const, label: "Lista", Icon: List },
@@ -111,7 +113,7 @@ const Sets = () => {
                     key={value}
                     type="button"
                     aria-pressed={view === value}
-                    onClick={() => setView(value)}
+                    onClick={() => setSelectedView(value)}
                     className={`inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gingerbread ${view === value ? 'bg-gingerbread text-white' : 'text-gingerbread hover:bg-cream'}`}
                   >
                     <Icon size={18} aria-hidden="true" />{label}
@@ -122,7 +124,7 @@ const Sets = () => {
             {visibleSets.length === 0 ? (
               <p className="text-center text-muted-foreground py-12">Brak produktów w tej kategorii. Wybierz drugi filtr lub kliknij ponownie, aby zobaczyć całą ofertę.</p>
             ) : (
-            <div className={view === "list" ? "space-y-4" : "grid grid-cols-1 min-[340px]:grid-cols-2 md:grid-cols-3 gap-6"}>
+            <div className={view === "list" ? "space-y-4 max-sm:-mx-10" : "grid grid-cols-1 min-[340px]:grid-cols-2 md:grid-cols-3 gap-6"}>
             {visibleSets.map((set, index) => (
               view === "list" ? (
               <SetRow

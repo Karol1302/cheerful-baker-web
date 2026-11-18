@@ -686,12 +686,13 @@
     },
     {
       "id": "2026-40-zestaw-prezentowy-1",
-      "name": "Zestaw prezentowy 1",
+      "name": "Zestaw prezentowy 2",
       "description": "Zestaw z czerwonym sweterkiem i misiem. Pudełko 25x25 cm",
       "shortDescription": "Zestaw z czerwonym sweterkiem i misiem. Pudełko 25x25 cm",
       "thumbnail": "/sets/boze-narodzenie-2026/40-zestaw-prezentowy-1/40.jpg",
-      "price": "125 zł",
+      "price": "128 zł",
       "tag": "zestaw",
+      "setNumber": 2,
       "images": [
         {
           "url": "/sets/boze-narodzenie-2026/40-zestaw-prezentowy-1/40.jpg",
@@ -705,12 +706,13 @@
     },
     {
       "id": "2026-42-zestaw-prezentowy-2",
-      "name": "Zestaw prezentowy 2",
+      "name": "Zestaw prezentowy 1",
       "description": "Zestaw białe i naturalne pierniczki. Pudełko 25x25 cm",
       "shortDescription": "Zestaw białe i naturalne pierniczki. Pudełko 25x25 cm",
       "thumbnail": "/sets/boze-narodzenie-2026/42-zestaw-prezentowy-2/42.png",
       "price": "88 zł",
       "tag": "zestaw",
+      "setNumber": 1,
       "images": [
         {
           "url": "/sets/boze-narodzenie-2026/42-zestaw-prezentowy-2/42.png",
@@ -719,6 +721,318 @@
         {
           "url": "/sets/boze-narodzenie-2026/42-zestaw-prezentowy-2/43.png",
           "description": "Zestaw białe i naturalne pierniczki. Pudełko 25x25 cm"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-3",
+      "name": "Zestaw nr 3 - XXL - 30 szt.",
+      "description": "Duży zestaw pierniczków w wysokim trójwarstwowym pudełku. Klasyczne pierniczki zdobione białym lukrem, dużo wzorów, nie ma dwóch identycznych. Pudełko prezentowe 21x21 cm z okienkiem i ozdobną wstążką z napisem Wesołych Świąt.",
+      "shortDescription": "Duży zestaw pierniczków w wysokim trójwarstwowym pudełku. Klasyczne pierniczki zdobione białym lukrem, dużo wzorów, nie ma dwóch identycznych. Pudełko prezentowe 21x21 cm z okienkiem i ozdobną wstążką z napisem Wesołych Świąt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-03/3.jpg",
+      "price": "160 zł",
+      "tag": "zestaw",
+      "setNumber": 3,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-03/3.jpg",
+          "description": "Zestaw nr 3 - XXL - 30 szt."
+        },
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-03/3_1.jpg",
+          "description": "Zestaw nr 3 - XXL - 30 szt. – dodatkowe zdjęcie"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-4",
+      "name": "Zestaw nr 4",
+      "description": "Pudełko 15x21 cm, 6szt.",
+      "shortDescription": "Pudełko 15x21 cm, 6szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-04/4.jpg",
+      "price": "79 zł",
+      "tag": "zestaw",
+      "setNumber": 4,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-04/4.jpg",
+          "description": "Zestaw nr 4"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-5",
+      "name": "Zestaw nr 5",
+      "description": "Pudełko 15x21 cm, 6szt.",
+      "shortDescription": "Pudełko 15x21 cm, 6szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-05/5.jpg",
+      "price": "90 zł",
+      "tag": "zestaw",
+      "setNumber": 5,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-05/5.jpg",
+          "description": "Zestaw nr 5"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-6",
+      "name": "Zestaw nr 6",
+      "description": "Pudełko 15x21 cm, 5szt.",
+      "shortDescription": "Pudełko 15x21 cm, 5szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-06/6.jpg",
+      "price": "90 zł",
+      "tag": "zestaw",
+      "setNumber": 6,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-06/6.jpg",
+          "description": "Zestaw nr 6"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-7",
+      "name": "Zestaw nr 7",
+      "description": "Pudełko 15x21 cm, 5szt.",
+      "shortDescription": "Pudełko 15x21 cm, 5szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-07/7.jpg",
+      "price": "86 zł",
+      "tag": "zestaw",
+      "setNumber": 7,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-07/7.jpg",
+          "description": "Zestaw nr 7"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-8",
+      "name": "Zestaw nr 8",
+      "description": "Pudełko 15x21 cm, 6szt.",
+      "shortDescription": "Pudełko 15x21 cm, 6szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-08/8.jpg",
+      "price": "92 zł",
+      "tag": "zestaw",
+      "setNumber": 8,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-08/8.jpg",
+          "description": "Zestaw nr 8"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-9",
+      "name": "Zestaw nr 9",
+      "description": "Pudełko 15x21 cm, 7szt.",
+      "shortDescription": "Pudełko 15x21 cm, 7szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-09/9.jpg",
+      "price": "74 zł",
+      "tag": "zestaw",
+      "setNumber": 9,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-09/9.jpg",
+          "description": "Zestaw nr 9"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-10",
+      "name": "Zestaw nr 10 Kolor miętowy.",
+      "description": "Pudełko 15x21 cm, 6szt.",
+      "shortDescription": "Pudełko 15x21 cm, 6szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-10/10.jpg",
+      "price": "66 zł",
+      "tag": "zestaw",
+      "setNumber": 10,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-10/10.jpg",
+          "description": "Zestaw nr 10 Kolor miętowy."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-11",
+      "name": "Zestaw nr 11 Biało-miętowy.",
+      "description": "Pudełko 15x21 cm, 7 szt.",
+      "shortDescription": "Pudełko 15x21 cm, 7 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-11/11.jpg",
+      "price": "63 zł",
+      "tag": "zestaw",
+      "setNumber": 11,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-11/11.jpg",
+          "description": "Zestaw nr 11 Biało-miętowy."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-12",
+      "name": "Zestaw nr 12",
+      "description": "Pudełko 15x21 cm, 5 szt.",
+      "shortDescription": "Pudełko 15x21 cm, 5 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-12/12.jpg",
+      "price": "80 zł",
+      "tag": "zestaw",
+      "setNumber": 12,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-12/12.jpg",
+          "description": "Zestaw nr 12"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-13",
+      "name": "Zestaw nr 13 Naturalny z chatką.",
+      "description": "Pudełko 15x21 cm, 7 szt.",
+      "shortDescription": "Pudełko 15x21 cm, 7 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-13/13.jpg",
+      "price": "58 zł",
+      "tag": "zestaw",
+      "setNumber": 13,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-13/13.jpg",
+          "description": "Zestaw nr 13 Naturalny z chatką."
+        },
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-13/13_1.jpg",
+          "description": "Zestaw nr 13 Naturalny z chatką. – dodatkowe zdjęcie"
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-14",
+      "name": "Zestaw nr 14 Naturalny z czerwoną czapką.",
+      "description": "Pudełko 15x21 cm, 7 szt.",
+      "shortDescription": "Pudełko 15x21 cm, 7 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-14/14.jpg",
+      "price": "60 zł",
+      "tag": "zestaw",
+      "setNumber": 14,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-14/14.jpg",
+          "description": "Zestaw nr 14 Naturalny z czerwoną czapką."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-15",
+      "name": "Zestaw nr 15 Naturalny z czerwoną bombką.",
+      "description": "Pudełko 15x21 cm, 7 szt.",
+      "shortDescription": "Pudełko 15x21 cm, 7 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-15/15.jpg",
+      "price": "60 zł",
+      "tag": "zestaw",
+      "setNumber": 15,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-15/15.jpg",
+          "description": "Zestaw nr 15 Naturalny z czerwoną bombką."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-16",
+      "name": "Zestaw nr 16 Naturalny z Mikołajem.",
+      "description": "Pudełko 15x15 cm, 5 szt.",
+      "shortDescription": "Pudełko 15x15 cm, 5 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-16/16.jpg",
+      "price": "45 zł",
+      "tag": "zestaw",
+      "setNumber": 16,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-16/16.jpg",
+          "description": "Zestaw nr 16 Naturalny z Mikołajem."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-17",
+      "name": "Zestaw nr 17 Biały z misiem w szaliku.",
+      "description": "Pudełko 15x15 cm, 4 szt.",
+      "shortDescription": "Pudełko 15x15 cm, 4 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-17/17.jpg",
+      "price": "45 zł",
+      "tag": "zestaw",
+      "setNumber": 17,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-17/17.jpg",
+          "description": "Zestaw nr 17 Biały z misiem w szaliku."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-18",
+      "name": "Zestaw nr 18 Miś i ciastek.",
+      "description": "Pudełko 15x15 cm, 4 szt.",
+      "shortDescription": "Pudełko 15x15 cm, 4 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-18/18.jpg",
+      "price": "52 zł",
+      "tag": "zestaw",
+      "setNumber": 18,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-18/18.jpg",
+          "description": "Zestaw nr 18 Miś i ciastek."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-19",
+      "name": "Zestaw nr 19 Miś i cukierki.",
+      "description": "Pudełko 15x15 cm, 4 szt.",
+      "shortDescription": "Pudełko 15x15 cm, 4 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-19/19.jpg",
+      "price": "64 zł",
+      "tag": "zestaw",
+      "setNumber": 19,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-19/19.jpg",
+          "description": "Zestaw nr 19 Miś i cukierki."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-20",
+      "name": "Zestaw nr 20 Miś i sweterek.",
+      "description": "Pudełko 15x15 cm, 4 szt.",
+      "shortDescription": "Pudełko 15x15 cm, 4 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-20/20.jpg",
+      "price": "62 zł",
+      "tag": "zestaw",
+      "setNumber": 20,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-20/20.jpg",
+          "description": "Zestaw nr 20 Miś i sweterek."
+        }
+      ]
+    },
+    {
+      "id": "2026-zestaw-prezentowy-21",
+      "name": "Zestaw nr 21 Biały zest. z misiem.",
+      "description": "Pudełko 15x15 cm, 4 szt.",
+      "shortDescription": "Pudełko 15x15 cm, 4 szt.",
+      "thumbnail": "/sets/boze-narodzenie-2026/zestaw-prezentowy-21/21.jpg",
+      "price": "44 zł",
+      "tag": "zestaw",
+      "setNumber": 21,
+      "images": [
+        {
+          "url": "/sets/boze-narodzenie-2026/zestaw-prezentowy-21/21.jpg",
+          "description": "Zestaw nr 21 Biały zest. z misiem."
         }
       ]
     }

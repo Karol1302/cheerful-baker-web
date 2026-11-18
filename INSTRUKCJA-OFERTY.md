@@ -21,7 +21,7 @@ W kolumnie `tag` w pliku CSV wpisz `pojedynczy` dla pojedynczego pierniczka albo
 
 ## Wpis w pliku sets.json
 
-Dodaj kolejny obiekt na końcu tablicy `sets`. Strona wyświetla wpisy w odwrotnej kolejności: ostatni wpis jest najnowszy i pojawia się pierwszy, a sześć ostatnich wpisów pojawia się również na stronie głównej. Identyfikatory istniejących produktów pozostają bez zmian. Aby ukryć produkt, usuń jego wpis z tablicy lub przenieś go poza ten plik. Samo usunięcie zdjęcia spowoduje brak obrazu na stronie.
+Dodaj kolejny obiekt na końcu tablicy `sets`. Oferta pokazuje najpierw zestawy z polem `setNumber`, od najniższego numeru, a potem pozostałe produkty w odwrotnej kolejności wpisów w pliku, od najnowszych. Na stronie głównej pojawiają się trzy pierwsze zestawy i trzy najnowsze pojedyncze pierniczki. Identyfikatory istniejących produktów pozostają bez zmian. Aby ukryć produkt, usuń jego wpis z tablicy lub przenieś go poza ten plik. Samo usunięcie zdjęcia spowoduje brak obrazu na stronie.
 
 ```json
 {
@@ -48,6 +48,7 @@ Dodaj kolejny obiekt na końcu tablicy `sets`. Strona wyświetla wpisy w odwrotn
 - `id` musi być unikalne i jest częścią adresu produktu. Dla nowych produktów używaj małych liter, cyfr i myślników. Zmiana istniejącego `id` zmienia jego adres.
 - `name` to nazwa, `price` to cena zapisana jako tekst, a `description` to opis na stronie produktu.
 - `tag` to `pojedynczy` lub `zestaw` i przypisuje produkt do odpowiedniego filtra.
+- `setNumber` to numer zestawu zapisany jako liczba, np. `3`. Dodaj go do ponumerowanych zestawów, używając unikalnego numeru.
 - `shortDescription` jest opcjonalny i wyświetla się na liście; bez niego używany jest `description`.
 - `thumbnail` wskazuje zdjęcie na listach. Pierwszy obraz z `images` jest dużym zdjęciem produktu; zazwyczaj obie ścieżki wskazują ten sam plik. Każdy produkt musi mieć co najmniej jedno zdjęcie w `images`.
 - Opisy zdjęć pomagają opisać ich zawartość osobom korzystającym z czytników ekranu. Wszystkie ścieżki zaczynają się od `/sets/` i muszą dokładnie odpowiadać nazwom plików.

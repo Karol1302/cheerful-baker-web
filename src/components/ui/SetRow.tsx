@@ -32,19 +32,19 @@ const SetRow = ({
         to={`/sets/${id}`}
         className="flex flex-col sm:flex-row items-center bg-white rounded-lg border overflow-hidden hover:shadow-md transition-shadow"
       >
-        <div className="w-full sm:w-32 md:w-40 h-40 sm:h-28 md:h-32 flex-shrink-0">
+        <div className="w-full shrink-0 max-sm:relative max-sm:aspect-[4/3] sm:h-28 sm:w-32 md:h-32 md:w-40">
           <img
             src={getAssetUrl(thumbnail)}
             alt={name}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover max-sm:absolute max-sm:inset-0"
           />
         </div>
-        <div className="flex-grow p-4 flex flex-col sm:flex-row items-center">
-          <div className="flex-grow text-center sm:text-left">
+        <div className="flex min-w-0 flex-grow p-4 max-sm:w-full max-sm:items-start max-sm:gap-3 sm:items-center">
+          <div className="min-w-0 flex-grow">
             <h3 className="font-medium text-lg sm:text-xl text-gingerbread mb-1">{name}</h3>
             <p className="text-sm text-gray-600 line-clamp-2">{description}</p>
           </div>
-          <div className="mt-3 sm:mt-0 sm:ml-4 font-medium text-gingerbread-dark">
+          <div className="shrink-0 whitespace-nowrap font-medium text-gingerbread-dark sm:ml-4">
             {price}
           </div>
         </div>

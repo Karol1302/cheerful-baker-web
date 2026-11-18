@@ -88,10 +88,10 @@ const SetDetail = () => {
   const productLink = (product: GiftSet | undefined, direction: "previous" | "next") => {
     const previous = direction === "previous";
     const label = previous ? "Poprzedni produkt" : "Następny produkt";
-    const className = `inline-flex w-full items-center justify-center gap-1 rounded-lg border px-3 py-3 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gingerbread ${
+    const className = `inline-flex min-h-11 w-full items-center justify-center gap-1 rounded-lg border px-2 py-2 text-center text-xs font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gingerbread min-[360px]:text-sm md:px-3 md:py-3 ${
       product ? "border-gingerbread/30 bg-white text-gingerbread hover:bg-cream" : "border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed"
     }`;
-    const content = <>{previous && <ChevronLeft size={18} aria-hidden="true" />}<span>{label}</span>{!previous && <ChevronRight size={18} aria-hidden="true" />}</>;
+    const content = <>{previous && <ChevronLeft size={18} className="shrink-0 max-md:size-4" aria-hidden="true" />}<span>{label}</span>{!previous && <ChevronRight size={18} className="shrink-0 max-md:size-4" aria-hidden="true" />}</>;
     return product ? (
       <Link to={`/sets/${product.id}`} className={className} aria-label={`${label}: ${product.name}`}>{content}</Link>
     ) : (
@@ -99,9 +99,23 @@ const SetDetail = () => {
     );
   };
 
+  const productLinks = (
+    <>
+      {productLink(previousSet, "previous")}
+      {productLink(nextSet, "next")}
+    </>
+  );
+
   return (
-    <div className="pt-28 pb-24 px-6">
-      <div className="container mx-auto">
+    <div className="px-6 pb-24 pt-16 md:pt-28">
+      <nav
+        className="sticky top-16 z-30 -mx-6 grid grid-cols-2 gap-2 border-b border-gingerbread/20 bg-white px-4 py-2 md:hidden"
+        aria-label="Nawigacja między produktami"
+      >
+        {productLinks}
+      </nav>
+
+      <div className="container mx-auto max-md:pt-6">
         <button
           onClick={() => navigate("/sets")}
           className="flex items-center text-gingerbread hover:text-gingerbread-dark transition-colors mb-6"
@@ -158,9 +172,8 @@ const SetDetail = () => {
             </button>
           </div>
         </div>
-        <nav className="grid grid-cols-2 gap-3 max-w-4xl mx-auto" aria-label="Nawigacja między produktami">
-          {productLink(previousSet, "previous")}
-          {productLink(nextSet, "next")}
+        <nav className="mx-auto hidden max-w-4xl grid-cols-2 gap-3 md:grid" aria-label="Nawigacja między produktami">
+          {productLinks}
         </nav>
 
         {currentGalleryIndex !== null && (

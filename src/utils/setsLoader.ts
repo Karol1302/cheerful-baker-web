@@ -15,6 +15,7 @@ export interface GiftSet {
   thumbnail: string;
   price: string;
   tag: OfferTag;
+  setNumber?: number;
   current?: boolean; // Keeping for backward compatibility with data
   images: SetImage[];
 }
@@ -23,8 +24,11 @@ export const getSetsFromJson = async (): Promise<GiftSet[]> => {
   try {
     const response = await fetch(getAssetUrl('sets/sets.json'));
     const data = await response.json();
-    // Nowe wpisy dopisujemy na końcu pliku, a na stronie pokazujemy je od najnowszego.
-    return [...data.sets].reverse();
+    const newestFirst: GiftSet[] = [...data.sets].reverse();
+    // Sortowanie zachowuje kolejność dodania produktów bez numeru zestawu.
+    return newestFirst.sort((a, b) =>
+      (a.setNumber ?? Number.MAX_SAFE_INTEGER) - (b.setNumber ?? Number.MAX_SAFE_INTEGER)
+    );
   } catch (error) {
     console.error("Failed to load sets:", error);
     return [];
