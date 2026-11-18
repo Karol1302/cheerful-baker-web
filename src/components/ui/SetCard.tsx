@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { getAssetUrl } from '@/utils/url';
+import SetThumbnail from './SetThumbnail';
 
 interface SetCardProps {
   id: string;
@@ -37,9 +37,10 @@ const SetCard = ({
       <Link to={`/sets/${id}`} className="block h-full">
         <div className="group overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-full">
           <div className="relative aspect-square overflow-hidden">
-            <img
-              src={getAssetUrl(thumbnail)}
+            <SetThumbnail
+              thumbnail={thumbnail}
               alt={name}
+              sizes="(min-width: 1264px) 368px, (min-width: 600px) calc((100vw - 160px) / 3), (min-width: 340px) calc((100vw - 144px) / 2), calc(100vw - 112px)"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>

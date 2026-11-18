@@ -1,0 +1,662 @@
+{
+  "/sets/balwanek_duzy.png": [
+    {
+      "url": "/sets/thumbnails/balwanek-duzy-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/balwanek-duzy-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/domek_bialy.png": [
+    {
+      "url": "/sets/thumbnails/domek_bialy-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/domek_bialy-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/balwanek_maly.png": [
+    {
+      "url": "/sets/thumbnails/balwanek_maly-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/balwanek_maly-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/choinka.png": [
+    {
+      "url": "/sets/thumbnails/choinka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/choinka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/skarpeta.png": [
+    {
+      "url": "/sets/thumbnails/skarpeta-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/skarpeta-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/gwiazdka.png": [
+    {
+      "url": "/sets/thumbnails/gwiazdka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/gwiazdka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/rekawica.png": [
+    {
+      "url": "/sets/thumbnails/rekawica-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/rekawica-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/01-bialy-mis/01.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-01-bialy-mis-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-01-bialy-mis-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/02-glowa-mikolaja/02.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-02-glowa-mikolaja-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-02-glowa-mikolaja-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/03-mikolaj/03.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-03-mikolaj-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-03-mikolaj-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/04-glowa-mikolaja/04.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-04-glowa-mikolaja-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-04-glowa-mikolaja-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/05-biala-sniezynka/05.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-05-biala-sniezynka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-05-biala-sniezynka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/06-osniezona-choinka/06.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-06-osniezona-choinka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-06-osniezona-choinka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/07-domek-zielony/07.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-07-domek-zielony-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-07-domek-zielony-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/08-kamieniczka/08.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-08-kamieniczka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-08-kamieniczka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/09-domek/09.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-09-domek-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-09-domek-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/10-skarpeta-z-prezentami/10.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-10-skarpeta-z-prezentami-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-10-skarpeta-z-prezentami-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/11-czapka/11.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-11-czapka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-11-czapka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/12-bucik/12.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-12-bucik-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-12-bucik-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/13-kokardka/13.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-13-kokardka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-13-kokardka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/14-choinka/14.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-14-choinka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-14-choinka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/15-konik-szwedzki/15.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-15-konik-szwedzki-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-15-konik-szwedzki-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/16-sweterek-czerwony/16.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-16-sweterek-czerwony-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-16-sweterek-czerwony-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/17-wieniec-z-kokardka/17.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-17-wieniec-z-kokardka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-17-wieniec-z-kokardka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/18-jemiola/18.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-18-jemiola-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-18-jemiola-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/19-laska-swiateczna/19.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-19-laska-swiateczna-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-19-laska-swiateczna-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/20-samochod-z-choinka/20.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-20-samochod-z-choinka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-20-samochod-z-choinka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/21-ciastek-w-czapce/21.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-21-ciastek-w-czapce-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-21-ciastek-w-czapce-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/23-kubek-czerwony/23.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-23-kubek-czerwony-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-23-kubek-czerwony-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/24-kubek-mietowy/24.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-24-kubek-mietowy-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-24-kubek-mietowy-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/25-cukierek/25.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-25-cukierek-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-25-cukierek-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/26-muchomorek/26.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-26-muchomorek-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-26-muchomorek-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/27-sweterek-zielony/27.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-27-sweterek-zielony-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-27-sweterek-zielony-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/28-muchomorek/28.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-28-muchomorek-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-28-muchomorek-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/29-choinka/29.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-29-choinka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-29-choinka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/30-domek/30.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-30-domek-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-30-domek-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/31-choinka-z-lampkami/31.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-31-choinka-z-lampkami-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-31-choinka-z-lampkami-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/32-choinka-3d/32.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-32-choinka-3d-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-32-choinka-3d-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/33-choinka/33.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-33-choinka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-33-choinka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/34-ostrokrzew/34.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-34-ostrokrzew-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-34-ostrokrzew-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/35-choinka/35.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-35-choinka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-35-choinka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/36-choinka/36.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-36-choinka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-36-choinka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/37-gwiazdka-zielona/37.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-37-gwiazdka-zielona-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-37-gwiazdka-zielona-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/38-serce/38.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-38-serce-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-38-serce-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/39-bombka/39.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-39-bombka-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-39-bombka-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/40-zestaw-prezentowy-1/40.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-40-zestaw-prezentowy-1-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-40-zestaw-prezentowy-1-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/42-zestaw-prezentowy-2/42.png": [
+    {
+      "url": "/sets/thumbnails/2026-42-zestaw-prezentowy-2-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-42-zestaw-prezentowy-2-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-03/3.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-3-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-3-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-04/4.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-4-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-4-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-05/5.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-5-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-5-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-06/6.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-6-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-6-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-07/7.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-7-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-7-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-08/8.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-8-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-8-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-09/9.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-9-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-9-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-10/10.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-10-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-10-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-11/11.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-11-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-11-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-12/12.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-12-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-12-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-13/13.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-13-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-13-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-14/14.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-14-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-14-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-15/15.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-15-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-15-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-16/16.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-16-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-16-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-17/17.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-17-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-17-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-18/18.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-18-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-18-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-19/19.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-19-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-19-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-20/20.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-20-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-20-800.webp",
+      "width": 800
+    }
+  ],
+  "/sets/boze-narodzenie-2026/zestaw-prezentowy-21/21.jpg": [
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-21-400.webp",
+      "width": 400
+    },
+    {
+      "url": "/sets/thumbnails/2026-zestaw-prezentowy-21-800.webp",
+      "width": 800
+    }
+  ]
+}

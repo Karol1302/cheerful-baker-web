@@ -54,6 +54,8 @@ Dodaj kolejny obiekt na końcu tablicy `sets`. Oferta pokazuje najpierw zestawy 
 - Opisy zdjęć pomagają opisać ich zawartość osobom korzystającym z czytników ekranu. Wszystkie ścieżki zaczynają się od `/sets/` i muszą dokładnie odpowiadać nazwom plików.
 - W JSON kolejne obiekty oddziela się przecinkami, ale po ostatnim elemencie tablicy przecinka nie ma.
 
+Po dodaniu produktów lub zmianie zdjęcia wskazanego przez `thumbnail` uruchom `npm run thumbnails`. Polecenie wymaga FFmpeg z obsługą WebP w `PATH`. Zapisuje miniatury w `public/sets/thumbnails` i aktualizuje `src/config/offerThumbnails.json`. Do repozytorium dodaj oba wyniki. Build korzysta z zapisanych miniatur i nie wymaga FFmpeg. Strona produktu otwiera oryginalne zdjęcia z `images`.
+
 ## Tytuł oferty
 
 W pliku `src/config/siteConfig.json` zmień wartość `offerTitle`. Ten sam tytuł wyświetli się na stronie głównej i na stronie oferty.

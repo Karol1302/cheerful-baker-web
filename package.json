@@ -6,6 +6,7 @@
   "homepage": "https://pierniczkikim.pl",
   "scripts": {
     "dev": "vite",
+    "thumbnails": "node scripts/generate-thumbnails.mjs",
     "build": "vite build && node scripts/copy404.js",
     "build:prerender": "vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
     "build:dev": "vite build --mode development",

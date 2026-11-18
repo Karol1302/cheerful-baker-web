@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { getAssetUrl } from '@/utils/url';
+import SetThumbnail from './SetThumbnail';
 
 interface SetRowProps {
   id: string;
@@ -33,9 +33,10 @@ const SetRow = ({
         className="flex flex-col sm:flex-row items-center bg-white rounded-lg border overflow-hidden hover:shadow-md transition-shadow"
       >
         <div className="w-full shrink-0 max-sm:relative max-sm:aspect-[4/3] sm:h-28 sm:w-32 md:h-32 md:w-40">
-          <img
-            src={getAssetUrl(thumbnail)}
+          <SetThumbnail
+            thumbnail={thumbnail}
             alt={name}
+            sizes="(min-width: 768px) 160px, (min-width: 640px) 128px, calc(100vw - 34px)"
             className="h-full w-full object-cover max-sm:absolute max-sm:inset-0"
           />
         </div>
